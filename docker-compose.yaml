@@ -24,6 +24,7 @@ services:
     command: >
       /bin/bash -c "sqlite3"
     restart: always
+    tty: true
     ports:
       - 3309:3306
 
@@ -33,6 +34,8 @@ services:
       context: .
       dockerfile: Dockerfile_apache
     container_name: servidor_apache
+    restart: always
+    tty: true
     command: >
       /bin/bash -c "service apache2 start"
     ports:
