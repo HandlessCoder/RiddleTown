@@ -1,0 +1,17 @@
+FROM ubuntu:24.04
+
+RUN apt update && apt upgrade -y
+RUN apt install python3 -y
+RUN apt install python3-pip -y
+RUN apt install python3-venv -y
+RUN mkdir -p proyecto
+# RUN cd proyecto
+
+RUN python3 -m venv proyecto/virtual_env
+RUN . proyecto/virtual_env/bin/activate
+COPY python-requirements.txt .
+RUN pip install -r python-requirements.txt --break-system-packages
+
+RUN cd proyecto && django-admin startproject RiddleTown
+
+# COPY . .

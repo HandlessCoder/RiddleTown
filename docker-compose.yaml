@@ -1,0 +1,60 @@
+services:
+  django:           #se accede yendo, a través del navegador, a localhost:8000
+    build:
+      context: .
+      dockerfile: Dockerfile_django
+    container_name: servidor_django
+    command: >
+      /bin/bash -c "python3 proyecto/RiddleTown/manage.py migrate
+      && python3 proyecto/RiddleTown/manage.py runserver 0.0.0.0:8000
+      "
+    restart: always
+    tty: true
+    ports:
+      - 8000:8000
+    # volumes: 
+    #   - <rutaSistemaExterno>:<rutaDentroContenedor>
+
+
+  sqlite:           #se accederá pronto usando networks y volumes
+    build:
+      context: .
+      dockerfile: Dockerfile_sqlite3
+    container_name: servidor_sqlite3
+    command: >
+      /bin/bash -c "sqlite3"
+    restart: always
+    ports:
+      - 3309:3306
+
+
+  apache:           #se accede yendo, a través del navegador, a localhost
+    build:
+      context: .
+      dockerfile: Dockerfile_apache
+    container_name: servidor_apache
+    command: >
+      /bin/bash -c "service apache2 start"
+    ports:
+      - 80:8080
+
+
+
+# parece que la conexión con la BD sqlite3 no requiere parámetros especiales, sin credenciales.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'HOST': 'db',
+#         'NAME': 'mydb.db',
+#         'PORT': '3306',
+#     }
+# }
+# 
+
+# usar docker-compose up -d --build para incorporar cambios hechos en el DockerFile
+# usar docker-compose up -d para correr algo sin necesidad de usar cambios
+
+
+# usar sudo docker exec -ti <id-contenedor> /bin/bash  para entrar al contenedor de forma interactiva
+
+# usar docker-compose logs -f para ver el log de las cosas que se han impreso dentro del contenedor desde que lo levantamos
