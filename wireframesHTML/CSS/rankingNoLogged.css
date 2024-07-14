@@ -58,8 +58,10 @@ body{
 }
 
 .main-content{
-    width: 100%;
-    padding: 1vw;
+    width: 75%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vw;
     overflow-y: auto;
     color: #1D3D59;
 }
@@ -81,6 +83,7 @@ body{
 .buttonPlayContainer{
     display: flex;
     justify-content: center;
+    margin-bottom: 1vh;
 }
 
 .selectCategory{
@@ -125,6 +128,21 @@ body{
     background-color: #ebebeb;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    margin-bottom: 20px;
-    
+    margin-bottom: 15px;
+    padding: 2vw 4vw 0.8vw 4vw;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.ranking li{
+    margin-bottom: 5px;
+}
+
+.namePerson{
+    float: left;
+}
+
+.points{
+    float: right;
 }
