@@ -13,6 +13,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(../IMG/VectorMenu.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 113.8% 113%;
+    background-position-x: 6vw;
+    background-position-y: -3vw;
 }
 
 .sidebar .logo{
@@ -27,7 +33,7 @@ body{
 .lineLogo{
     background-color: #f35e3d;
     padding: 1px;
-    width: 85%;
+    width: 12.5vw;
 }
 
 .lineMenu{
@@ -36,17 +42,17 @@ body{
     width: 100%;
 }
 
-.sidebar nav ul{
+.sidebar ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar nav ul li{
+.sidebar ul li{
     margin: 15px 0;
 }
 
-.sidebar nav ul li a{
+.sidebar ul li a{
     text-decoration: none;
     color: #1D3D59;
     font-size: 1.2em;
@@ -78,9 +84,9 @@ body{
 }
 
 .premioFisico img{
-    width: 20vw;
+    width: 18vw;
     height: 15vw;
-    margin-left: 11vw;
+    margin-left: 6vw;
 }
 
 .awardsPositionsContainer{
@@ -92,6 +98,7 @@ body{
 
 .awardPosition{
     margin: 0.5vh;
+    margin-top: 0;
     font-size: 1.2em;
 }
 
@@ -115,28 +122,28 @@ body{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    /*background-image: url(../IMG/VectorRanking.png);
-    background-repeat: no-repeat;*/
-}
-
-.top-ranking h2{
-    text-align: center;
+    background-image: url(../IMG/VectorRanking.png);
+    background-repeat: no-repeat;
+    background-size: 110% 126%;
+    background-position-x: -5vw;
 }
 
 .rankingPerson{
     display: flex;
     flex-direction: column;
-    float: left;
+    font-size: 1.2em;
 }
 
 .personPoints{
     display: flex;
     flex-direction: column;
-    float: right;
+    font-size: 1.2em;
 }
 
 .awards h2, .top-ranking h2{
     margin-top: 0;
+    text-align: center;
+    font-size: 1.8em;
 }
 
 .buttonRanking{
@@ -155,8 +162,6 @@ body{
     display: flex;
     justify-content: center;
 }
-
-
 
 .buttonAwardsContainer{
     display: flex;
