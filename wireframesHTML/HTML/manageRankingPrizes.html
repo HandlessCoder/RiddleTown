@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RiddleTown - Administrar Premios</title>
+    <link rel="stylesheet" href="../CSS/adminStyles.css"/>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../img/logoV2.0.png" alt="RiddleTown Logo"/>
+        </div>
+        <div class="lineLogo"></div>
+        <ul>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/iconotrivia.png" alt="Trivias" class="sideImages"/>Trivias</a></div></li>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/piezas-de-rompecabezas.png" alt="Categorías" class="sideImages"/>Categorías</a></div></li>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/trofeo.png" alt="Ranking" class="sideImages"/>Ranking</a></div></li>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/iconoPremio.png" alt="Premios" class="sideImages"/>Premios</a></div></li>
+            <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/engranaje.png" alt="Configuración" class="sideImages"/>Configuración</a></div></li>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/signo-de-interrogacion.png" alt="Ayuda" class="sideImages">Ayuda</a></div></li>
+            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/sol.png" alt="Cambiar modo" class="sideImages2"></a></div></li>
+        </ul>
+    </div>
+
+    <div class="mainview">
+        <img src="../IMG/flecha.png" alt="Atrás" class="goBack"/>
+        <div class="main">
+            <div class="space"></div>
+            <div class="mainContent">
+
+                <h2>Administrar Premios Raking</h2>
+
+                <div class="form-container">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="fecha-sorteo">Fecha del sorteo</label>
+                            <div class="input-container">
+                                <input type="text" id="fecha-sorteo" name="fecha-sorteo" placeholder="DD/MM/AAAA">
+                                <button type="button" class="calendar-button">📅</button>
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Premios</label>
+                            <div class="input-container">
+                                <input type="text" name="premio1" placeholder="Premio 1">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" name="premio2" placeholder="Premio 2">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" name="premio3" placeholder="Premio 3">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                        </div>
+            
+                        <div class="form-group buttonAux">
+                            <button type="submit" class="submit-button">Crear Sorteo</button>
+                        </div>
+                    </form>
+                </div>
+            <div class="space"></div>
+        
+            </div>
+        </div>
+            
+    </div>
+    
+</body>
+</html>
