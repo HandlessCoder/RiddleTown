@@ -47,13 +47,13 @@ body{
 
 .lineMenuContainer{
     display: flex;
-    width: 100%;
+    width: 85%;
 }
 
 .lineMenu{
     background-color: #f35e3d;
     padding: 1px;
-    width: 150%;
+    width: 100%;
 }
 
 .sidebar ul{
