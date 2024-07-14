@@ -1,3 +1,4 @@
+/* GENERAL */
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -6,6 +7,10 @@ body{
     flex-direction: row;
     height: 100vh;
     background-color: white;
+}
+
+.premio{
+    text-decoration: underline;
 }
 
 .sidebar{
@@ -22,9 +27,109 @@ body{
     align-items: center;
 }
 
+.sideImages{
+    width: 4.7vh;
+    margin-right: 1.5vh;
+}
+
+
+.sidebar .logo{
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo img{
+    width: 85%;
+}
+
+.lineLogo{
+    background-color: #f35e3d;
+    padding: 1px;
+    margin-top: 10px;
+    width: 85%;
+}
+
+.lineMenuContainer{
+    display: flex;
+    width: 100%;
+}
+
+.lineMenu{
+    background-color: #f35e3d;
+    padding: 1px;
+    width: 150%;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li{
+    margin: 15px 0;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #1D3D59;
+    font-size: 1.2em;
+}
+
+.sideImages2{
+    width: 6.5vh;
+    margin-right: 1.5vh;
+}
+
+.optionContainer{
+    display: flex;
+}
+
+.optionLink{
+    display: flex;
+    margin-top: 5px;
+}
+
+.goBack{
+    width: 8vh;
+    height: 8vh;
+}
+
+.mainview{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    text-align: left;
+    justify-items: left;
+}
+
+.main{
+    display: flex;
+    text-align: left;
+}
+
+.space{
+    width: 15%;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    color: #1D3D59;
+}
+
+/* FORMULARIOS */
+
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.form-group2 {
+    display: flex;
     gap: 10px;
     justify-content: center;
 }
@@ -84,72 +189,7 @@ input[type="text"] {
     background-color: #453876;
 }
 
-.sidebar .logo{
-    display: flex;
-    justify-content: center;
-}
 
-.sidebar .logo img{
-    width: 85%;
-}
-
-.lineLogo{
-    background-color: #f35e3d;
-    padding: 1px;
-    margin-top: 10px;
-    width: 85%;
-}
-
-.lineMenuContainer{
-    display: flex;
-    width: 100%;
-}
-
-.lineMenu{
-    background-color: #f35e3d;
-    padding: 1px;
-    width: 150%;
-}
-
-.sidebar ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li{
-    margin: 15px 0;
-}
-
-.sidebar ul li a{
-    text-decoration: none;
-    color: #1D3D59;
-    font-size: 1.2em;
-}
-
-.mainview{
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    text-align: center;
-    justify-items: center;
-}
-
-.main{
-    display: flex;
-    text-align: left;
-}
-
-.space{
-    width: 15%;
-}
-
-.mainContent{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    color: #1D3D59;
-}
 
 .form-container {
     display: flex;
@@ -197,26 +237,4 @@ input[type="text"] {
     margin-top: 12px;
 }
 
-.sideImages{
-    width: 4.7vh;
-    margin-right: 1.5vh;
-}
 
-.sideImages2{
-    width: 6.5vh;
-    margin-right: 1.5vh;
-}
-
-.optionContainer{
-    display: flex;
-}
-
-.optionLink{
-    display: flex;
-    margin-top: 5px;
-}
-
-.goBack{
-    width: 8vh;
-    height: 8vh;
-}
