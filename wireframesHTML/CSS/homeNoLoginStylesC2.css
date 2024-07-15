@@ -84,21 +84,26 @@ body{
 }
 
 .premioFisico img{
-    width: 15vw;
+    width: 18vw;
     height: 15vw;
-    margin-left: 5vw;
+    margin-left: 6vw;
 }
 
-.awardsPositionsContainer{
+.awardsInstantContainer{
     display: flex;
-    width: 43vw;
+    width: 39vw;
     flex-direction: column;
     align-items: center;
 }
 
-.awardPosition{
-    margin-top: 0;
+.awardsInstantContainer h2{
+    margin: 0;
+}
+
+.textAward{
+    text-align: center;
     font-size: 1.2em;
+    font-weight: 500;
 }
 
 .buttonAwardsContainer{

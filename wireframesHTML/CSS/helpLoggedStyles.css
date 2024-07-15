@@ -8,7 +8,7 @@ body{
 }
 
 .sidebar{
-    width: 20%;
+    width: 20vw;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ body{
 }
 
 .sidebar .logo img{
-    width: 85%;
+    width: 13vw;
 }
 
 .lineLogo{
