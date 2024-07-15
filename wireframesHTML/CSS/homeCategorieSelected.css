@@ -221,10 +221,6 @@ body{
     border-radius: 10px;
 }
 
-/*button:hover{
-    background-color: #e64a19;
-}*/
-
 .selectCategory{
     text-align: center;
     margin-top: 0;
@@ -246,4 +242,8 @@ body{
 .optionLink{
     display: flex;
     margin-top: 1vh;
+}
+
+.categorySelected{
+    border: #f25e3d solid 5px;
 }
