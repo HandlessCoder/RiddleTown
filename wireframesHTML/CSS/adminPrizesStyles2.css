@@ -68,8 +68,6 @@ input[type="text"] {
     background-color: #453876;
 }
 
-
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -88,7 +86,7 @@ input[type="text"] {
     text-decoration: none;
     color: #1D3D59;
     transition: background-color 0.3s ease;
-    height: 10%;
+    height: 35%;
 }
 
 .form-button:hover {
@@ -96,7 +94,7 @@ input[type="text"] {
 }
 
 .arrow-icon {
-    height: 90%;
+    width: 1.5vw;
 }
 
 .buttonPlay{
@@ -116,6 +114,15 @@ input[type="text"] {
     margin-top: 12px;
 }
 
-.premio{
+.configuracion{
     text-decoration: underline;
+    color: #1D3D59;
+}
+
+.language{
+    font-size: small;
+}
+
+.spanish{
+    font-size: 1.5em;
 }
