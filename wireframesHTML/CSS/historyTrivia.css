@@ -82,6 +82,11 @@ body{
     margin-right: 10.1vw;
 }
 
+.r1 a, .r2 a{
+    text-decoration: none;
+    color: #1D3D59;
+}
+
 .selectOption{
     text-align: center;
     font-size: 1.1em;
