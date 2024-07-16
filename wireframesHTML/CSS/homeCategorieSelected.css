@@ -247,3 +247,38 @@ body{
 .categorySelected{
     border: #f25e3d solid 5px;
 }
+
+
+.top-ranking{
+    background-color: #ebebeb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-image: url(../IMG/VectorRanking.png);
+    background-repeat: no-repeat;
+    background-size: 110% 126%;
+    background-position-x: -5vw;
+}
+
+.ranking{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 7vw;
+}
+
+.namePerson{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    float: left;
+}
+
+.points{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    float: right;
+    margin-right: 8vw;
+}
