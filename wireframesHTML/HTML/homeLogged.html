@@ -9,27 +9,27 @@
 <body>
     <div class="sidebar">
         <div class="logo">
-            <img src="../img/logoV2.0.png" alt="RiddleTown Logo"/>
+            <a href=""><img src="../img/logoV2.0.png" alt="RiddleTown Logo"/></a>
         </div>
         <div class="lineLogo"></div>
-        <ul>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/usuario.png" alt="Usuario" class="sideImages"/>Perfil</a></div></li>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/piezas-de-rompecabezas.png" alt="Categorías" class="sideImages"/>Categorías</a></div></li>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/trofeo.png" alt="Ranking" class="sideImages"/>Ranking</a></div></li>
-            <div class="lineMenuContainer"><div class="lineMenu"></div></div>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/engranaje.png" alt="Configuración" class="sideImages"/>Configuración</a></div></li>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/piezas-de-rompecabezas.png" alt="Categorías" class="sideImages">Categorías</a></div></li>
-            <li><div class="optionContainer"><a href="login.html" class="optionLink"><img src="../IMG/sidebar/cerrar-sesion.png" alt="Iniciar Sesión" class="sideImages">Cerrar Sesión</a></div></li>
-            <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/sol.png" alt="Cambiar modo" class="sideImages2"></a></div></li>
-        </ul>
-    </div>
+            <ul>
+                <li><div class="optionContainer"><a href="login.html" class="optionLink"><img src="../IMG/sidebar/usuario.png" alt="Usuario" class="sideImages"/>Perfil</a></div></li>
+                <li><div class="optionContainer"><a href="categoriesNoLogged.html" class="optionLink"><img src="../IMG/sidebar/piezas-de-rompecabezas.png" alt="Categorías" class="sideImages"/>Categorías</a></div></li>
+                <li><div class="optionContainer"><a href="rankingNoLogged.html" class="optionLink"><img src="../IMG/sidebar/trofeo.png" alt="Ranking" class="sideImages"/>Ranking</a></div></li>
+                <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+                <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/engranaje.png" alt="Configuración" class="sideImages"/>Configuración</a></div></li>
+                <li><div class="optionContainer"><a href="helpNoLogged.html" class="optionLink"><img src="../IMG/sidebar/signo-de-interrogacion.png" alt="Ayuda" class="sideImages">Ayuda</a></div></li>
+                <li><div class="optionContainer"><a href="login.html" class="optionLink"><img src="../IMG/sidebar/cerrar-sesion.png" alt="Cerrar" class="sideImages">Cerrar Sesión</a></div></li>
+                <li><div class="optionContainer"><a href="#" class="optionLink"><img src="../IMG/sidebar/sol.png" alt="Cambiar modo" class="sideImages2"></a></div></li>
+            </ul>
+        </div>
     <div class="main-content">
 
         <div class="awards">
+            <div class="prev"><a href="homeNoLoggedC2.html"><img src="../IMG/flechaCarruselI.png" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
                 <img src="../img/premiosFisicos.png" alt="Premio físico"/>
             </div>
-            
             <div class="awardsPositionsContainer">
                 <h2>Premios de la temporada</h2> 
                 <div class="awardPosition"><strong>Primer lugar: Monitor Asus</strong></div>
@@ -39,21 +39,25 @@
                     <a href="#" class="buttonAwards">Ver más</a>
                 </div>
             </div>
+            <div class="next"><a href="homeNoLoggedC2.html"><img src="../IMG/flechaCarruselD.png" alt="Hacia adalente"></a></div>
         </div>
 
         <div class="top-ranking">
             <h2>Top Ranking</h2>
-            <div class="rankingPerson">
-                <div>1.Kaveh</div>  
-                <div>2.Rafax2002</div> 
-                <div>3.TriviaBlaster10</div> 
-            </div>
-
-            <div class="personPoints">
-                <div>9000 pts</div>
-                <div>8900 pts</div>
-                <div>6500 pts</div>
-            </div>
+            <ol class="ranking">
+                <li>
+                    <div class="namePerson">Kaveh</div>
+                    <div class="points">9000 puntos</div>
+                </li>
+                <li>
+                    <div class="namePerson">Rafax2002</div>
+                    <div class="points">8900 puntos</div>
+                </li>
+                <li>
+                    <div class="namePerson">TriviaBlaster10</div>
+                    <div class="points">6500 puntos</div>
+                </li>
+            </ol>
             
             <div class="buttonRankingContainer">
                 <a href="#" class="buttonRanking">Ver Ranking</a>
