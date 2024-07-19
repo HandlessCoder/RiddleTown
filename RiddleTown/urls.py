@@ -23,6 +23,8 @@ urlpatterns = [
     path('', views.mainpage),
     path('prueba/', views.prueba),
     path('admin/', admin.site.urls),
+    path('login/', views.login),
+    path('register/', views.register),
     
     
     

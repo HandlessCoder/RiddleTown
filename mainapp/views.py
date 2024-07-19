@@ -12,6 +12,10 @@ def mainpage(request):
 def prueba(request):
     return render(request,'mainapp/prueba.html')
 
+def login(request):
+    return render(request,'login.html')
+def register(request):
+    return render(request,'register.html')
 
 
 
