@@ -9,6 +9,8 @@ from django.shortcuts import render
 def mainpage(request):
     return render(request,'mainapp/base.html')
 
+def prueba(request):
+    return render(request,'mainapp/prueba.html')
 
 
 
