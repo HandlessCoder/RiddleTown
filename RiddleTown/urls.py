@@ -20,11 +20,19 @@ from mainapp import views
 
 
 urlpatterns = [
-    path('', views.mainpage),
-    path('prueba/', views.prueba),
+    path('', views.mainpage),       #este será el mismo que se usará para cuando un usuario esté loggeado, pero hace falta dinamizarlo para que cambie cuando haya una sesión
+    # path('prueba/', views.prueba),
     path('admin/', admin.site.urls),
     path('login/', views.login),
     path('register/', views.register),
+    
+    path('profile/', views.profile),
+    path('profile/edit/', views.edit_profile),
+    path('help/', views.help),
+    
+    path('conf/', views.configuration),
+    path('ranking/', views.ranking),
+    path('play/', views.play),
     
     
     

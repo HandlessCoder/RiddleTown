@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>RiddleTown - Editar perfil</title>
+<link rel="stylesheet" href="{% static 'CSS/profileStyles.css' %}"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="mainview">
+    <a href="/"><img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="goBack"/></a>
+    <div class="main">
+        <div class="space"></div>
+        <div class="mainContent">
+
+            <div class="editContainer">
+                <div class="profileImage">
+                    <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
+                    <div class="withProfile">
+                        <p>0</p>
+                        <p class="text">Puntos obtenidos</p>
+                    </div>
+                    <div class="withProfile">
+                        <p>0</p>
+                        <p class="text">Premios ganados</p>
+                    </div>
+                </div>
+                <span class="alias">Alias</span>
+                <div class="changeImage">
+                    <a class="edit" href="/profile/edit">Editar perfil</a>
+                </div>
+                <p>Dirección</p>
+                <P>Pais: Venezuela</P>
+                <P>Estado: Caraacas</P>
+                <p>Dirección: ResidenciasUCV</p>
+                <div class="container2">
+                    <div class="top-ranking">
+                        <div>
+                            <img src="{% static 'IMG/sidebar/trofeo.png' %}" alt="Trofeo" class="sideImages"/>
+                        </div>
+                        <p>No tienes premios por reclamar</p>
+                    </div>
+                        
+                </div>
+                
+            </div>
+            <div class="space"></div>
+
+            <div class="buttonPlayContainer">
+                <a href="#" class="buttonPlay"><strong>¡Jugar!</strong></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

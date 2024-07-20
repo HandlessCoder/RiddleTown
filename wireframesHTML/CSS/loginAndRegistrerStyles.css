@@ -1,0 +1,124 @@
+body{
+    background-image: url(../IMG/ImagenFondoLogin.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.card{
+    background-color: #ebebeb;
+    padding: 2.5vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    background-image: url(../IMG/VectorFigma.png);
+    background-repeat: no-repeat;
+    background-size: 130% 113%;
+    background-position-x: -5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vh;
+    height: 60vh;
+    margin: auto;
+}
+
+.logo img{
+    width: 11vw;
+    height: 8vw;
+}
+
+.form{
+    color: #1D3D59;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.form input[type="text"], 
+.form input[type="password"],
+.form input[type="submit"]{
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+    border: 1px solid #1D3D59;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]{
+    background-color: #f25e3d;
+    color: #1D3D59;
+    border-radius: 50px;
+    width: 45%;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.password-container{
+    position: relative;
+    width: 87%;
+    direction: row;
+}
+
+.password-container input[type="password"]{
+    padding-right: 40px;
+}
+
+.password-container .eye-icon{
+    position: absolute;
+    left: 210px;
+    width: 12%;
+    transform: translateY(-150%);
+    cursor: pointer;
+}
+
+.form .remember-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    direction: row;
+}
+
+.form .input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form .remember-container input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #1D3D59;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos para el checkbox cuando está seleccionado */
+  .form .remember-container input[type="checkbox"]:checked {
+    background-color: #504673;
+    border-color: #504673;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+  }
+
+a{
+    color: #1D3D59;
+    text-decoration: none;
+}
+
