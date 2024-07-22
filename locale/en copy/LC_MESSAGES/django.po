@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-22 16:03-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: RiddleTown/settings.py:130
+msgid "Español"
+msgstr "Spanish"
+
+#: RiddleTown/settings.py:131
+msgid "Chino"
+msgstr "Chinese"
+
+#: RiddleTown/settings.py:132
+msgid "Inglés"
+msgstr "English"
+
+#: RiddleTown/settings.py:133
+msgid "Portugués"
+msgstr "Portuguese"
+
+#: RiddleTown/settings.py:134
+msgid "Italiano"
+msgstr "Italian"
+
+#: RiddleTown/settings.py:135
+msgid "Francés"
+msgstr "French"
+
+#: RiddleTown/settings.py:136
+msgid "Japonés"
+msgstr "Japanese"
+
+#: RiddleTown/settings.py:137
+msgid "Coreano"
+msgstr "Korean"
+
+#: mainapp/templates/base.html:22 mainapp/templates/mainapp/profile.html:5
+msgid "Perfil"
+msgstr "Profile"
+
+#: mainapp/templates/base.html:23 mainapp/templates/mainapp/categories.html:5
+#: mainapp/templates/mainapp/home.html:52
+msgid "Categorías"
+msgstr "Categories"
+
+#: mainapp/templates/base.html:24
+msgid "Ranking"
+msgstr "Ranking"
+
+#: mainapp/templates/base.html:26
+#: mainapp/templates/mainapp/configuration.html:5
+#: mainapp/templates/mainapp/configuration.html:19
+msgid "Configuración"
+msgstr "Setting"
+
+#: mainapp/templates/base.html:27 mainapp/templates/mainapp/help.html:5
+msgid "Ayuda"
+msgstr "Help"
+
+#: mainapp/templates/base.html:28 mainapp/templates/login.html:7
+msgid "Iniciar Sesión"
+msgstr "Log In"
+
+#: mainapp/templates/login.html:18
+msgid "¡Bienvenido(a)!"
+msgstr "Welcome!"
+
+#: mainapp/templates/login.html:27
+msgid "Recuérdame"
+msgstr "Remember me"
+
+#: mainapp/templates/login.html:32
+msgid "¿No estás registrado?"
+msgstr "Don't have an account yet?"
+
+#: mainapp/templates/mainapp/categories.html:14
+msgid "Geografía"
+msgstr "Geography"
+
+#: mainapp/templates/mainapp/categories.html:15
+msgid "Historia"
+msgstr "History"
+
+#: mainapp/templates/mainapp/categories.html:16
+msgid "Ciencia"
+msgstr "Science"
+
+#: mainapp/templates/mainapp/categories.html:17
+msgid "Entretenimiento"
+msgstr "Entertainment"
+
+#: mainapp/templates/mainapp/categories.html:18
+msgid "Música"
+msgstr "Music"
+
+#: mainapp/templates/mainapp/categories.html:19
+msgid "Deporte"
+msgstr "Sport"
+
+#: mainapp/templates/mainapp/categories.html:20
+msgid "Arte"
+msgstr "Art"
+
+#: mainapp/templates/mainapp/categories.html:21
+msgid "Cultura general"
+msgstr "General Culture"
+
+#: mainapp/templates/mainapp/categories.html:23
+#: mainapp/templates/mainapp/home.html:63
+msgid "Selecciona una categoría antes de jugar"
+msgstr "Select a category before playing"
+
+#: mainapp/templates/mainapp/configuration.html:23
+msgid "Idioma"
+msgstr "Language"
+
+#: mainapp/templates/mainapp/editProfile.html:5
+#: mainapp/templates/mainapp/editProfile.html:16
+#: mainapp/templates/mainapp/profile.html:30
+msgid "Editar perfil"
+msgstr "Edit Profile"
+
+#: mainapp/templates/mainapp/editProfile.html:20
+#: mainapp/templates/mainapp/editProfile.html:27
+#: mainapp/templates/mainapp/profile.html:28
+msgid "Alias"
+msgstr "Nickname"
+
+#: mainapp/templates/mainapp/editProfile.html:22
+msgid "Cambiar foto"
+msgstr "Change Photo"
+
+#: mainapp/templates/mainapp/editProfile.html:31
+#: mainapp/templates/mainapp/editProfile.html:49
+#: mainapp/templates/mainapp/profile.html:32
+#: mainapp/templates/mainapp/profile.html:35
+msgid "Dirección"
+msgstr "Address"
+
+#: mainapp/templates/mainapp/editProfile.html:35
+msgid "País"
+msgstr "Country"
+
+#: mainapp/templates/mainapp/editProfile.html:42
+#: mainapp/templates/mainapp/profile.html:34
+msgid "Estado"
+msgstr "Estate"
+
+#: mainapp/templates/mainapp/editProfile.html:57
+msgid "Guardar cambios"
+msgstr "Save changes"
+
+#: mainapp/templates/mainapp/help.html:13
+msgid "¿Cómo jugar?"
+msgstr "How to play?"
+
+#: mainapp/templates/mainapp/help.html:16
+msgid ""
+"Pon a prueba tus conocimientos en una variedad de categorías con preguntas "
+"desafiantes y divertidas. En cada ronda, se te presentará una pregunta con "
+"cuatro opciones de respuesta (texto o imágenes). Tu objetivo es elegir la "
+"respuesta correcta."
+msgstr ""
+"Test your knowledge in a variety of categories with challenging and fun questions. In each round, you will be presented with a question with four answer options (text or images). Your goal is to choose the correct answer."
+
+#: mainapp/templates/mainapp/help.html:19
+msgid "Premios"
+msgstr "Prizes"
+
+#: mainapp/templates/mainapp/help.html:22
+msgid ""
+"Pon a prueba tus conocimientos y diviértete mientras acumulas puntos para "
+"obtener premios increíbles. En cada trivia que completes, sumarás puntos que "
+"te acercarán a la cima del ranking. Al final de la temporada, los 3 mejores "
+"jugadores serán recompensados con premios que te dejarán sin aliento."
+msgstr ""
+"Test your knowledge and have fun while you accumulate points to obtain incredible prizes. In each trivia you complete, you will add points that will bring you closer to the top of the ranking. At the end of the season, the 3 best players will be rewarded with prizes that will leave you breathless."
+
+#: mainapp/templates/mainapp/help.html:25
+msgid ""
+"Prepárate para una experiencia llena de sorpresas y adrenalina. Mientras "
+"juegas tus trivias favoritas, tendrás la oportunidad de ganar premios "
+"instantáneos en cualquier momento, al responder la pregunta correctamente. "
+"La frecuencia de aparición es variada y depende de la temporada. También hay "
+"cantidad limitada."
+msgstr ""
+"Get ready for an experience full of surprises and adrenaline. While playing your favorite trivia, you will have the opportunity to win instant prizes at any time, by answering the question correctly. The frequency of appearance is varied and depends on the season. There is also a limited quantity "
+
+#: mainapp/templates/mainapp/help.html:28
+msgid "Reclame de premios"
+msgstr "Prizes Claiming"
+
+#: mainapp/templates/mainapp/help.html:31
+msgid ""
+"Si tienes premios acumulados, la forma de reclamarlos es desde tu perfil. "
+"Para poder reclamar premios monetarios, tendrás que asociar tu cuenta de "
+"Paypal a tu perfil. En caso de premios físicos, tendrás que asociar tu "
+"dirección."
+msgstr ""
+"If you have accumulated prizes, the way to claim them is from your profile. In order to claim monetary prizes, you will have to associate your Paypal account with your profile. In the case of physical prizes, you will have to associate your address."
+
+#: mainapp/templates/mainapp/home.html:19
+msgid "Premios de la temporada"
+msgstr "Season Prizes"
+
+#: mainapp/templates/mainapp/home.html:20
+msgid "Primer lugar"
+msgstr "First Place"
+
+#: mainapp/templates/mainapp/home.html:21
+msgid "Segundo lugar"
+msgstr "Second Place"
+
+#: mainapp/templates/mainapp/home.html:22
+msgid "Tercer lugar"
+msgstr "Third Place"
+
+#: mainapp/templates/mainapp/home.html:24
+msgid "Ver más"
+msgstr "See More"
+
+#: mainapp/templates/mainapp/home.html:31
+msgid "Podio de los clasificados"
+msgstr "Top Players"
+
+#: mainapp/templates/mainapp/home.html:35
+#: mainapp/templates/mainapp/home.html:39
+#: mainapp/templates/mainapp/home.html:43
+#: mainapp/templates/mainapp/ranking.html:14
+#: mainapp/templates/mainapp/ranking.html:18
+#: mainapp/templates/mainapp/ranking.html:22
+#: mainapp/templates/mainapp/ranking.html:26
+#: mainapp/templates/mainapp/ranking.html:30
+#: mainapp/templates/mainapp/ranking.html:34
+#: mainapp/templates/mainapp/ranking.html:38
+#: mainapp/templates/mainapp/ranking.html:42
+#: mainapp/templates/mainapp/ranking.html:46
+#: mainapp/templates/mainapp/ranking.html:50
+#: mainapp/templates/mainapp/ranking.html:54
+#: mainapp/templates/mainapp/ranking.html:58
+#: mainapp/templates/mainapp/ranking.html:62
+#: mainapp/templates/mainapp/ranking.html:66
+#: mainapp/templates/mainapp/ranking.html:70
+#: mainapp/templates/mainapp/ranking.html:74
+#: mainapp/templates/mainapp/ranking.html:78
+#: mainapp/templates/mainapp/ranking.html:82
+#: mainapp/templates/mainapp/ranking.html:86
+#: mainapp/templates/mainapp/ranking.html:90
+#: mainapp/templates/mainapp/ranking.html:94
+#: mainapp/templates/mainapp/ranking.html:98
+#: mainapp/templates/mainapp/ranking.html:102
+#: mainapp/templates/mainapp/ranking.html:106
+msgid "puntos"
+msgstr "points"
+
+#: mainapp/templates/mainapp/home.html:48
+msgid "Ver la clasificación"
+msgstr "See the ranking"
+
+#: mainapp/templates/mainapp/profile.html:21
+msgid "Puntos obtenidos"
+msgstr "Earned points"
+
+#: mainapp/templates/mainapp/profile.html:25
+msgid "Premios ganados"
+msgstr "Earned prizes"
+
+#: mainapp/templates/mainapp/profile.html:33
+msgid "Pais"
+msgstr "Country"
+
+#: mainapp/templates/mainapp/profile.html:41
+msgid "No tienes premios por reclamar"
+msgstr "You've no prizes left to claim"
+
+#: mainapp/templates/mainapp/ranking.html:5
+msgid "Clasificación"
+msgstr "Ranking"
+
+#: mainapp/templates/mainapp/trivia.html:5
+#, fuzzy
+#| msgid "¡Jugar!"
+msgid "Jugar"
+msgstr "Play!"
+
+#: mainapp/templates/mainapp/trivia.html:33
+msgid "¡Selecciona una opción!"
+msgstr "Pick up an option!"
+
+#: mainapp/templates/mainapp/trivia.html:35
+msgid "Saltar pregunta"
+msgstr "Skip question"
+
+#: mainapp/templates/play_component.html:4
+msgid "¡Jugar!"
+msgstr "Play!"
+
+#: mainapp/templates/register.html:7
+msgid "Registrar"
+msgstr "Register"
+
+#: mainapp/templates/register.html:18
+msgid "¡Únete a nosotros!"
+msgstr "Join us!"
+
+#: mainapp/templates/register.html:29
+msgid "¿Ya tienes una cuenta?"
+msgstr "Have an account already?"

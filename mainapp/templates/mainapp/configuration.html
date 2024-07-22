@@ -1,27 +1,26 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block head %}
-<title>RiddleTown - Configuración</title>
+<title>RiddleTown - {% trans "Configuración" %}</title>
 <link rel="stylesheet" href="{% static 'CSS/configuration.css' %}"/>
 <link rel="stylesheet" href="{% static 'CSS/configuration2.css' %}"/>
 
 {% endblock %}
 
 
-{% block content%}
+{% block content%}|
 
 <div class="mainview">
-    <a href="homeNoLogged.html"><img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="goBack"/></a>
+    {% include 'back_component.html' %}
     <d iv class="main">
         <div class="space"></div>
         <div class="mainContent">
-
-            <h2>Configuración</h2>
+            <h2>{% trans "Configuración" %}</h2>
             <div class="form-container">
                 <a href="" class="form-button">
                     <span class="language">
-                        Idioma
+                        {% trans "Idioma" %}
                         <br>
                         <span class="spanish">Español</span>
                     </span>

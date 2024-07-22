@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block head %}
-<title>RiddleTown - Jugar</title>
+<title>RiddleTown - {% trans "Jugar" %}</title>
 <link rel="stylesheet" href="{% static 'CSS/historyTrivia.css' %}"/>
 {% endblock %}
 
@@ -30,9 +30,9 @@
         <div class="option r2">Lumos</div>
     </div>
 
-    <p class="selectOption">¡Selecciona una opción!</p>
+    <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
     <div class="buttonPlayContainer">
-        <a href="#" class="buttonPass"><strong>Saltar pregunta</strong></a>
+        <a href="#" class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></a>
     </div>
 </div>
 

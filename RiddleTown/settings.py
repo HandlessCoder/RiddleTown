@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import django.template.context_processors
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'RiddleTown.urls'
@@ -72,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django.template.context_proccesors.i18n',
             ],
         },
     },
@@ -113,13 +116,36 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-ve'
+LANGUAGE_CODE = 'es-ve' #'en-us'
 
 TIME_ZONE = 'America/Caracas'
 
 USE_I18N = True
 
 USE_TZ = True
+
+_ = lambda s : s
+
+LANGUAGES = (
+    ('es', _('Español')),
+    ('zh', _('Chino')),
+    ('en', _('Inglés')),
+    ('pt', _('Portugués')),
+    ('it', _('Italiano')),
+    ('fr', _('Francés')),
+    ('jp', _('Japonés')),
+    ('kr', _('Coreano')),
+)
+
+#django-admin makemessages -l en -i "venv_w*" -i "venv_l*"
+#django-admin makemessages -l en -l zh -l pt -l it -l fr -l jp -l kr -i "venv_w*" -i "venv_l*"
+#django-admin compilemessages -l en -i "venv_w*" -i "venv_l*"
+
+
+
+LOCALE_PATHS = (
+ os.path.join(BASE_DIR, "locale"),
+)
 
 
 # Static files (CSS, JavaScript, Images)

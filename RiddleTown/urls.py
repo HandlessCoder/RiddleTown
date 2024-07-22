@@ -19,6 +19,12 @@ from django.urls import path
 from mainapp import views
 
 
+
+from django.urls import include, re_path
+from django.contrib import admin
+admin.autodiscover()
+
+
 urlpatterns = [
     path('', views.mainpage),       #este será el mismo que se usará para cuando un usuario esté loggeado, pero hace falta dinamizarlo para que cambie cuando haya una sesión
     # path('prueba/', views.prueba),
@@ -30,15 +36,20 @@ urlpatterns = [
     path('profile/edit/', views.edit_profile),
     path('help/', views.help),
     
-    path('conf/', views.configuration),
+    path('configuration/', views.configuration),
     path('ranking/', views.ranking),
     path('play/', views.play),
+    path('categories/', views.categories),
     
     
     
     
     
     
+    # re_path(r'^i18n/', include('django.conf.urls.i18n')),
+    # re_path(r'^admin/', include(admin.site.urls)),
+    # re_path(r'',include('informacion.urls'))
+
     
     
     
