@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+    <title>RiddleTown - {% trans "Categorías" %}</title>
+    <link rel="stylesheet" href="{% static 'CSS/categoriesNoLogged.css' %}"/>
+{% endblock %}
+
+
+{% block content%}
+    {% include 'back_component.html' %}
+    <div class="main-content">
+        <div class="categories">
+            <div class="category">{% trans "Geografía" %} <img src="{% static 'IMG/categories/mundo.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Historia" %} <img src="{% static 'IMG/categories/libros.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Ciencia" %} <img src="{% static 'IMG/categories/quimica.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Entretenimiento" %} <img src="{% static 'IMG/categories/cine.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Música" %} <img src="{% static 'IMG/categories/musica.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Deporte" %} <img src="{% static 'IMG/categories/futbol.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Arte" %} <img src="{% static 'IMG/categories/arte.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            <div class="category">{% trans "Cultura general" %} <img src="{% static 'IMG/categories/museo.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+        </div>
+        <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
+        {% include 'play_component.html' %}
+    </div>
+{% endblock %}

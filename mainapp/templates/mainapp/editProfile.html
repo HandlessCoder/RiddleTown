@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown - {% trans "Editar perfil" %}</title>
+<link rel="stylesheet" href="{% static 'CSS/editProfile.css' %}"/>
+<link rel="stylesheet" href="{% static 'CSS/editProfile2.css' %}"/>
+{% endblock %}
+
+{% block content%}
+    <div class="mainview">
+        {% include 'back_component.html' %}
+        <div class="main">
+            <div class="space"></div>
+            <div class="mainContent">
+                <h2>{% trans "Editar perfil" %}</h2>
+                <div class="editContainer">
+                    <div class="profileImage">
+                        <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
+                        <span class="alias">{% trans "Alias" %}</span>
+                        <div class="changeImage">
+                            {% trans "Cambiar foto" %}
+                        </div>
+                    </div>
+                    <div class="profileAlias">
+                        <span class="alias2">
+                            {% trans "Alias" %} <br>
+                            <span class="editAlias">Usuario1</span>
+                        </span>
+                    </div>
+                    <h4 class="directionTitle">{% trans "Dirección" %}</h4>
+                    <div class="profileDirection">
+                        <a href="" class="directionButton">
+                            <span class="country">
+                                {% trans "País" %} <br>
+                                <span class="venezuela">Venezuela</span>
+                            </span>
+                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
+                        </a>
+                        <a href="" class="cityButton">
+                            <span class="country">
+                                {% trans "Estado" %} <br>
+                                <span class="caracas">Caracas</span>
+                            </span>
+                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
+                        </a>
+                        <div class="directionTextArea">
+                            <span class="direction">
+                                {% trans "Dirección" %} <br>
+                                <span class="resUCV">ResidenciasUCV</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class="saveChangesContainer">
+                    <a href=".." class="saveChangesButton"><strong>{% trans "Guardar cambios" %}</strong></a>
+                </div>
+                {% include 'play_component.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

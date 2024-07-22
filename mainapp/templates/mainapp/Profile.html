@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown - {% trans "Perfil" %}</title>
+<link rel="stylesheet" href="{% static 'CSS/profileStyles.css' %}"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="mainview">
+    {% include 'back_component.html' %}
+    <div class="main">
+        <div class="space"></div>
+        <div class="mainContent">
+            <div class="editContainer">
+                <div class="profileImage">
+                    <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
+                    <div class="withProfile">
+                        <p>0</p>
+                        <p class="text">{% trans "Puntos obtenidos" %}</p>
+                    </div>
+                    <div class="withProfile">
+                        <p>0</p>
+                        <p class="text">{% trans "Premios ganados" %}</p>
+                    </div>
+                </div>
+                <span class="alias">{% trans "Alias" %}</span>
+                <div class="changeImage">
+                    <a class="edit" href="edit">{% trans "Editar perfil" %}</a>
+                </div>
+                <p>{% trans "Dirección" %}</p>
+                <P>{% trans "Pais" %}: Venezuela</P>
+                <P>{% trans "Estado" %}: Caraacas</P>
+                <p>{% trans "Dirección" %}: ResidenciasUCV</p>
+                <div class="container2">
+                    <div class="top-ranking">
+                        <div>
+                            <img src="{% static 'IMG/sidebar/trofeo.png' %}" alt="Trofeo" class="sideImages"/>
+                        </div>
+                        <p>{% trans "No tienes premios por reclamar" %}</p>
+                    </div>  
+                </div>
+            </div>
+        <div class="space"></div>
+            {% include 'play_component.html' %}
+        </div>
+    </div>
+</div>
+{% endblock %}

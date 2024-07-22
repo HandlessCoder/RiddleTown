@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'CSS/homeNoLoginStyles.css' %}">
+    {% block head %}
+
+    {% endblock %}
+
+    <!-- <link rel="stylesheet" href="CSS/homeNoLoginStyles.css"/> -->
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/"><img src="{% static 'IMG/logoV2.0.png' %}" alt="RiddleTown Logo"/></a>
+        </div>
+        <div class="lineLogo"></div>
+            <ul>
+                <li><div class="optionContainer"><a href="/profile" class="optionLink"><img src="{% static 'IMG/sidebar/usuario.png' %}" alt="Usuario" class="sideImages"/>{% trans "Perfil" %}</a></div></li>
+                <li><div class="optionContainer"><a href="/categories" class="optionLink"><img src="{% static 'IMG/sidebar/piezas-de-rompecabezas.png' %}" alt="Categorías" class="sideImages"/>{% trans "Categorías" %}</a></div></li>
+                <li><div class="optionContainer"><a href="/ranking" class="optionLink"><img src="{% static 'IMG/sidebar/trofeo.png' %}" alt="Ranking" class="sideImages"/>{% trans "Ranking" %}</a></div></li>
+                <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+                <li><div class="optionContainer"><a href="/configuration" class="optionLink"><img src="{% static 'IMG/sidebar/engranaje.png' %}" alt="Configuración" class="sideImages"/>{% trans "Configuración" %}</a></div></li>
+                <li><div class="optionContainer"><a href="/help" class="optionLink"><img src="{% static 'IMG/sidebar/signo-de-interrogacion.png' %}" alt="Ayuda" class="sideImages">{% trans "Ayuda" %}</a></div></li>
+                <li><div class="optionContainer"><a href="/login" class="optionLink"><img src="{% static 'IMG/sidebar/iniciar-sesion.png' %}" alt="Iniciar Sesión" class="sideImages">{% trans "Iniciar Sesión" %}</a></div></li>
+            </ul>
+        </div>
+
+    <div class="main-content">
+        {% block content%}
+        {% endblock %}
+    </div>
+</body>
+</html>

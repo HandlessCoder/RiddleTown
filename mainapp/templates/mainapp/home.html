@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown</title>
+<link rel="stylesheet" href="{% static 'CSS/homeNoLoginStyles.css' %}"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="main-content">
+
+    <div class="awards">
+        <div class="prev"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
+        <div class="premioFisico">
+            <img src="{% static 'img/premiosFisicos.png' %}" alt="Premio físico"/>
+        </div>
+        <div class="awardsPositionsContainer">
+            <h2>{% trans "Premios de la temporada" %}</h2> 
+            <div class="awardPosition"><strong>{% trans "Primer lugar" %}: Monitor Asus</strong></div>
+            <div class="awardPosition"><strong>{% trans "Segundo lugar" %}: Teclado mecánico</strong></div>
+            <div class="awardPosition"><strong>{% trans "Tercer lugar" %}: Mouse</strong></div>
+            <div class="buttonAwardsContainer">
+                <a href="#" class="buttonAwards">{% trans "Ver más" %}</a>
+            </div>
+        </div>
+        <div class="next"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
+    </div>
+
+    <div class="top-ranking">
+        <h2>{% trans "Podio de los clasificados" %}</h2>
+        <ol class="ranking">
+            <li>
+                <div class="namePerson">Kaveh</div>
+                <div class="points">9000 {% trans "puntos" %}</div>
+            </li>
+            <li>
+                <div class="namePerson">Rafax2002</div>
+                <div class="points">8900 {% trans "puntos" %}</div>
+            </li>
+            <li>
+                <div class="namePerson">TriviaBlaster10</div>
+                <div class="points">6500 {% trans "puntos" %}</div>
+            </li>
+        </ol>
+        
+        <div class="buttonRankingContainer">
+            <a href="ranking" class="buttonRanking">{% trans "Ver la clasificación" %}</a>
+        </div>
+    </div>
+
+    <h2>{% trans "Categorías" %}</h2>
+    <div class="category-icons">
+        <div class="category"><img src="{% static 'IMG/categories/mundo.jpg' %}" alt="World"></div>
+        <div class="category"><img src="{% static 'IMG/categories/libros.jpg' %}" alt="History"></div>
+        <div class="category"><img src="{% static 'IMG/categories/quimica.jpg' %}" alt="Science"></div>
+        <div class="category"><img src="{% static 'img/categories/cine.jpg' %}" alt="Cinema"><p></p></div>
+        <div class="category"><img src="{% static 'IMG/categories/musica.jpg' %}" alt="Music"></div>
+        <div class="category"><img src="{% static 'IMG/categories/futbol.jpg' %}" alt="Sport"></div>
+        <div class="category"><img src="{% static 'IMG/categories/arte.jpg' %}" alt="Art"></div>
+        <div class="category"><img src="{% static 'IMG/categories/museo.jpg' %}" alt="Museum"></div>
+    </div>
+    <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
+    {% include 'play_component.html' %}
+
+</div>
+
+{% endblock %}
+

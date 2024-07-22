@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown - {% trans "Configuración" %}</title>
+<link rel="stylesheet" href="{% static 'CSS/configuration.css' %}"/>
+<link rel="stylesheet" href="{% static 'CSS/configuration2.css' %}"/>
+
+{% endblock %}
+
+
+{% block content%}|
+
+<div class="mainview">
+    {% include 'back_component.html' %}
+    <d iv class="main">
+        <div class="space"></div>
+        <div class="mainContent">
+            <h2>{% trans "Configuración" %}</h2>
+            <div class="form-container">
+                <a href="" class="form-button">
+                    <span class="language">
+                        {% trans "Idioma" %}
+                        <br>
+                        <span class="spanish">Español</span>
+                    </span>
+                    <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
+                </a>
+            </div>
+            <div class="space"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
