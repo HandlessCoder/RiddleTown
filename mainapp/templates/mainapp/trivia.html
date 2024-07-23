@@ -8,9 +8,13 @@
 
 
 {% block content%}
-<div class="main-content">
+
     <div class="upperDecorationContainer">
-        <div class="decorationIconContainer"><a href="categoriesLogged.html"><img src="{% static 'IMG/flecha.png' %}../" alt="Atrás" class="decorationIcon"/></a></div>
+        <div class="decorationIconContainer">
+            <a href="/categories">
+                <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
+            </a>
+        </div>
         <div class="decorationIconContainer"><img src="{% static 'IMG/video.png' %}" alt="Play" class="decorationIcon"/></div>
         <img src="" alt=""/>
     </div>
@@ -34,12 +38,11 @@
     <div class="buttonPlayContainer">
         <a href="#" class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></a>
     </div>
-</div>
+
 
 {% endblock %}
 
 
-    </div>
 
 
 
