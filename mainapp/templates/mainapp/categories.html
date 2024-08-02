@@ -4,11 +4,22 @@
 {% block head %}
     <title>RiddleTown - {% trans "Categorías" %}</title>
     <link rel="stylesheet" href="{% static 'CSS/categoriesNoLogged.css' %}"/>
+    <link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
 {% endblock %}
 
 
 {% block content%}
     {% include 'back_component.html' %}
+
+    <div class="searchBar">
+        <div class="searchInputContainer">
+            <input type="text" placeholder="{% trans 'Buscar categoría' %}">
+            <button type="submit">
+                <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
+            </button>
+        </div>
+    </div>
+
     <div class="main-content">
         <div class="categories">
             <div class="category">{% trans "Geografía" %} <img src="{% static 'IMG/categories/mundo.jpg' %}" alt="Geografía" class="categoryImage"/></div>
