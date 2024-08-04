@@ -19,7 +19,7 @@ def register(request):
     return render(request,'register.html')
 
 def profile(request):
-    return render(request,'mainapp/profile.html')
+    return render(request,'mainapp/Profile.html')
 
 def edit_profile(request):
     return render(request,'mainapp/editProfile.html')
