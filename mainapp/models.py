@@ -57,4 +57,61 @@ class User (AbstractBaseUser, PermissionsMixin):
         return self.nickname or self.email.split('@')[0]
     
     
+# MODELOS BASE DE DATOS
+#from django.core.validators import MinValueValidator, MaxValueValidator
+
+class Category(models.Model):
+    name = models.CharField(max_length=50, primary_key=True)
+    color = models.CharField(max_length=10)
+    icon = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+class Trivia(models.Model):
+    triviaID = models.CharField(max_length=20, primary_key=True)
+    questionType = models.CharField(max_length=10, choices=[
+        ('text', 'Texto'),
+        ('image', 'Imagen'),
+        ('audio', 'Audio'),
+    ])
+    questionText = models.CharField(max_length=200, blank=True)
+    questionImage = models.CharField(max_length=50, blank=True)
+    questionAudio = models.CharField(max_length=50, blank=True)
+    categoryID = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.triviaID
+
+class Answer(models.Model):
+    answerID = models.CharField(max_length=20, primary_key=True)
+    answerType = models.CharField(max_length=10, choices=[
+        ('text', 'Texto'),
+        ('image', 'Imagen'),
+    ])
+    answerText = models.CharField(max_length=200, blank=True)
+    answerImage = models.CharField(max_length=50, blank=True)
+    correctAnswer = models.BooleanField(default=False)
+    triviaID = models.ForeignKey(Trivia, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.answerID
+
+"""
+class TriviaAnswered(models.Model):
+    triviaID = models.ForeignKey(Trivia, on_delete=models.CASCADE)
+    answerID = models.ForeignKey(Answer, on_delete=models.CASCADE)
+    scoreObtained = models.IntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(100),
+                    lambda value: value in [0, 100]],
+        default=0
+    )
+    bonusObtained = models.IntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(200),
+                    lambda value: value in [0, 200]],
+        default=0
+    )
+"""
+
     
+
