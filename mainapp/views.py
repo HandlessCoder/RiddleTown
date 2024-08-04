@@ -5,8 +5,6 @@ from django.utils.translation import gettext       ##requires to instal GNU gett
 
 # Create your views here.
 
-
-
 def mainpage(request):
     return render(request,'mainapp/home.html')
 
@@ -38,11 +36,4 @@ def play(request):
 
 def categories(request):
     return render(request,'mainapp/categories.html')
-
-
-
-
-
-
-
 
