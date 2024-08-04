@@ -16,7 +16,9 @@
         </div>
         <div class="form">
             <h2> {% trans "¡Bienvenido(a) de vuelta! ¡Inicia Sesión!" %} </h2>
-            <form>
+            <form action="" method="post">
+                {% csrf_token %}
+
                 <input type="text" name="User" placeholder="Alias o correo electrónico">
                 <br>
                 <div class="password-container">

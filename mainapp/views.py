@@ -2,6 +2,7 @@ from django.http import HttpResponse,JsonResponse
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
+from mainapp.models import CustomUserManager
 
 # Create your views here.
 
@@ -14,9 +15,31 @@ def mainpage(request):
     # return render(request,'mainapp/prueba.html')
 
 def login(request):
-    return render(request,'login.html')
+    if request.method == 'POST':
+        email = request.POST.get('User')
+        password = request.POST.get('Password')
+        print(email,password)
+    else:
+        return render(request,'login.html')
+    
+    
+    
+
+
+
 def register(request):
-    return render(request,'register.html')
+    if request.method == 'POST':
+        email = request.POST.get('User')
+        password = request.POST.get('Password')
+        print(email,password)
+        # if validateLogin (email,password):
+        #     my_user = CustomUserManager.create_user(email,password)
+        
+    else:
+        return render(request,'register.html')
+        
+        
+        
 
 def profile(request):
     return render(request,'mainapp/profile.html')
