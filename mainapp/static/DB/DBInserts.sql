@@ -21,8 +21,10 @@ CREATE TABLE mainapp_answer (
     answerText VARCHAR(200),
     answerImage VARCHAR(50),
     correctAnswer BOOLEAN,
-    triviaID INTEGER REFERENCES Trivia (triviaID) ON DELETE CASCADE
+    triviaID INTEGER REFERENCES Trivia (trivia_id) ON DELETE CASCADE
 );
+
+INSERT INTO "main"."mainapp_user" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('1', 'pbkdf2_sha256$720000$EPIBhScIK1uJXsZELmLGiw$i1noGlSLs0YWo5sW581z5bcA7z8/Fh9HJ6nwWUObQio=', 'www.juan201@gmail.com', 'Jupaenriro', 'Venezuela', 'Distrito Capital', 'Av. La Paz, Edificio Simari Piso 6, Apartamento 11', '1', '1', '1', '2024-07-23 02:48:27', '2024-07-23 02:49:46');
 */
 
 
@@ -40,7 +42,7 @@ VALUES
 
 -- ARTE
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('1', 'text', '¿Quién pintó la famosa obra "La Gioconda" o "Mona Lisa"?', NULL, NULL, 'Arte'),
     ('2', 'text', '¿Cuál es el movimiento artístico que se caracterizó por el uso de colores vivos, formas simples y la representación de objetos cotidianos?', NULL, NULL, 'Arte'),
     ('3', 'text', '¿Cuál es la técnica artística que consiste en rayar una superficie para crear una imagen?', NULL, NULL, 'Arte'),
@@ -52,7 +54,7 @@ VALUES ('1', 'text', '¿Quién pintó la famosa obra "La Gioconda" o "Mona Lisa"
     ('9', 'text', '¿Cuál es el movimiento artístico que se caracterizó por la representación de la luz y el color al aire libre?', NULL, NULL, 'Arte'),
     ('10', 'image', '¿Quién pintó este cuadro?', 'Trivias/arte/pregunta10/pregunta.png', NULL, 'Arte');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('1', 'text', 'Vincent van Gogh', NULL, False, '1'),
     ('2', 'text', 'Pablo Picasso', NULL, False, '1'),
     ('3', 'text', 'Leonardo da Vinci', NULL, True, '1'),
@@ -97,7 +99,7 @@ VALUES ('1', 'text', 'Vincent van Gogh', NULL, False, '1'),
 
 -- Ciencia
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('11', 'text', '¿Cuál es el planeta más grande del sistema solar?', NULL, NULL,  'Ciencia'),
     ('12', 'text',  '¿Cuál es la unidad básica de la vida?', NULL, NULL,  'Ciencia'),
     ('13', 'text', '¿Quién formuló la teoría de la relatividad?', NULL, NULL,  'Ciencia'),
@@ -109,7 +111,7 @@ VALUES ('11', 'text', '¿Cuál es el planeta más grande del sistema solar?', NU
     ('19', 'text', '¿Cuál es el proceso por el cual las plantas convierten la luz solar en energía?', NULL, NULL,  'Ciencia'),
     ('20', 'image', 'Dada la siguiente imagen, ¿A cuál ley de Newton hace alusión? ', 'Trivias/ciencia/pregunta10/pregunta.png', NULL,  'Ciencia');
     
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('41', 'text', 'Marte', NULL, False, '11'),
     ('42', 'text', 'Júpiter', NULL, True, '11'),
     ('43', 'text', 'Saturno', NULL, False, '11'),
@@ -154,7 +156,7 @@ VALUES ('41', 'text', 'Marte', NULL, False, '11'),
 
 -- Cultura General
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('21', 'text', '¿Cuál es el país más grande del mundo en extensión territorial?', NULL, NULL,  'Cultura General'),
     ('22', 'text', '¿Quién escribió la obra "Don Quijote de la Mancha"?', NULL, NULL,  'Cultura General'),
     ('23', 'text', '¿Cuál es el océano más grande del mundo?', NULL, NULL,  'Cultura General'),
@@ -166,7 +168,7 @@ VALUES ('21', 'text', '¿Cuál es el país más grande del mundo en extensión t
     ('29', 'text', '¿Cuál de las siguientes es una de las 7 maravillas del mundo moderno?', NULL, NULL,  'Cultura General'),
     ('30', 'text', '¿Cuál es el animal terrestre más rápido del mundo?', NULL, NULL,  'Cultura General');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('81', 'text', 'Canadá', NULL, False, '21'),
     ('82', 'text', 'Rusia', NULL, True, '21'),
     ('83', 'text', 'Estados Unidos', NULL, False, '21'),
@@ -211,7 +213,7 @@ VALUES ('81', 'text', 'Canadá', NULL, False, '21'),
 
 -- Deporte
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('31', 'text', '¿Quién es considerado el mejor jugador de baloncesto de todos los tiempos?', NULL, NULL,  'Deporte'),
     ('32', 'text', '¿En qué deporte se utiliza un balón ovalado y se marcan tries?', NULL, NULL,  'Deporte'),
     ('33', 'text', '¿Cuál es el torneo de tenis más prestigioso del mundo?', NULL, NULL,  'Deporte'),
@@ -223,7 +225,7 @@ VALUES ('31', 'text', '¿Quién es considerado el mejor jugador de baloncesto de
     ('39', 'text', '¿En qué deporte se utiliza un guante y una pelota pequeña?', NULL, NULL,  'Deporte'),
     ('40', 'text', '¿Qué deporte es?', 'Trivias/deporte/pregunta10/pregunta.png', NULL,  'Deporte');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('121', 'text', 'LeBron James', NULL, False, '31'),
     ('122', 'text', 'Michael Jordan', NULL, True, '31'),
     ('123', 'text', 'Kobe Bryant', NULL, False, '31'),
@@ -268,7 +270,7 @@ VALUES ('121', 'text', 'LeBron James', NULL, False, '31'),
 
 -- Entretenimiento
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('41', 'text', '¿Quién interpreta al personaje de Harry Potter en las películas?', NULL, NULL,  'Entretenimiento'),
     ('42', 'text', '¿Cuál de estos artistas es conocido por sus canciones de pop y su estilo excéntrico?', NULL, NULL,  'Entretenimiento'),
     ('43', 'text', '¿En qué saga cinematográfica aparece el personaje de Luke Skywalker?', NULL, NULL,  'Entretenimiento'),
@@ -280,7 +282,7 @@ VALUES ('41', 'text', '¿Quién interpreta al personaje de Harry Potter en las p
     ('49', 'text', '¿Cuál es el hechizo que permite a un mago hacer levitar objetos en la saga Harry Potter?', NULL, NULL,  'Entretenimiento'),
     ('50', 'audio', 'Escuche el audio y diga que personaje de Harry Potter dice la frase', NULL, 'Trivias/entretenimiento/pregunta10/pregunta.mp3', 'Entretenimiento');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('161', 'text', 'Daniel Radcliffe', NULL, True, '41'),
     ('162', 'text', 'Rupert Grint', NULL, False, '41'),
     ('163', 'text', 'Emma Watson', NULL, False, '41'),
@@ -325,7 +327,7 @@ VALUES ('161', 'text', 'Daniel Radcliffe', NULL, True, '41'),
 
 -- Geografía
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('51', 'text', '¿Quién interpreta al personaje de Harry Potter en las películas?', NULL, NULL,  'Geografía'),
     ('52', 'text', '¿Qué continente alberga la selva amazónica?', NULL, NULL,  'Geografía'),
     ('53', 'text', '¿Cuál es el océano más grande de la Tierra?', NULL, NULL,  'Geografía'),
@@ -337,7 +339,7 @@ VALUES ('51', 'text', '¿Quién interpreta al personaje de Harry Potter en las p
     ('59', 'text', '¿Qué país alberga la mayor parte de la selva del Congo?', NULL, NULL,  'Geografía'),
     ('60', 'text', '¿Cuál bandera es de Ecuador? ', NULL, NULL,  'Geografía');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('201', 'text', 'Canadá', NULL, False, '51'),
     ('202', 'text', 'Rusia', NULL, True, '51'),
     ('203', 'text', 'Estados Unidos', NULL, False, '51'),
@@ -382,7 +384,7 @@ VALUES ('201', 'text', 'Canadá', NULL, False, '51'),
 
 -- Historia
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('61', 'text', '¿Quién fue el primer hombre en llegar a la Luna?', NULL, NULL,  'Historia'),
     ('62', 'text', '¿En qué año terminó la Segunda Guerra Mundial?', NULL, NULL,  'Historia'),
     ('63', 'text', '¿Cuál de estas civilizaciones antiguas construyó las pirámides de Egipto?', NULL, NULL,  'Historia'),
@@ -394,7 +396,7 @@ VALUES ('61', 'text', '¿Quién fue el primer hombre en llegar a la Luna?', NULL
     ('69', 'text', '¿Cuál de estas civilizaciones mesoamericanas creó un calendario muy preciso?', NULL, NULL,  'Historia'),
     ('70', 'text', '¿Quién de estos fue el primer presidente de los Estados Unidos?', NULL, NULL,  'Historia');
    
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('241', 'text', 'Neil Armstrong', NULL, True, '61'),
     ('242', 'text', 'Buzz Aldrin', NULL, False, '61'),
     ('243', 'text', 'Yuri Gagarin', NULL, False, '61'),
@@ -439,7 +441,7 @@ VALUES ('241', 'text', 'Neil Armstrong', NULL, True, '61'),
 
 -- Música
 
-INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, categoryID)
+INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
 VALUES ('71', 'text', '¿Quién es considerado el "Rey del Rock and Roll"?', NULL, NULL, 'Música'),
     ('72', 'text', '¿Cuál es el instrumento principal de una banda de rock?', NULL, NULL, 'Música'),
     ('73', 'text', '¿A qué grupo pertenece Agust D? ', NULL, NULL, 'Música'),
@@ -451,7 +453,7 @@ VALUES ('71', 'text', '¿Quién es considerado el "Rey del Rock and Roll"?', NUL
     ('79', 'text', '¿Cuál es el término que se utiliza para describir a los fanáticos más dedicados del K-pop?', NULL, NULL, 'Música'),
     ('80', 'audio', '¿Qué grupo canta la siguiente canción? ', NULL, 'Trivias/musica/pregunta10/pregunta.mp3', 'Música');
 
-INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, triviaID)
+INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('283', 'text', 'Mick Jagger', NULL, False, '71'),
     ('284', 'text', 'Elvis Presley', NULL, True, '71'),
     ('285', 'text', 'Freddie Mercury', NULL, False, '71'),
