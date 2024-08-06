@@ -75,10 +75,10 @@ class Trivia(models.Model):
         ('image', 'Imagen'),
         ('audio', 'Audio'),
     ])
-    questionText = models.CharField(max_length=200, blank=True)
-    questionImage = models.CharField(max_length=50, blank=True)
-    questionAudio = models.CharField(max_length=50, blank=True)
-    categoryID = models.ForeignKey(Category, on_delete=models.CASCADE)
+    questionText = models.CharField(max_length=200, blank=True, null=True)
+    questionImage = models.CharField(max_length=50, blank=True, null=True)
+    questionAudio = models.CharField(max_length=50, blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.triviaID
@@ -89,10 +89,10 @@ class Answer(models.Model):
         ('text', 'Texto'),
         ('image', 'Imagen'),
     ])
-    answerText = models.CharField(max_length=200, blank=True)
-    answerImage = models.CharField(max_length=50, blank=True)
+    answerText = models.CharField(max_length=200, blank=True, null=True)
+    answerImage = models.CharField(max_length=50, blank=True, null=True)
     correctAnswer = models.BooleanField(default=False)
-    triviaID = models.ForeignKey(Trivia, on_delete=models.CASCADE)
+    trivia = models.ForeignKey(Trivia, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.answerID
