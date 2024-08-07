@@ -443,3 +443,7 @@ input[type="text"] {
     height: 20%;
     margin-top: 2vh;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

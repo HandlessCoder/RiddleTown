@@ -271,3 +271,7 @@ body{
 .next img{
     margin-left: 9vw;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

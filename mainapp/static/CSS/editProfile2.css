@@ -285,3 +285,7 @@ input[type="text"] {
     justify-content: center;
     margin-top: 20vh;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

@@ -146,3 +146,7 @@ body{
 .points{
     float: right;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

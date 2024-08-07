@@ -462,3 +462,7 @@ p{
     font-weight: 500;
     margin-left: 7vw;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

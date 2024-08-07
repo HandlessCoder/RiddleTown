@@ -7,6 +7,40 @@ body{
     background-color: white;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    display: none;
+}
+
+.menu-icon{
+    width: 30%;
+    text-align: left;
+}
+
+.menu-icon img{
+    height: 4vw;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.space2{
+    width:30%;
+}
+
+.logoMobile{
+    text-align: center;
+    width: 40%;
+}
+
+.logoMobile img{
+    height: 9vw;
+    min-height: 80px;
+    min-width: 90x;
+}
+
 .sidebar{
     width: 20vw;
     background-color: #fafafa;
@@ -40,6 +74,10 @@ body{
     background-color: #f35e3d;
     padding: 1px;
     width: 100%;
+}
+
+.lineMenuContainer{
+    width: 70%;
 }
 
 .sidebar ul{
@@ -134,7 +172,6 @@ body{
     font-weight: 500;
     margin-left: 7vw;
 }
-
 
 .namePerson{
     display: flex;
@@ -266,4 +303,185 @@ body{
 
 .next img{
     margin-left: 9vw;
+}
+
+@media (max-width: 1290px) {
+
+    
+
+    div {
+        font-size: 0.9rem;
+    }
+
+    h2{
+        font-size: 1.50rem;
+    }
+
+    .buttonAwards, .buttonRanking{
+        width:15vw;
+        height: 7px;
+        align-items: center;
+        padding-top: 3px;
+    }
+
+    .buttonAwardsContainer, .buttonRankingContainer{
+        margin-top: 1.5vh;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .awardsPositionsContainer{
+        width: 50vw;
+        min-width: 300px;
+    }
+
+    .buttonRankingContainer{
+        margin-bottom: 5px;
+    }
+
+    .top-ranking{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .buttonRanking{
+        width:20vw;
+        height: 12px;
+        padding-bottom: 15px;
+        min-width: 150px;
+    }
+
+    .awards{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .prev, .next{
+        display: none;
+    }
+
+    header {
+        display: flex;
+    }
+
+    .sidebar{
+        position: absolute;
+        left: -100%;
+        transition: left 0.1s ease;
+        width: 450px;
+        height: 100%;
+        background-image: none;
+        justify-content: left;
+        display: none;
+    }
+
+    .backgroundOpacity{
+        position: fixed;
+        left: -100%;
+        height: 100%;
+        z-index: 100;
+        background-color: hsla(280, 100%, 5%, 0.6);
+
+    }
+
+    .backgroundOpacity.active{
+        left: 450px;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    .sidebar.active {
+        left: 0;
+        display: flex;
+        position: fixed;
+        
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.active {
+        margin-left: 250px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+    }
+
+    .category-icons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        width: 90%;
+        padding: 5px;
+    }
+    
+    .category{
+        margin: 2px;
+        padding: 5px;
+    }
+    
+    .category img{
+        width: 9vh;
+        height: 9vh;
+        border-radius: 12px;
+    }
+    
+    .category p{
+        margin-top: 5px;
+    }
+
+    .category-icons .category:nth-child(even){
+        padding: 5px;
+    }
+    
+    .category-icons .category:nth-child(odd){
+        padding: 5px;
+    }
+
+    .premioFisico img{
+        width: 20vw;
+        height: 20vw;
+        margin-left: 5vw;
+        min-height: 150px;
+        min-width: 150px;
+    }
+
+    .lineLogo{
+
+        width: 100%;
+    }
+    
+    .lineMenu{
+        width: 100%;
+        background-color: #ef7e65;
+    }
+
+    .lineMenuContainer{
+        width: 100%;
+
+    }
+
+    .containerSideBar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .optionContainer{
+        padding-left: 30px;
+    }
+    
 }

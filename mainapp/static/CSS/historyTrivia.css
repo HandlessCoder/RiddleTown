@@ -190,3 +190,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

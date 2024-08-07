@@ -69,3 +69,7 @@ p{
 .trofeo{
     text-decoration: underline;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}
