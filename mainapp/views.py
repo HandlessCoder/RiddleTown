@@ -2,11 +2,31 @@ from django.http import HttpResponse,JsonResponse
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
+from .models import Category
 
 # Create your views here.
 
 def mainpage(request):
-    return render(request,'mainapp/home.html')
+    if(request.method == 'POST'):
+        print("Papi papíripe")
+        print(request.POST.get('miValor', False))
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    categorias = list(Category.objects.values())
+    context = {
+        "categorias" : categorias
+    }
+    
+    
+    return render(request,'mainapp/home.html', context=context)
 
 # def prueba(request):
     # return render(request,'mainapp/prueba.html')
@@ -35,5 +55,10 @@ def play(request):
     return render(request,'mainapp/trivia.html')
 
 def categories(request):
+    
+    
+    
+    
+    
     return render(request,'mainapp/categories.html')
 
