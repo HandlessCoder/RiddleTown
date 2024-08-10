@@ -494,3 +494,30 @@ VALUES ('283', 'text', 'Mick Jagger', NULL, False, '71'),
     ('320', 'text', 'Chino y Nacho', NULL, False, '80'),
     ('321', 'text', 'Stray Kids', NULL, False, '80'),
     ('322', 'text', 'Seventeen', NULL, False, '80');
+
+
+
+-- PREMIOS
+
+INSERT INTO mainapp_prize(prizeCode, prizeName, prizeType, appearFrecuency, quantity, rankingPosition)
+VALUES ('PRIZE000', 'Puntaje', 'instant', 0.15, 200, NULL), 
+    ('PRIZE001', 'Monitor', 'ranking', NULL, NULL, 1),
+    ('PRIZE002', 'Teclado gamer', 'ranking', NULL, NULL, 2),
+    ('PRIZE003', 'Mouse gamer', 'ranking', NULL, NULL, 3);
+
+
+-- USER JUGADOR
+-- (creado por interfaz Admin)
+/*
+INSERT INTO mainapp_user(id, password, email, nickname, country, estate, address, is_active, is_superuser, is_staff, date_joined, last_login)
+VALUES ('3', 'alhaithamTarado', 'kaveh@mail.com', 'Kaveh', 'Sumeru', 'Ciudad de Sumeru', 'Calle Alhaja, casa 1', '1', '0', '0', '2024-08-09 23:45:00', '2024-08-10 00:02:29');
+*/
+
+-- RANKING
+INSERT INTO mainapp_ranking(user_id, score, position, last_updated)
+VALUES ('3', 9000, 1, '2024-08-10 00:02:29');
+
+
+-- PREMIO GANADO
+INSERT INTO mainapp_prizewon(user_id, prize_id, prizeState, won_at)
+VALUES ('3', 'PRIZE001', 'Enviado', '2024-08-09 23:45:00');
