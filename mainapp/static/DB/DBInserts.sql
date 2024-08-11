@@ -516,7 +516,7 @@ VALUES ('3', 'alhaithamTarado', 'kaveh@mail.com', 'Kaveh', 'Sumeru', 'Ciudad de 
 -- RANKING
 INSERT INTO mainapp_ranking(user_id, score, position, last_updated)
 VALUES ('3', 9000, 1, '2024-08-10 00:02:29');
--- demás insertados mediante la interfaz admin
+
 
 -- PREMIO GANADO
 INSERT INTO mainapp_prizewon(user_id, prize_id, prizeState, won_at)
