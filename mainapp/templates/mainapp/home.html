@@ -58,6 +58,8 @@
         {% for categoria in categorias %}
         <div class="category"><img src="{% static categoria.icon %}" alt="{{categoria.name}}" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
         {% endfor %}
+
+        
     </div>
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
 

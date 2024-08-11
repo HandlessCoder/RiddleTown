@@ -8,17 +8,11 @@ from .models import Category
 
 def mainpage(request):
     if(request.method == 'POST'):
-        print("Papi papíripe")
-        print(request.POST.get('miValor', False))
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('miValor', False)} desde el home")
+
+
+
+
     
     categorias = list(Category.objects.values())
     context = {
@@ -55,10 +49,20 @@ def play(request):
     return render(request,'mainapp/trivia.html')
 
 def categories(request):
+    if(request.method == 'POST'):
+        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('miValor', False)} desde Categorías")
+
+
+
+
+    
+    categorias = list(Category.objects.values())
+    context = {
+        "categorias" : categorias
+    }
     
     
     
     
-    
-    return render(request,'mainapp/categories.html')
+    return render(request,'mainapp/categories.html', context = context)
 
