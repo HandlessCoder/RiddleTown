@@ -22,16 +22,17 @@
 
     <div class="main-content">
         <div class="categories">
-            <div class="category">{% trans "Geografía" %} <img src="{% static 'IMG/categories/mundo.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Historia" %} <img src="{% static 'IMG/categories/libros.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Ciencia" %} <img src="{% static 'IMG/categories/quimica.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Entretenimiento" %} <img src="{% static 'IMG/categories/cine.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Música" %} <img src="{% static 'IMG/categories/musica.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Deporte" %} <img src="{% static 'IMG/categories/futbol.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Arte" %} <img src="{% static 'IMG/categories/arte.jpg' %}" alt="Geografía" class="categoryImage"/></div>
-            <div class="category">{% trans "Cultura general" %} <img src="{% static 'IMG/categories/museo.jpg' %}" alt="Geografía" class="categoryImage"/></div>
+            {% for categoria in categorias %}
+                <div class="category"> {{categoria.name}}  <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
+            {% endfor %}
+
+            
         </div>
         <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
-        {% include 'play_component.html' %}
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <input type="hidden" id="selectedCategory" name="miValor">
+            {% include 'play_component.html' %}
+    </form>
     </div>
 {% endblock %}

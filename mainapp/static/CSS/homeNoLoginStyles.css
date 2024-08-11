@@ -221,13 +221,13 @@ body{
 }
 
 .category-icons .category:nth-child(even){
-    background-color: #ffffff;
+    background-color: #ebebeb;
     padding: 10px;
     border-radius: 10px;
 }
 
 .category-icons .category:nth-child(odd){
-    background-color: #ffffff;
+    background-color: #ebebeb;
     padding: 10px;
     border-radius: 10px;
 }
