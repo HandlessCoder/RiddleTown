@@ -512,10 +512,63 @@ VALUES ('PRIZE000', 'Puntaje', 'instant', 0.15, 200, NULL),
 INSERT INTO mainapp_user(id, password, email, nickname, country, estate, address, is_active, is_superuser, is_staff, date_joined, last_login)
 VALUES ('3', 'alhaithamTarado', 'kaveh@mail.com', 'Kaveh', 'Sumeru', 'Ciudad de Sumeru', 'Calle Alhaja, casa 1', '1', '0', '0', '2024-08-09 23:45:00', '2024-08-10 00:02:29');
 */
+-- inserciones hechas mediante Interfaz de Administrador y extraídas gracias a DB Browser for SQLite
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('3', 'alhaithamTarado', 'kaveh@mail.com', 'Kaveh', 'Sumeru', 'Ciudad de Sumeru', 'Calle Alhaja, casa 1', '1', '0', '0', '2024-08-10 14:52:28', '2024-08-11 15:45:49');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('4', 'roseAhorcame_porFabor', 'rafaelcontrerasagudelo@gmail.com', 'Rafax2002', 'Venezuela', 'Distrito Capital', 'El Valle', '1', '0', '0', '2024-08-11 14:46:34', '2024-08-11 15:45:56');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('5', 'TriviaBlaster10', 'triviablaster@gmail.com', 'TriviaBlaster10', 'Estados Unidos', 'Texas', 'Desierto', '1', '0', '0', '2024-08-11 15:01:36', '2024-08-11 15:46:09');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('6', 'tuDesgracia_miIngreso', 'huhutao@teyvat.com', 'HuTaoWalnut', 'Liyue', 'Ciudad de Liyue', 'Funeraria El Camino', '1', '0', '0', '2024-08-11 15:08:39', '2024-08-11 15:46:16');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('7', 'queenBee123', 'theQueen@yahoo.com', 'QuizQueen', 'Francia', 'París', 'rue Caulaincourt', '1', '0', '0', '2024-08-11 15:12:48', '2024-08-11 15:46:22');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('8', 'SoloSeQueNoSeNada', 'serOnoSer@hotmail.com', 'KnowItAll4Life', 'Dinamarca', 'Elsinor', 'Castillo Hamlet', '1', '0', '0', '2024-08-11 15:16:09', '2024-08-11 15:46:34');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('9', 'comemosTrivias', 'triviatriviatrivia@gmail.com', 'TriviaAddict', 'Desconocido', 'Riddletown', 'casa #', '1', '0', '0', '2024-08-11 15:23:54', '2024-08-11 15:46:42');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('10', 'SrZhongliMiPastor', 'callmyname@adeptus.com', 'XiaoYaksha', 'Liyue', 'Pantano Dihua', 'Posada Wangshu', '1', '0', '0', '2024-08-11 15:28:51', '2024-08-11 15:46:49');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('11', 'uhavebrain?', 'brainiac@mail.com', 'Brainiac101', 'Venezuela', 'Mérida', 'Mucubají', '1', '0', '0', '2024-08-11 15:39:54', '2024-08-11 15:46:58');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('12', '123', 'bandaArataki@wujuu.com', 'Itto', 'Inazuma', 'Ciudad de Inazuma', 'Las calles', '1', '0', '0', '2024-08-11 15:41:56', '2024-08-11 15:47:04');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('13', 'PuzzleProdigy__', 'prodigy@puzzle.com', 'PuzzleProdigy', 'Venezuela', 'Delta Amacuro', 'Calle X', '1', '0', '0', '2024-08-11 15:43:45', '2024-08-11 15:45:42');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('14', 'noTime', 'triviatime@mail.com', 'TriviaTime', 'Venezuela', 'Carabobo', 'Valencia', '1', '0', '0', '2024-08-11 15:44:39', '2024-08-11 15:45:35');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('15', 'guruguruguru', 'erGuruuuu@jajaja.com', 'TriviaGuru', 'Venezuela', 'Distrito Capital', 'La Victoria', '1', '0', '0', '2024-08-11 15:47:29', '2024-08-11 15:52:02');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('16', 'KnowBrainer321', 'KnowBrainer@hotmail.com', 'KnowBrainer', 'Venezuela', 'Miranda', 'Chacao', '1', '0', '0', '2024-08-11 15:51:12', '2024-08-11 15:51:56');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('17', 'TriviaChampLalala', 'theChampion.yeah@mail.com', 'TriviaChamp', 'Venezuela', 'Lara', 'Baquisimeto', '1', '0', '0', '2024-08-11 15:52:10', '2024-08-11 15:55:12');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('18', 'chefIncomprendida', 'InazumaEternity@archon.com', 'RaidenShogun', 'Inazuma', 'Ciudad de Inazuma', 'Tenshukaku', '1', '0', '0', '2024-08-11 15:55:17', '2024-08-11 16:00:40');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('19', 'fanDeTrivias1111', 'TriviaFanatic@gmail.com', 'TriviaFanatic', 'Venezuela', 'Monagas', 'Gas', '1', '0', '0', '2024-08-11 16:00:44', '2024-08-11 16:09:01');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('20', 'tsunami', 'BrainWave@gmail.com', 'BrainWave', 'Venezuela', 'Distrito Capital', 'Plaza Venezuela', '1', '0', '0', '2024-08-11 16:09:12', '2024-08-11 16:09:48');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('21', 'HunterXHunterJuasJuas', 'theBestHunter@mail.com', 'TriviaHunter', 'Venezuela', 'Distrito Capital', 'Fuerzas Armadas', '1', '0', '0', '2024-08-11 16:09:54', '2024-08-11 16:57:52');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('22', 'QuizQuest', 'QuizQuest@gmail.com', 'QuizQuest', 'Venezuela', 'Distrito Capital', 'Valles del Tuy', '1', '0', '0', '2024-08-11 16:57:57', '2024-08-11 16:58:31');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('23', 'KnowledgeSeeker', 'KnowledgeSeeker@yahoo.com', 'KnowledgeSeeker', 'Venezuela', 'Bolívar', 'La Llovizna', '1', '0', '0', '2024-08-11 16:58:34', '2024-08-11 16:59:11');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('24', 'Triviaholic', 'Triviaholic@gmail.com', 'Triviaholic', 'Venezuela', 'Miranda', 'Las Mercedes', '1', '0', '0', '2024-08-11 17:07:18', '2024-08-11 17:07:41');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('25', 'traverlerS_AW', 'Aether_Lumine@teyvat.com', 'AetherLumine', 'Teyvat', 'Teyvat', 'Relajatetera', '1', '0', '0', '2024-08-11 17:08:01', '2024-08-11 17:11:51');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('26', 'EheTeNandayo', 'erBardo@archon.com', 'VentiTraveler', 'Mondstadt', 'Ciudad de Mondstadt', 'Obsequio del Ángel', '1', '0', '0', '2024-08-11 17:12:11', '2024-08-11 17:16:55');
+INSERT INTO "main"."" ("id", "password", "email", "nickname", "country", "estate", "address", "is_active", "is_superuser", "is_staff", "date_joined", "last_login") VALUES ('27', 'elSeñorDeLaNoooocheee', 'masterDiluc@gmail.com', 'QuizMaster', 'Mondstadt', 'Meseta de la Ventisca', 'Viñedo del Amanecer', '1', '0', '0', '2024-08-11 17:18:22', '2024-08-11 17:22:46');
+
 
 -- RANKING
 INSERT INTO mainapp_ranking(user_id, score, position, last_updated)
 VALUES ('3', 9000, 1, '2024-08-10 00:02:29');
+
+-- inserciones hechas mediante Interfaz de Administrador y extraídas gracias a DB Browser for SQLite
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('4', '8900', '2', '2024-08-11 15:20:33.340862');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('5', '6500', '3', '2024-08-11 15:22:01.707172');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('6', '6400', '4', '2024-08-11 15:22:23.123152');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('7', '6300', '5', '2024-08-11 15:22:52.648711');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('8', '6200', '6', '2024-08-11 15:23:43.564171');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('9', '6100', '7', '2024-08-11 17:31:57.252809');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('10', '6000', '8', '2024-08-11 17:32:24.162776');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('11', '5900', '9', '2024-08-11 17:33:16.211708');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('13', '5800', '10', '2024-08-11 17:33:37.587061');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('14', '5700', '11', '2024-08-11 17:34:09.628995');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('15', '5600', '12', '2024-08-11 17:34:36.441468');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('16', '5500', '13', '2024-08-11 17:34:56.411310');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('17', '5400', '14', '2024-08-11 17:37:11.862316');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('18', '5300', '15', '2024-08-11 17:37:40.570842');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('19', '5200', '16', '2024-08-11 17:38:10.817067');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('20', '5100', '17', '2024-08-11 17:38:42.724760');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('21', '5000', '18', '2024-08-11 17:39:07.693839');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('22', '4900', '19', '2024-08-11 17:39:35.711757');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('23', '4800', '20', '2024-08-11 17:40:02.329823');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('24', '4700', '21', '2024-08-11 17:40:32.938743');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('25', '4600', '22', '2024-08-11 17:41:12.201820');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('26', '4500', '23', '2024-08-11 17:41:36.681934');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('27', '4400', '24', '2024-08-11 17:41:57.819313');
+INSERT INTO "main"."" ("user_id", "score", "position", "last_updated") VALUES ('12', '4000', '25', '2024-08-11 17:42:20.146174');
 
 
 -- PREMIO GANADO
