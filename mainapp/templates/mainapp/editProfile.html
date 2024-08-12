@@ -15,42 +15,78 @@
             <div class="space"></div>
             <div class="mainContent">
                 <h2>{% trans "Editar perfil" %}</h2>
-                <div class="editContainer">
+                <div class="editContainer" method="POST" enctype="multipart/form-data">
+                    
+                    {% csrf_token %}
                     <div class="profileImage">
-                        <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
+                        <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar" id="avatarPreview"/>
                         <span class="alias">{% trans "Alias" %}</span>
                         <div class="changeImage">
-                            {% trans "Cambiar foto" %}
+                            <label for="avatarUpload">{% trans "Cambiar foto" %}</label>
                         </div>
+                        <input type="file" id="avatarUpload" name="avatar" accept="image/*" style="display: none;">
                     </div>
+
                     <div class="profileAlias">
-                        <span class="alias2">
+                        <div class="alias2">
                             {% trans "Alias" %} <br>
-                            <span class="editAlias">Usuario1</span>
-                        </span>
+                            <input type="text" class="editAlias" id="userAlias" name="userAlias" placeholder="Usuario1">
+                        </div>
                     </div>
+                    
                     <h4 class="directionTitle">{% trans "Dirección" %}</h4>
+
                     <div class="profileDirection">
-                        <a href="" class="directionButton">
-                            <span class="country">
-                                {% trans "País" %} <br>
-                                <span class="venezuela">Venezuela</span>
-                            </span>
-                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
-                        </a>
-                        <a href="" class="cityButton">
-                            <span class="country">
-                                {% trans "Estado" %} <br>
-                                <span class="caracas">Caracas</span>
-                            </span>
-                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
-                        </a>
-                        <div class="directionTextArea">
-                            <span class="direction">
-                                {% trans "Dirección" %} <br>
-                                <span class="resUCV">ResidenciasUCV</span>
+
+                        <div class="directionButton profileAlias">
+                            <span class="country alias2">
+                                <form action="/submit" method="post">
+                                    {% trans "País" %} <br>
+                                    <div class="form-group editAlias">
+                                        <select class="editOptions" id="options" name="options">
+                                            <option value="option0">Venezuela</option>
+                                            <option value="option1">Estados Unidos</option>
+                                            <option value="option2">Mondstadt</option>
+                                            <option value="option3">Liyue</option>
+                                            <option value="option4">Inazuma</option>
+                                            <option value="option5">Sumeru</option>
+                                            <option value="option6">Teyvat</option>
+                                        </select>
+                                    </div>
+                                </form>
                             </span>
                         </div>
+
+                        <div class="cityButton profileAlias">
+                            <span class="country alias2">
+                                <form action="/submit" method="post">
+                                    {% trans "Estado" %} <br>
+                                    <div class="form-group editAlias">
+                                        <select class="editOptions" id="options" name="options">
+                                            <option value="option0">Caracas</option>
+                                            <option value="option1">Carabobo</option>
+                                            <option value="option2">Distrito Capital</option>
+                                            <option value="option3">Mérida</option>
+                                            <option value="option4">Texas</option>
+                                            <option value="option5">Ciudad de Mondstadt</option>
+                                            <option value="option6">Ciudad de Liyue</option>
+                                            <option value="option7">Pantano Dihua</option>
+                                            <option value="option8">Ciudad de Inazuma</option>
+                                            <option value="option9">Ciudad de Sumeru</option>
+                                            <option value="option10">Teyvat</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </span>
+                        </div>
+
+                        <div class="directionTextArea profileAlias">
+                            <span class="direction alias2">
+                                {% trans "Dirección" %} <br>
+                                <textarea class="resUCV editAlias" id="userAddress" name="userAddress" placeholder="ResidenciasUCV"></textarea>
+                            </span>
+                        </div>
+
                     </div>
                 </div>
                 <div class="space"></div>
