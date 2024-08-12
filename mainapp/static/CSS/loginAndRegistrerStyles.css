@@ -125,3 +125,26 @@ a{
 .lineMenuContainer{
     width: 70%;
 }
+
+
+@media (max-width: 1290px) {
+    body{
+        background-image: none;
+    }
+
+    .card{
+        background-size: 130% 30%;
+        background-position-x: -3.8vh;
+        background-position-y: 46vh;
+        padding-bottom: 0;
+        width: 60vw;
+        min-width: 270px;
+        height: 60vh;
+        max-width: 393px;
+    }
+    
+    .logo img{
+        min-width: 120px;
+        min-height: 95px;
+    }
+}
