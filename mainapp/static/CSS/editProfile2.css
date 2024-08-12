@@ -26,20 +26,22 @@ label {
     align-items: center;
     gap: 10px;
 }
-
+/*
 input[type="text"] {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-}
+}*/
 
 .calendar-button,
 .load-button {
     padding: 10px 15px;
     border: none;
+    /*
     border-radius: 10px;
     background-color: #504673;
+    */
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -77,6 +79,7 @@ input[type="text"] {
 .profileImage{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     padding: 10px 10px;
     font-size: 16px;
     border: 1px solid #1D3D59;
@@ -85,10 +88,13 @@ input[type="text"] {
     text-decoration: none;
     color: #1D3D59;
     transition: background-color 0.3s ease;
-    height: 35%;
+    /*height: 35%;*/
+    position: relative;
 }
 
-.form-button:hover {
+.form-button:hover,
+.profileAlias:hover,
+.profileImage:hover {
     background-color: #e0e0e0;
 }
 
@@ -139,14 +145,24 @@ input[type="text"] {
 .changeImage{
     background-color: #504673;
     color: white;
-    padding: 0.7vw;
+    padding: 0.5vw 1vw;
     border-radius: 12px;
     margin-left: 38.9vw;
     text-align: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.8;
+    cursor: pointer;
+}
+
+.changeImage:hover {
+    background-color: #453876;
 }
 
 .profileAlias{
     display: flex;
+    flex-direction: column;
     padding: 10px 10px;
     font-size: 16px;
     border: 1px solid #1D3D59;
@@ -159,10 +175,19 @@ input[type="text"] {
 
 .alias2{
     font-size: small;
+    width: 100%;
 }
 
 .editAlias{
     font-size: 1.6em;
+    border: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    color: #1D3D59;
+    outline: none;
+    margin-top: 1vh;
+    outline: none;
 }
 
 .directionTitle{
@@ -240,10 +265,23 @@ input[type="text"] {
 
 .direction{
     font-size: small;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .resUCV{
     font-size: 1.4em;
+    border: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background: transparent;
+    color: #1D3D59;
+    outline: none;
+    padding: 0;
+    font-family: inherit;
 }
 
 .buttonPlay{
@@ -286,6 +324,30 @@ input[type="text"] {
     margin-top: 20vh;
 }
 
-.lineMenuContainer{
-    width: 70%;
+.editOptions{
+    font-size: 0.9em;
+    border: none !important;
+    border-radius: 0px;
+    width: 100%;
+    padding: 0;
+    color: #1D3D59;
+    outline: none !important;
+    margin-top: 1vh;
+    background: url("/static/IMG/flechaAbajo.png") no-repeat right center !important;
+    background-size: 3.5% !important;
+    appearance: none;
+}
+
+.editOptions option {
+    background-color: #e0e0e0;
+    color: #504673;
+    border-color: none;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.editOptions option:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /*background-color:#504673;*/
+    color: #e0e0e0;
 }
