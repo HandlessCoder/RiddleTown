@@ -61,6 +61,8 @@ class Category(models.Model):
     name = models.CharField(max_length=50, primary_key=True)
     color = models.CharField(max_length=10)
     icon = models.CharField(max_length=50)
+    barVector = models.CharField(max_length=70, null=True)
+    questionVector = models.CharField(max_length=70, null=True)
 
     def __str__(self):
         return self.name
