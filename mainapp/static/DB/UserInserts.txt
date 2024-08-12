@@ -1,0 +1,27 @@
+id,password,email,nickname,country,estate,address,is_active,is_superuser,is_staff,date_joined,last_login
+1,pbkdf2_sha256$870000$EdgfAcU3pYXYKqAChbPz88$GGaGsHyYJB0jbzXqunwXNV5J1lrbo8rqLO8MC0a6T74=,www.juan201@gmail.com,Jupaenriro,Venezuela,Distrito Capital,"Av. La Paz, Edificio Simari Piso 6, Apartamento 11",1,1,1,2024-07-23 02:48:27,2024-08-11 14:45:45.835398
+3,alhaithamTarado,kaveh@mail.com,Kaveh,Sumaru,Ciudad de Sumeru,"Calle Alhaja, casa 1",1,0,0,2024-08-10 14:52:28,2024-08-11 15:45:49
+4,roseAhorcame_porFabor,rafaelcontrerasagudelo@gmail.com,Rafax2002,Venezuela,Distrito Capital,El Valle,1,0,0,2024-08-11 14:46:34,2024-08-11 15:45:56
+5,TriviaBlaster10,triviablaster@gmail.com,TriviaBlaster10,Estados Unidos,Texas,Desierto,1,0,0,2024-08-11 15:01:36,2024-08-11 15:46:09
+6,tuDesgracia_miIngreso,huhutao@teyvat.com,HuTaoWalnut,Liyue,Ciudad de Liyue,Funeraria El Camino,1,0,0,2024-08-11 15:08:39,2024-08-11 15:46:16
+7,queenBee123,theQueen@yahoo.com,QuizQueen,Francia,París,rue Caulaincourt,1,0,0,2024-08-11 15:12:48,2024-08-11 15:46:22
+8,SoloSeQueNoSeNada,serOnoSer@hotmail.com,KnowItAll4Life,Dinamarca,Elsinor,Castillo Hamlet,1,0,0,2024-08-11 15:16:09,2024-08-11 15:46:34
+9,comemosTrivias,triviatriviatrivia@gmail.com,TriviaAddict,Desconocido,Riddletown,casa #,1,0,0,2024-08-11 15:23:54,2024-08-11 15:46:42
+10,SrZhongliMiPastor,callmyname@adeptus.com,XiaoYaksha,Liyue,Pantano Dihua,Posada Wangshu,1,0,0,2024-08-11 15:28:51,2024-08-11 15:46:49
+11,uhavebrain?,brainiac@mail.com,Brainiac101,Venezuela,Mérida,Mucubají,1,0,0,2024-08-11 15:39:54,2024-08-11 15:46:58
+12,123,bandaArataki@wujuu.com,Itto,Inazuma,Ciudad de Inazuma,Las calles,1,0,0,2024-08-11 15:41:56,2024-08-11 15:47:04
+13,PuzzleProdigy__,prodigy@puzzle.com,PuzzleProdigy,Venezuela,Delta Amacuro,Calle X,1,0,0,2024-08-11 15:43:45,2024-08-11 15:45:42
+14,noTime,triviatime@mail.com,TriviaTime,Venezuela,Carabobo,Valencia,1,0,0,2024-08-11 15:44:39,2024-08-11 15:45:35
+15,guruguruguru,erGuruuuu@jajaja.com,TriviaGuru,Venezuela,Distrito Capital,La Victoria,1,0,0,2024-08-11 15:47:29,2024-08-11 15:52:02
+16,KnowBrainer321,KnowBrainer@hotmail.com,KnowBrainer,Venezuela,Miranda,Chacao,1,0,0,2024-08-11 15:51:12,2024-08-11 15:51:56
+17,TriviaChampLalala,theChampion.yeah@mail.com,TriviaChamp,Venezuela,Lara,Baquisimeto,1,0,0,2024-08-11 15:52:10,2024-08-11 15:55:12
+18,chefIncomprendida,InazumaEternity@archon.com,RaidenShogun,Inazuma,Ciudad de Inazuma,Tenshukaku,1,0,0,2024-08-11 15:55:17,2024-08-11 16:00:40
+19,fanDeTrivias1111,TriviaFanatic@gmail.com,TriviaFanatic,Venezuela,Monagas,Gas,1,0,0,2024-08-11 16:00:44,2024-08-11 16:09:01
+20,tsunami,BrainWave@gmail.com,BrainWave,Venezuela,Distrito Capital,Plaza Venezuela,1,0,0,2024-08-11 16:09:12,2024-08-11 16:09:48
+21,HunterXHunterJuasJuas,theBestHunter@mail.com,TriviaHunter,Venezuela,Distrito Capital,Fuerzas Armadas,1,0,0,2024-08-11 16:09:54,2024-08-11 16:57:52
+22,QuizQuest,QuizQuest@gmail.com,QuizQuest,Venezuela,Distrito Capital,Valles del Tuy,1,0,0,2024-08-11 16:57:57,2024-08-11 16:58:31
+23,KnowledgeSeeker,KnowledgeSeeker@yahoo.com,KnowledgeSeeker,Venezuela,Bolívar,La Llovizna,1,0,0,2024-08-11 16:58:34,2024-08-11 16:59:11
+24,Triviaholic,Triviaholic@gmail.com,Triviaholic,Venezuela,Miranda,Las Mercedes,1,0,0,2024-08-11 17:07:18,2024-08-11 17:07:41
+25,traverlerS_AW,Aether_Lumine@teyvat.com,AetherLumine,Teyvat,Teyvat,Relajatetera,1,0,0,2024-08-11 17:08:01,2024-08-11 17:11:51
+26,EheTeNandayo,erBardo@archon.com,VentiTraveler,Mondstadt,Ciudad de Mondstadt,Obsequio del Ángel,1,0,0,2024-08-11 17:12:11,2024-08-11 17:16:55
+27,elSeñorDeLaNoooocheee,masterDiluc@gmail.com,QuizMaster,Mondstadt,Meseta de la Ventisca,Viñedo del Amanecer,1,0,0,2024-08-11 17:18:22,2024-08-11 17:22:46
