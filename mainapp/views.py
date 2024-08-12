@@ -10,7 +10,7 @@ def mainpage(request):
     if(request.method == 'POST'):
         print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('miValor', False)} desde el home")
 
-
+        
 
 
     
@@ -56,6 +56,10 @@ def ranking(request):
     return render(request,'mainapp/ranking.html', context = context)
 
 def play(request):
+
+    
+
+
     return render(request,'mainapp/trivia.html')
 
 def categories(request):
