@@ -11,7 +11,14 @@
 {% block content%}
 
 <div class="main-content">
+    <div class="background" id="background"></div>
     <div class="content">
+        <div class="popup" id="myPopup">
+            <h2>Premios de la temporada</h2>
+            <h3>¡Gana premios emocionantes con nuestro sistema de trivias!</h3>
+            <p>Pon a prueba tus conocimientos y diviértete mientras acumulas puntos para obtener premios increíbles. En cada trivia que completes, sumarás puntos que te acercarán a la cima del ranking. Al final de la temporada, los 3 mejores jugadores serán recompensados con premios que te dejarán sin aliento. ¡Gana puntos!</p>
+            <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
+          </div>
         <div class="awards">
             <div class="prev"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
@@ -23,7 +30,7 @@
                 <div class="awardPosition"><strong>{% trans "Segundo lugar" %}: Teclado mecánico</strong></div>
                 <div class="awardPosition"><strong>{% trans "Tercer lugar" %}: Mouse</strong></div>
                 <div class="buttonAwardsContainer">
-                    <a href="#" class="buttonAwards">{% trans "Ver más" %}</a>
+                    <a href="#" class="buttonAwards" onclick="openPopup(); openBackground()">{% trans "Ver más" %}</a>
                 </div>
             </div>
             <div class="next"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
@@ -65,6 +72,21 @@
     </div>
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
     {% include 'play_component.html' %}
+
+    <script>
+        function openPopup() {
+          document.getElementById("myPopup").style.display = "block";
+        }
+        function closePopup() {
+          document.getElementById("myPopup").style.display = "none";
+        }
+        function openBackground() {
+          document.getElementById("background").style.display = "block";
+        }
+        function closeBackground() {
+          document.getElementById("background").style.display = "none";
+        }
+      </script>
 
 </div>
 

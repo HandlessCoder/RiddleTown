@@ -97,6 +97,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 7vw;
+    min-height: 65px;
     gap: 35.5vw;
 }
 
@@ -192,5 +193,222 @@ body{
 }
 
 .lineMenuContainer{
-    width: 70%;
+    width: 90%;
+}
+
+@media (max-width: 1290px) {
+
+
+    div {
+        font-size: 0.5rem;
+    }
+
+    h2{
+        font-size: 1.50rem;
+    }
+
+    p{
+        font-size: 0.2rem;
+    }
+
+    .buttonAwards, .buttonRanking{
+        width:15vw;
+        height: 7px;
+        align-items: center;
+        padding-top: 3px;
+    }
+
+    .buttonAwardsContainer, .buttonRankingContainer{
+        margin-top: 1.5vh;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .awardsPositionsContainer{
+        width: 50vw;
+        min-width: 300px;
+    }
+
+    .buttonRankingContainer{
+        margin-bottom: 5px;
+    }
+
+    .top-ranking{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .buttonRanking{
+        width:20vw;
+        height: 12px;
+        padding-bottom: 15px;
+        min-width: 150px;
+    }
+
+    .awards{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .prev, .next{
+        display: none;
+    }
+
+    header {
+        display: flex;
+        position: absolute;
+    }
+
+    .sidebar{
+        position: absolute;
+        left: -100%;
+        transition: left 0.1s ease;
+        width: 400px;
+        height: 100%;
+        background-image: none;
+        justify-content: left;
+        display: none;
+    }
+
+    .backgroundOpacity{
+        position: fixed;
+        left: -100%;
+        height: 100%;
+        z-index: 100;
+        background-color: hsla(280, 100%, 5%, 0.6);
+
+    }
+
+    .backgroundOpacity.active{
+        left: 400px;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    .sidebar.active {
+        left: 0;
+        display: flex;
+        position: fixed;
+        z-index: 99;
+        
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.active {
+        margin-left: 250px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+    }
+
+
+    .lineLogo{
+
+        width: 100%;
+    }
+    
+    .lineMenu{
+        width: 100%;
+        background-color: #ef7e65;
+    }
+
+    .lineMenuContainer{
+        width: 100%;
+
+    }
+
+    .containerSideBar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .optionContainer{
+        padding-left: 30px;
+    }
+
+    .main-content{
+        margin: 0;
+        border: 1vw;
+        width: 100%;
+        padding: 0;
+    }
+
+    .logoMobile{
+        display: none;
+    }
+
+    .menu-icon img{
+        min-width: auto;
+    }
+
+    .decorationIcon{
+        width: 9vh;
+        height: 9vh;
+        max-width: 40px;
+        max-height: 40px;
+        padding: 0px;
+        padding-top: 5px;
+    }
+
+    #category{
+        position: absolute;
+        top: 1px;
+        left: 48%;
+    }
+
+    #back{
+        position: absolute;
+        left: 10px;
+        top:7%;
+        z-index: 1;
+    }
+
+    .upperDecorationContainer{
+        width: 100%;
+        height: 5vh;
+    }
+
+    .question{
+        background-size: 100% 90%;
+        background-position-x: 0vh;
+        background-position-y: 2vh;
+        width: 90%;
+        width: 100%;
+        padding: 7vh;
+    }
+
+    .optionsContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        gap: 4vh;
+    }
+
+    .buttonPlayContainer{
+       display: flex;
+
+    }
+
+    .option{
+        height: 3vh;
+        margin: 0;
+        width: 90%;
+    }
 }
