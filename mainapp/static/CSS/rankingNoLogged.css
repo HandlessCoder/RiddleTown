@@ -199,4 +199,18 @@ body{
         width: 100%;
 
     }
+
+    .buttonPlay{
+        background-color: #f25e3d;
+        color: #1D3D59;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        width: 25%;
+        font-size: 1.2em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        text-decoration: none;
+    }
 }
