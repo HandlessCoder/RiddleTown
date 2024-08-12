@@ -28,17 +28,17 @@ INSERT INTO "main"."mainapp_user" ("id", "password", "email", "nickname", "count
 */
 
 
-INSERT INTO mainapp_category(name, color, icon)
-VALUES
-    ('Arte', '#C0452A', 'Trivias/arte/arteIcon.png'),
-    ('Ciencia', '#504673', 'Trivias/ciencia/cienciaIcon.png'),
-    ('Cultura General', '#60AAEB', 'Trivias/culturaGeneral/culturaGeneralIcon.png'),
-    ('Deporte', '#922C3F', 'Trivias/deporte/deporteIcon.png'),
-    ('Entretenimiento', '#D76950', 'Trivias/entretenimiento/entretenimientoIcon.png'),
-    ('Geografía', '#4D7EA9', 'Trivias/geografia/geografiaIcon.png'),
-    ('Historia', '#BE5568', 'Trivias/historia/historiaIcon.png'),
-    ('Música', '#9388BA', 'Trivias/musica/musicaIcon.png');
-    
+-- Inserciones actualizadas de Category
+
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Arte', '#C0452A', 'Trivias/arte/arteIcon.png', 'Trivias/arte/Arte_Barra.png', 'Trivias/arte/Arte_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Ciencia', '#504673', 'Trivias/ciencia/cienciaIcon.png', 'Trivias/ciencia/Ciencia_Barra.png', 'Trivias/ciencia/Ciencia_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Cultura General', '#60AAEB', 'Trivias/culturaGeneral/culturaGeneralIcon.png', 'Trivias/culturaGeneral/CulturaGeneral_Barra.png', 'Trivias/culturaGeneral/CulturaGeneral_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Deporte', '#922C3F', 'Trivias/deporte/deporteIcon.png', 'Trivias/deporte/Deporte_Barra.png', 'Trivias/deporte/Deporte_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Entretenimiento', '#D76950', 'Trivias/entretenimiento/entretenimientoIcon.png', 'Trivias/entretenimiento/Entretenimiento_Barra.png', 'Trivias/entretenimiento/Entretenimiento_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Geografía', '#4D7EA9', 'Trivias/geografia/geografiaIcon.png', 'Trivias/geografia/Geografia_Barra.png', 'Trivias/geografia/Geografia_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Historia', '#BE5568', 'Trivias/historia/historiaIcon.png', 'Trivias/historia/Historia_Barra.png', 'Trivias/historia/Historia_Pregunta.png');
+INSERT INTO "main"."" ("name", "color", "icon", "barVector", "questionVector") VALUES ('Música', '#9388BA', 'Trivias/musica/musicaIcon.png', 'Trivias/musica/Musica_Barra.png', 'Trivias/musica/Musica_Pregunta.png');
+
 
 -- ARTE
 
