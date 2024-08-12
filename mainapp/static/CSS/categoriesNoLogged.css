@@ -263,7 +263,7 @@ body{
         position: absolute;
         left: -100%;
         transition: left 0.1s ease;
-        width: 450px;
+        width: 280px;
         height: 100%;
         background-image: none;
         justify-content: left;
@@ -280,7 +280,7 @@ body{
     }
 
     .backgroundOpacity.active{
-        left: 450px;
+        left: 280px;
         width: 100%;
     }
 
@@ -392,4 +392,8 @@ body{
         padding-left: 10%;
         height: 25px;
     }
+
+    .buttonPlay{
+        width: 60px;
+      }
 }
