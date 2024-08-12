@@ -362,9 +362,7 @@ header {
 
 @media (max-width: 1290px) {
 
-    
-
-    div {
+    div{
         font-size: 0.9rem;
     }
 
@@ -372,17 +370,23 @@ header {
         font-size: 1.50rem;
     }
 
-    .buttonAwards, .buttonRanking{
+    .buttonRanking{
         width:15vw;
         height: 7px;
         align-items: center;
         padding-top: 3px;
     }
 
-    .buttonAwardsContainer, .buttonRankingContainer{
+    .buttonRankingContainer{
         margin-top: 1.5vh;
         align-items: center;
         padding: 0px;
+    }
+
+    .buttonAwards{
+        width:15vw;
+        height: 25px;
+        padding: 3px;
     }
 
     .awardsPositionsContainer{
