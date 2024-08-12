@@ -103,6 +103,8 @@ header {
     color: #1D3D59;
     padding: 0px;
     border: 1vw;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .awards{

@@ -62,8 +62,10 @@ body{
 .mainContent{
     display: flex;
     flex-direction: column;
-    width: 95%;
-    padding: 20px;
+    width: 80%;
+    padding: 10%;
+    padding-top: 0;
+    padding-bottom: 2%;
     color: #1D3D59;
     text-align: center;
 }
@@ -114,6 +116,15 @@ body{
 }
 
 @media (max-width: 1290px){
+
+    h2{
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
 
     .sidebar{
         position: absolute;
@@ -172,4 +183,12 @@ body{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         text-decoration: none;
     }
+
+    .goBack{
+        width: 5vh;
+        height: 5vh;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    
 }
