@@ -65,7 +65,7 @@
 
     <form method="POST" action="play/">
             {% csrf_token %}
-            <input type="hidden" id="selectedCategory" name="miValor">
+            <input type="hidden" id="selectedCategory" name="category">
             {% include 'play_component.html' %}
     </form>
 </div>

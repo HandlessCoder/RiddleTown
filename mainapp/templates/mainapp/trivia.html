@@ -4,6 +4,12 @@
 {% block head %}
 <title>RiddleTown - {% trans "Jugar" %}</title>
 <link rel="stylesheet" href="{% static 'CSS/historyTrivia.css' %}"/>
+<style>
+    .upperDecorationContainer{  background-image: url("{% static category.barVector%}");}
+    .question{                  background-image: url("{% static category.questionVector%}");}
+</style>
+
+
 {% endblock %}
 
 
@@ -15,7 +21,8 @@
                 <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
             </a>
         </div>
-        <div class="decorationIconContainer"><img src="{% static 'IMG/video.png' %}" alt="Play" class="decorationIcon"/></div>
+
+        <div class="decorationIconContainer"><img src="{% static category.icon %}" alt="Play" class="decorationIcon"/></div>
         <img src="" alt=""/>
     </div>
     
