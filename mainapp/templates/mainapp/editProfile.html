@@ -15,6 +15,10 @@
             <div class="space"></div>
             <div class="mainContent">
                 <h2>{% trans "Editar perfil" %}</h2>
+                <div class="userMobile">
+                    <img src="{% static 'IMG/user.png' %}" alt="User" class="avatarMobile" id="avatarPreview"/>
+                </div>
+                <p class="textMobile">Cambiar foto de perfil</p>
                 <div class="editContainer" method="POST" enctype="multipart/form-data">
                     
                     {% csrf_token %}

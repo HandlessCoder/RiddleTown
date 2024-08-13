@@ -113,7 +113,7 @@ body{
     width: 100%;
 }
 
-@media (max-width: 1290px){
+@media (max-width: 1220px){
 
     .sidebar{
         position: absolute;
@@ -164,5 +164,17 @@ body{
         height: 5vh;
         min-width: 60px;
         min-height: 60px;
+    }
+
+    .form-container{
+        height: 80px;
+    }
+    
+    .language{
+        padding: 0;
+    }
+
+    .editOptions{
+        margin: 0 !important;
     }
 }

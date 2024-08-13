@@ -222,7 +222,7 @@ body{
     padding: 0;
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1220px) {
 
     header {
         display: flex;
