@@ -1,35 +1,51 @@
 import pytest 
 
+from faker import Faker
+from custom_faker_providers import EmailProvider
+
 from RiddleTown.wsgi import *
 
 from mainapp.models import User
 
+fake = Faker()
+fake.add_provider(EmailProvider)
+
 @pytest.mark.django_db                      #test para un usuario comun
 def test_user_creation():
     user = User.objects.create_user(
-        email ='pruebaUnitaria@gmail.com',
-        nickname ='pruebaUnitaria'
+        email =fake.custom_email(),
+        nickname =fake.first_name()
     )
-
-    assert user.nickname == 'pruebaUnitaria'
-
+    
+    print(user.nickname)
+    print(user.email)
 
 @pytest.mark.django_db                      #test para un super usuario
 def test_superuser_creation():
-    user = User.objects.create_superuser(
-        email ='pruebaSuperUsuario@gmail.com',
-        nickname ='pruebaSuperUsuario'
+    superUser = User.objects.create_superuser(
+        email =fake.custom_email(),
+        nickname =fake.first_name()
     )
 
-    assert user.is_superuser
-
+    assert superUser.is_superuser
+    print(superUser.nickname)
+    print(superUser.email)
 
 @pytest.mark.django_db                      #test para un usuario staff
 def test_staff_user_creation():
-    user = User.objects.create_user(
-        email ='pruebaUsuarioStaff@gmail.com',
-        nickname ='pruebaUsuarioStaff',
+    staffUser = User.objects.create_user(
+        email =fake.custom_email(),
+        nickname =fake.first_name(),
         is_staff =True
     )
 
-    assert user.is_staff
+    assert staffUser.is_staff
+    print(staffUser.nickname)
+    print(staffUser.email)
+
+@pytest.mark.django_db
+def test_user_creation_fail():
+    with pytest.raises(Exception):
+        User.objects.create_user(
+            nikname ='pruebaException'
+        )
