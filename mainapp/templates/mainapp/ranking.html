@@ -12,104 +12,17 @@
 <div class="main-content" id="ranking">
     
     <ol class="ranking">
-        <li>
-            <div class="namePerson">Kaveh</div>
-            <div class="points">9000 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">Rafax2002</div>
-            <div class="points">8900 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaBlaster10</div>
-            <div class="points">6500 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">HuTaoWalnut</div>
-            <div class="points">6400 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">QuizQueen</div>
-            <div class="points">6300 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">KnowItAll4Life</div>
-            <div class="points">6200 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaAddict</div>
-            <div class="points">6100 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">XiaoYaksha</div>
-            <div class="points">6000 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">Brainiac101</div>
-            <div class="points">5900 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">PuzzleProdigy</div>
-            <div class="points">5800 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaTime</div>
-            <div class="points">5700 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaGuru</div>
-            <div class="points">5600 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">KnowBrainer</div>
-            <div class="points">5500 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaChamp</div>
-            <div class="points">5400 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">RaidenShogun</div>
-            <div class="points">5300 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaFanatic</div>
-            <div class="points">5200 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">BrainWave</div>
-            <div class="points">5100 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">TriviaHunter</div>
-            <div class="points">5000 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">QuizQuest</div>
-            <div class="points">4900 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">KnowledgeSeeker</div>
-            <div class="points">4800 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">Triviaholic</div>
-            <div class="points">4700 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">AetherLumine</div>
-            <div class="points">4600 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">VentiTraveler</div>
-            <div class="points">4500 {% trans "puntos" %}</div>
-        </li>
-        <li>
-            <div class="namePerson">QuizMaster</div>
-            <div class="points">4400 {% trans "puntos" %}</div>
-        </li>
+        {% for place in ranking %}
+            <li>
+                <div class="namePerson">{{place.user.nickname}}</div>
+                <div class="points">{{place.score}} {% trans "puntos" %}</div>
+            </li>
+        {% endfor %}
     </ol>
     
-    {% include 'play_component.html' %}    
+    <a href="/">
+
+        {% include 'play_component.html' %}    
+    </a>
     </div>
 {% endblock %}

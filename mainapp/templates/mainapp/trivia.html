@@ -4,64 +4,150 @@
 {% block head %}
 <title>RiddleTown - {% trans "Jugar" %}</title>
 <link rel="stylesheet" href="{% static 'CSS/historyTrivia.css' %}"/>
-<link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
+<style>
+    .upperDecorationContainer{  background-image: url("{% static category.barVector%}");}
+    .question-notImage{                  background-image: url("{% static category.questionVector%}");}
+</style>
+<script>
+    function delayedSubmit(answerID, res){
+        openPopup();
+        openBackground();
+        stopCounter();
+        document.getElementById('selectedAnswer').value = answerID;
+        //document.getElementById('timeInput').value = document.getElementById('counter').value;
+        el = document.getElementById(answerID)
+        hermanos = el.parentElement.children
+        for (let hijo of hermanos){
+            hijo.style.backgroundColor = "#EBEBEB"
+        }
+        puntos = 0
+        if(res){
+            el.style.backgroundColor = "#8ED697"
+            puntos+=100
+            if(document.getElementById('timeInput').value>0){
+                puntos+=200
+            }
+        }else{
+            el.style.backgroundColor = "#C55052"
+        }
+        /*          llamar popoup indicando puntos                */
+        document.getElementById('popup').style.display = 'block';
+        openBackground();
+
+        setTimeout(() => { document.getElementById('triviaQuestion').submit(); }, 3000); // set timout 
+    }
+
+</script>
+
 {% endblock %}
 
 
 {% block content%}
+    <form action="." method="POST" id="triviaQuestion">
+        {% csrf_token %}
+        <div style="visibility: hidden;">
+            <div style="display: none;">
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <input type="hidden" name="category" value="{{category.name}}">
+                                            <input type="hidden" name="total" value="{{total}}">
+                                            <input type="hidden" name="done" value="{{ done }}">
+                                            <input type="hidden" name="canSkip" value="{{canSkip}}">
+                                            <input type="hidden" name="user" value="{{user}}">
+                                            <input type="hidden" id="selectedAnswer" name="selectedAnswer" value="-1">
+                                            <input type="hidden" id="timeInput" name="time" value="-1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upperDecorationContainer">
+            <div class="decorationIconContainer" id="back">
+                <a href="/">
+                    <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
+                </a>
+            </div>
+            <div class="decorationIconContainer" id="categoryLogo" ><img src="{% static category.icon %}" alt="Play" class="decorationIcon"/></div>
+            <img src="" alt=""/>
+            <div class="timer">
+                <p id="counter">30</p>
+                <img src="{% static 'IMG/reloj.png' %}">
+            </div>
+            <div class="background" id="background"></div>
+            <div class="popup" id="myPopup">
+                <h2>¡Pregunta respondida!</h2>
+                <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
+                <div class="button-container">
+                    <button class="button exit" onclick="location.href='/categories'">Salir</button>
+                    <div class="button continue"><a href="#">Continuar</a></div>
+                </div>
+            </div>
+            <div class="popup" id="popup">
+                <h2>¡Se acabo el tiempo!</h2>
+                <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
+                <div class="button-container">
+                    <button class="button exit" onclick="location.href='/categories'">Salir</button>
+                    <button class="button continue"><a href="#">Continuar</a></button>
+                </div>
+            </div>
+        </div>
 
-    <div class="upperDecorationContainer">
-        <div class="space3"></div>
-        <div class="decorationIconContainer" id="categoryLogo"><img src="{% static 'IMG/video.png' %}" alt="Play" class="decorationIcon"/></div>
-        <img src="" alt=""/>
-        <div class="timer">
-            <p id="counter">30</p>
-            <img src="{% static 'IMG/reloj.png' %}">
-        </div>
-    </div>
-    <div class="decorationIconContainer" id="back">
-        <a href="/categories">
-            <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
-        </a>
-    </div>
+        <div class="subContainer">
+            {% if trivia.questionType == 'text'%}
+                <div class="question question-notImage">
+                    <p>
+                        {{trivia.questionText}}
+                    </p>
+                </div>
+                {% elif trivia.questionType == 'audio' %}
+                <div class="question question-notImage">
+                    <p>
+                        {{trivia.questionText}}
+                    </p>
+                    <audio controls preload="auto" src= "{% static trivia.questionAudio %}">
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </div>
+                {% elif trivia.questionType == 'image' %}
+                
+                <div class="question question-notImage">
+                    <p>
+                        {{trivia.questionText}}
+                    </p>
+                    <br>
+                    <img src="{% static trivia.questionImage %}">
+                </div>
+            {% endif %}
 
-    <div class="background" id="background"></div>
-
-    <div class="popup" id="myPopup">
-        <h2>¡Pregunta respondida!</h2>
-        <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
-        <div class="button-container">
-            <button class="button exit" onclick="location.href='/categories'">Salir</button>
-            <div class="button continue"><a href="#">Continuar</a></div>
-        </div>
-    </div>
-    <div class="popup" id="popup">
-        <h2>¡Se acabo el tiempo!</h2>
-        <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
-        <div class="button-container">
-            <button class="button exit" onclick="location.href='/categories'">Salir</button>
-            <button class="button continue"><a href="#">Continuar</a></button>
-        </div>
-    </div>
-    
-    <div class="subContainer">
-        <div class="question">
-            <p>
-                ¿Cuál es el hechizo que permite a un <br >mago hacer levitar objetos en la saga <br> Harry Potter?
-            </p>
-        </div>
-    </div>
+        </div>          
 
     <div class="optionsContainer">
-        <div class="option r1" onclick="openPopup(); openBackground(); stopCounter()">Wingardium Leviosa</div>
-        <div class="option r2" onclick="openPopup(); openBackground(); stopCounter()">Accio</div>
-        <div class="option r1" onclick="openPopup(); openBackground(); stopCounter()">Expecto Patronum</div>
-        <div class="option r2" onclick="openPopup(); openBackground(); stopCounter()">Lumos</div>
+            {% for answer in answers %}
+                <div class="option" onclick="delayedSubmit('{{answer.answerID}}', {%if answer.correctAnswer == True %} true {% else %} false {% endif %} )" id = "{{answer.answerID}}">
+                    {% if answer.answerType == 'text' %}
+                        {{answer.answerText}}
+                    {% elif answer.answerType == 'image' %}
+                        <img src="{% static answer.answerImage %}">
+                    {% endif %}
+                </div>
+            {% endfor %}
     </div>
 
     <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
-    <div class="buttonPlayContainer">
-        <a href="#" class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></a>
+        {% if canSkip == 1 %}
+        <div class="buttonPlayContainer">
+            <button class="buttonPass" type="submit" onclick="document.getElementById('canSkip').value = 0"><strong>{% trans "Saltar pregunta" %}</strong></button>
+        </div>
+        {% endif %}
 
         <script>
             function openPopup() {
@@ -80,7 +166,7 @@
             let count = 30;
             const counterElement = document.getElementById('counter');
             const popup = document.getElementById('popup');
-            const background = document.getElementById('backgorund')
+            const background = document.getElementById('background')
 
             const interval = setInterval(() => {
                 count--;
@@ -88,9 +174,6 @@
                 
                 if (count === 0) {
                     clearInterval(interval);
-                    popup.style.display = 'block';
-                    openBackground();
-
                 }
             }, 1000);
 
@@ -105,6 +188,7 @@
         </script>
     </div>
 
+    </form>
 
 {% endblock %}
 

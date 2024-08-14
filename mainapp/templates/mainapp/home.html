@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n %}
+{% load static i18n  %}
 
 {% block head %}
 <title>RiddleTown</title>
@@ -45,6 +45,7 @@
             <div class="next" onclick="showAwards('instaAwards')"><a href="#" ><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
         </div>
 
+
         <div class="awards" id = instaAwards>
             <div class="prev insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
@@ -65,22 +66,17 @@
             </div>
             <div class="next insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
         </div>
+
         
         <div class="top-ranking">
             <h2>{% trans "Podio de los clasificados" %}</h2>
             <ol class="ranking">
-                <li>
-                    <div class="namePerson">Kaveh</div>
-                    <div class="points">9000 {% trans "puntos" %}</div>
-                </li>
-                <li>
-                    <div class="namePerson">Rafax2002</div>
-                    <div class="points">8900 {% trans "puntos" %}</div>
-                </li>
-                <li>
-                    <div class="namePerson">TriviaBlaster10</div>
-                    <div class="points">6500 {% trans "puntos" %}</div>
-                </li>
+                {% for place in ranking %}
+                    <li>
+                        <div class="namePerson">{{place.user.nickname}}</div>
+                        <div class="points">{{place.score}} {% trans "puntos" %}</div>
+                    </li>
+                {% endfor %}
             </ol>
             
             <div class="buttonRankingContainer">
@@ -88,20 +84,15 @@
             </div>
         </div>
 
+
         <h2 class="categ">{% trans "Categorías" %}</h2>
         <div class="category-icons">
-            <div class="category"><img src="{% static 'IMG/categories/mundo.jpg' %}" alt="World"></div>
-            <div class="category"><img src="{% static 'IMG/categories/libros.jpg' %}" alt="History"></div>
-            <div class="category"><img src="{% static 'IMG/categories/quimica.jpg' %}" alt="Science"></div>
-            <div class="category"><img src="{% static 'IMG/categories/cine.jpg' %}" alt="Cinema"><p></p></div>
-            <div class="category"><img src="{% static 'IMG/categories/musica.jpg' %}" alt="Music"></div>
-            <div class="category"><img src="{% static 'IMG/categories/futbol.jpg' %}" alt="Sport"></div>
-            <div class="category"><img src="{% static 'IMG/categories/arte.jpg' %}" alt="Art"></div>
-            <div class="category"><img src="{% static 'IMG/categories/museo.jpg' %}" alt="Museum"></div>
+            {% for categoria in categorias %}
+                <div class="category"><img src="{% static categoria.icon %}" alt="{{categoria.name}}" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
+            {% endfor %}
         </div>
-    </div>
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
-    {% include 'play_component.html' %}
+
 
     <script>
         function openPopup() {
@@ -140,6 +131,13 @@
 
 
     </script>
+
+    <form method="POST" action="play/">
+            {% csrf_token %}
+            <input type="hidden" id="selectedCategory" name="category">
+            {% include 'play_component.html' %}
+    </form>
+
 </div>
 
 {% endblock %}
