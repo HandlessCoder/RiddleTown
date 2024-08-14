@@ -142,6 +142,20 @@ p{
     font-size: 1.2rem;
 }
 
+.section{
+    background-color: #efefef;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 10%;
+    margin-bottom: 45%;
+
+}
+#errorText{
+    margin-bottom: 5%;
+}
+
 @media (max-width: 1220px){
 
 
@@ -153,6 +167,8 @@ p{
     p{
         font-size: 1rem;
         margin-bottom: 4px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .text{

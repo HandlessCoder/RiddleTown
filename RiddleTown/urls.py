@@ -40,7 +40,7 @@ urlpatterns = [
     path('ranking/', views.ranking),
     path('play/', views.play),
     path('categories/', views.categories),
-    path('error404/', views.error404),
+    path('error400/', views.error400),
     
     
     

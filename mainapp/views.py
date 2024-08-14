@@ -11,20 +11,14 @@ from django.utils import timezone
 # Create your views here.
 
 def mainpage(request):
-    if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde el home")
-
     ranking = Ranking.objects.order_by('-score').all()[:3]
     categorias = list(Category.objects.values())
     context = {
         "categorias" : categorias,
         "ranking" : ranking
     }
-    
     return render(request,'mainapp/home.html', context=context)
 
-# def prueba(request):
-    # return render(request,'mainapp/prueba.html')
 
 def login(request):
     return render(request,'login.html')
@@ -82,8 +76,8 @@ def help(request):
 def configuration(request):
     return render(request,'mainapp/configuration.html')
 
-def error404(request):
-    return render(request,'mainapp/error404.html')
+def error400(request):
+    return render(request,'mainapp/error400.html')
 
 def ranking(request):
     ranking = Ranking.objects.order_by('-score').all()[:15]
@@ -207,9 +201,8 @@ def play(request):
             return HttpResponseRedirect('/ranking/')
                 #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
               
-
-    #debería retornarse una págian de error 404
-    return render(request,'mainapp/trivia.html')
+    #debería retornarse una págian de error 400
+    return HttpResponseRedirect('/error400/')
 
 def categories(request):
     if(request.method == 'POST'):
