@@ -29,7 +29,7 @@
         }
         /*          llamar popoup indicando puntos                */
 
-        setTimeout(() => { document.getElementById('triviaQuestion').submit(); }, 5000); // set timout 
+        setTimeout(() => { document.getElementById('triviaQuestion').submit(); }, 3000); // set timout 
     }
 
 </script>
@@ -49,10 +49,11 @@
                                 <div>
                                     <div>
                                         <div>
+                                            <input type="hidden" name="category" value="{{category.name}}">
                                             <input type="hidden" name="total" value="{{total}}">
                                             <input type="hidden" name="done" value="{{ done }}">
                                             <input type="hidden" name="canSkip" value="{{canSkip}}">
-                                            <input type="hidden" name="user" value="{{user.id}}">
+                                            <input type="hidden" name="user" value="{{user}}">
                                             <input type="hidden" id="selectedAnswer" name="selectedAnswer" value="-1">
                                             <input type="hidden" id="timeInput" name="time" value="-1">
                                         </div>
@@ -116,10 +117,11 @@
         </div>
 
         <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
+        {% if canSkip == 1 %}
         <div class="buttonPlayContainer">
-            <button {% if canSkip == False %} disabled{% endif %} class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></button>
+            <button class="buttonPass" type="submit" onclick="document.getElementById('canSkip').value = 0"><strong>{% trans "Saltar pregunta" %}</strong></button>
         </div>
-
+        {% endif %}
     </form>
 
 {% endblock %}
