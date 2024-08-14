@@ -24,7 +24,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 50vh;
-    height: 60vh;
+    height: 68vh;
     margin: auto;
 }
 
@@ -135,11 +135,11 @@ a{
     .card{
         background-size: 130% 30%;
         background-position-x: -3.8vh;
-        background-position-y: 46vh;
+        background-position-y: 52.5vh;
         padding-bottom: 0;
         width: 60vw;
         min-width: 270px;
-        height: 60vh;
+        height: 69vh;
         max-width: 393px;
     }
     

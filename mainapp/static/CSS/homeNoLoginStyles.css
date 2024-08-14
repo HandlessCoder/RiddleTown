@@ -115,7 +115,7 @@ header {
     margin-bottom: 20px;
     background-image: url(../IMG/VectorFigma.png);
     background-repeat: no-repeat;
-    background-size: 113.8% 113%;
+    background-size: 114.5% 113%;
     background-position-x: -5vw;
     display: flex;
     justify-content: space-between;
@@ -256,6 +256,7 @@ ol{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-align: center;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .buttonPlayContainer{
@@ -354,21 +355,21 @@ ol{
     font-size: 0.9rem;
     z-index: 100;
     max-width: 30%;
-  }
+}
 
-  h2{
+h2{
     font-size: 1.25rem;
-  }
+}
 
-  h3{
+h3{
     font-size: 1.10rem;
-  }
+}
 
-  p{
+p{
     font-size: 1rem;
-  }
+}
 
-  .close {
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -378,14 +379,14 @@ ol{
     border-radius: 50%;
     padding: 5px;
     border: none;
-  }
+}
   
-  .close:hover {
+.close:hover {
     background-color: #d32f2f;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  .background{
+.background{
     display: none;
     position: fixed;
     top: -20%;
@@ -393,33 +394,34 @@ ol{
     width: 100%;
     z-index: 50;
     background-color: hsla(280, 100%, 5%, 0.6);
+}
 
-    }
+.categ{
+    padding-left: 5%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
-    .categ{
-        padding-left: 5%;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
+#instaAwards{
+    display: none;
+}
 
-    #instaAwards{
-        display: none;
-    }
+.awards div { 
+    transition: transform 0.5s ease-in-out; 
+}
 
-    .awards div { 
-        transition: transform 0.5s ease-in-out; 
-      }
-
-      .textAward p{
-        text-align: center;
-    }
-
-    
+.textAward p{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2em;
+}
 
 @media (max-width: 1220px) {
 
     .awards{
         height: 170px;
+        background-size: 114% 112.5%;
+        background-position-x: -6vw;
     }
 
     #instaAwards .premioFisico {
@@ -532,7 +534,6 @@ ol{
         height: 100%;
         z-index: 100;
         background-color: hsla(280, 100%, 5%, 0.6);
-
     }
 
     .backgroundOpacity.active{
@@ -549,7 +550,6 @@ ol{
         left: 0;
         display: flex;
         position: fixed;
-        
     }
 
     .main-content {
@@ -607,7 +607,6 @@ ol{
         min-width: 150px;
         max-width: 160px;
         max-height: 150px;
-
     }
 
     .lineLogo{
@@ -645,17 +644,17 @@ ol{
 
     .popup {
         max-width: 50%;
-      }
+    }
 
-      .buttonPlay{
+    .buttonPlay{
         width: 60px;
-      }
+        margin-bottom: 10px;
+    }
       
-      .popup{
+    .popup{
         left:50% !important;
     }
 }
-
 
 @media (max-width: 400px) {
 
@@ -680,4 +679,7 @@ ol{
         font-size: .6em !important;
     }
 
+    .buttonPlay{
+        margin-bottom: 10px;
+    }
 }
