@@ -198,13 +198,12 @@ def play(request):
 
 def categories(request):
     if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde home")
-
-
-
-
+        search = request.POST.get('search')
+        
+        categorias = list(Category.objects.filter(name__contains=search).values())
+    else:
+        categorias = list(Category.objects.values())
     
-    categorias = list(Category.objects.values())
     context = {
         "categorias" : categorias
     }

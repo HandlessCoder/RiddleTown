@@ -10,15 +10,17 @@
 
 {% block content%}
     {% include 'back_component.html' %}
-
-    <div class="searchBar">
-        <div class="searchInputContainer">
-            <input type="text" placeholder="{% trans 'Buscar categoría' %}">
-            <button type="submit">
-                <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
-            </button>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="searchBar">
+            <div class="searchInputContainer">
+                <input type="text" placeholder="{% trans 'Buscar categoría' %}" name="search">
+                <button type="submit">
+                    <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
+                </button>
+            </div>
         </div>
-    </div>
+    </form>
 
     <div class="main-content">
         <div class="categories">
