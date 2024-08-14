@@ -119,3 +119,7 @@ input[type="text"] {
 .premio{
     text-decoration: underline;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

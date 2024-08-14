@@ -110,3 +110,7 @@ body{
 .incorrect{
     background-color: #C92B2B73;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

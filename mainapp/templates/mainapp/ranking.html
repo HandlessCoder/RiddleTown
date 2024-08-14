@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block content%}
-<div class="main-content">
+{% include 'back_component.html' %}
+<div class="main-content" id="ranking">
+    
     <ol class="ranking">
         {% for place in ranking %}
             <li>

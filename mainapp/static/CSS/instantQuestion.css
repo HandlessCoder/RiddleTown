@@ -115,3 +115,7 @@ body{
 .correct{
     background-color: #49A74873;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

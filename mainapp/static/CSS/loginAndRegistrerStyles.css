@@ -24,7 +24,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 50vh;
-    height: 60vh;
+    height: 68vh;
     margin: auto;
 }
 
@@ -122,3 +122,29 @@ a{
     text-decoration: none;
 }
 
+.lineMenuContainer{
+    width: 70%;
+}
+
+
+@media (max-width: 1220px) {
+    body{
+        background-image: none;
+    }
+
+    .card{
+        background-size: 130% 30%;
+        background-position-x: -3.8vh;
+        background-position-y: 52.5vh;
+        padding-bottom: 0;
+        width: 60vw;
+        min-width: 270px;
+        height: 69vh;
+        max-width: 393px;
+    }
+    
+    .logo img{
+        min-width: 120px;
+        min-height: 95px;
+    }
+}

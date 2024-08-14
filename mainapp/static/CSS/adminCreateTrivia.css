@@ -427,3 +427,7 @@ input[type="text"] {
 .typeQuestion{
     margin-right: 6vh;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}
