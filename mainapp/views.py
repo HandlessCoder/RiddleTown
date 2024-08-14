@@ -21,7 +21,6 @@ def mainpage(request):
         "ranking" : ranking
     }
     
-    
     return render(request,'mainapp/home.html', context=context)
 
 # def prueba(request):
@@ -44,14 +43,39 @@ def profile(request):
         "premios" : premios
     }
     
-    
-    
     return render(request,'mainapp/profile.html', context = context)
 
 def edit_profile(request):
-
-    return render(request,'mainapp/editProfile.html', context = context)
-
+    user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
+    
+    if(request.method == "POST"):
+        nickname = request.POST.get('nickname')
+        country = request.POST.get('country')
+        estate = request.POST.get('estate')
+        address = request.POST.get('address')
+        
+        if nickname != None and user.nickname != nickname:
+            user.nickname = nickname
+        if country != None and user.country != country:
+            user.country = country
+        if estate != None and user.estate != estate:
+            user.estate = estate
+        if address != None and user.address != address:
+            user.address = address
+        user.save()
+        return HttpResponseRedirect('/profile/')
+        
+    else:
+        countries = User.objects.values_list("country",flat=True).distinct()
+        estates = User.objects.values_list("estate",flat=True).distinct()
+        context = {
+            "user" : user,
+            "countries" : countries,
+            "estates" : estates        
+        }
+        return render(request,'mainapp/editProfile.html', context = context)
+        
+    
 def help(request):
     return render(request,'mainapp/help.html')
 
@@ -74,8 +98,6 @@ def play(request):
     if(request.method == 'POST'):
         #se envía un mensaje de prueba a la consola del backend por motivos de prueba
         # print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde Categorías")
-        
-
         
         
         #se leen los parámetros enviados por el post
@@ -180,31 +202,7 @@ def play(request):
                 
             return HttpResponseRedirect('/ranking/')
                 #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
-                
-                
-       
-                
-            
-            
-                    
-            
-            
-        
-        
-        
-        
-        # else:
-        #     print(f"El id de la respuesta seleccionada es: {selectedAnswer}")
-            # print("pues sí, en efecto funciona")
-            
-            
-            
-            
-    
-    
-    
-    
-    
+              
 
     #debería retornarse una págian de error 404
     return render(request,'mainapp/trivia.html')
@@ -220,9 +218,6 @@ def categories(request):
     context = {
         "categorias" : categorias
     }
-    
-    
-    
     
     return render(request,'mainapp/categories.html', context = context)
 
