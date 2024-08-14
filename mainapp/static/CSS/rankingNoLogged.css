@@ -8,7 +8,7 @@ body{
 }
 
 .sidebar{
-    width: 20vw;
+    width: 20%;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,11 @@ body{
     background-size: 113.8% 113%;
     background-position-x: 6vw;
     background-position-y: -3vw;
+}
+
+.sideImages{
+    width: 4.7vh;
+    margin-right: 1.5vh;
 }
 
 .sidebar .logo{
@@ -33,13 +38,14 @@ body{
 .lineLogo{
     background-color: #f35e3d;
     padding: 1px;
-    width: 12.5vw;
+    margin-top: 10px;
+    width: 13.5vw;
 }
 
 .lineMenu{
     background-color: #f35e3d;
     padding: 1px;
-    width: 100%;
+    width: 13.5vw;
 }
 
 .sidebar ul{
@@ -86,7 +92,7 @@ ol{
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
-    width: 10%;
+    width: 15%;
     font-size: 1.2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-align: center;
@@ -119,7 +125,7 @@ ol{
 
 .optionLink{
     display: flex;
-    margin-top: 1vh;
+    margin-top: 5px;
 }
 
 .goBack{

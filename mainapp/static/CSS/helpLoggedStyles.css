@@ -27,7 +27,7 @@ body{
 }
 
 .sidebar .logo img{
-    width: 13vw;
+    width: 13.5vw;
 }
 
 .lineLogo{
@@ -75,7 +75,7 @@ body{
     color: #1D3D59;
     padding: 10px 20px;
     border-radius: 50px;
-    width: 10%;
+    width: 15%;
     font-size: 1.2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-decoration: none;
