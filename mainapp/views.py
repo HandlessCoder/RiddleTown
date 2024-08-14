@@ -1,4 +1,4 @@
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
@@ -34,7 +34,7 @@ def register(request):
     return render(request,'register.html')
 
 def profile(request):
-    return render(request,'mainapp/Profile.html')
+    return render(request,'mainapp/profile.html')
 
 def edit_profile(request):
     return render(request,'mainapp/editProfile.html')
@@ -165,8 +165,7 @@ def play(request):
                     
                 
                 
-                
-            return profile(request)
+            return HttpResponseRedirect('/profile/')
                 #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
                 
                 
