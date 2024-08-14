@@ -248,17 +248,35 @@ a{
 }
 
 
+.upperDecorationContainer{
+    display: flex;
+    width: 100%;
+}
+
 
 .option:hover{
     cursor: pointer;
 }
 
-.timer{
-    position: absolute;
-    right: 2vw;
-    margin-top: 2vh;
+.space3{
+    width: 30%;
+}
+
+#categoryLogo{
+    width: 40%;
     display: flex;
     justify-content: center;
+}
+
+.decorationIcon{
+    margin-left: 10px;
+}
+
+.timer{
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: end;
     align-items: center;
 }
 
