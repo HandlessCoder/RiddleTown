@@ -59,8 +59,10 @@ def ranking(request):
 
 def play(request):
     if(request.method == 'POST'):
+        #se envía un mensaje de prueba a la consola del backend por motivos de prueba
         print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde Categorías")
         
+        #se leen los parámetros enviados por el post
         category = Category.objects.filter(name= request.POST.get('category')).first()
         total = request.POST.get('total')
         done = request.POST.get('done')
@@ -69,25 +71,23 @@ def play(request):
         time = request.POST.get('time')
         selectedAnswer = request.POST.get('selectedAnswer')
         
-        
+        #se valida el cumplimiento de las condiciones para que sea la primera pregunta que se está jugando
         if category != None and total == None and done == None and canSkip == None and user == None and time == None:
-            
-            
+            #se inicializan las variables necesarias
             total = 0
             done = []
             canSkip = 1
             user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
             time = 30
             
-            
-            
-            
+            #se establece cuál es la pregunta y cuáles son sus respuestas            
             trivias = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).all()
             trivia = random.choice(list(trivias))
             done.append(trivia.triviaID)
             done = reduce(lambda x, y: x+","+y, done)
             answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
             
+            #se empaqueta todo el contexto que se enviará al template del front
             context = {
                 "category" : category,
                 "total" : total,
@@ -99,17 +99,49 @@ def play(request):
                 "answers" : answers
             }
             
+            # print(category)
+            # print(total)
+            # print(done)
+            # print(canSkip)
+            # print(user)
+            # print(time)
+            # print(trivia)
+            # print(answers)
             
-            
-            print(category)
-            print(total)
-            print(done)
-            print(canSkip)
-            print(user)
-            print(time)
-            print(trivia)
-            print(answers)
+            #se retorna el renderizado del front con el contexto requerido
             return render(request,'mainapp/trivia.html', context = context)
+        
+        elif category != None and total != None and done != None and canSkip != None and user != None and time != None and selectedAnswer != None:
+            #se inicializan las variables necesarias
+            
+            done = done.split(',')
+            canSkip = 1
+            user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
+            time = 30
+            
+            #se establece cuál es la pregunta y cuáles son sus respuestas            
+            trivias = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).all()
+            trivia = random.choice(list(trivias))
+            done.append(trivia.triviaID)
+            done = reduce(lambda x, y: x+","+y, done)
+            answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
+            
+            #se empaqueta todo el contexto que se enviará al template del front
+            context = {
+                "category" : category,
+                "total" : total,
+                "done" : done,
+                "canSkip" : canSkip,
+                "user" : user,
+                "time" : time,
+                "trivia" : trivia,
+                "answers" : answers
+            }
+        
+        
+        
+        
+        
         else:
             print(f"El id de la respuesta seleccionada es: {selectedAnswer}")
             # print("pues sí, en efecto funciona")

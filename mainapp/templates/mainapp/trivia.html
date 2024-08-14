@@ -9,9 +9,26 @@
     .question-notImage{                  background-image: url("{% static category.questionVector%}");}
 </style>
 <script>
-    function delayedSubmit(answerID){
+    function delayedSubmit(answerID, res){
         document.getElementById('selectedAnswer').value = answerID;
-        document.getElementById('timeInput').value = document.getElementById('counter').value;
+        //document.getElementById('timeInput').value = document.getElementById('counter').value;
+        el = document.getElementById(answerID)
+        hermanos = el.parentElement.children
+        for (let hijo of hermanos){
+            hijo.style.backgroundColor = "#EBEBEB"
+        }
+        puntos = 0
+        if(res){
+            el.style.backgroundColor = "#8ED697"
+            puntos+=100
+            if(document.getElementById('timeInput').value>0){
+                puntos+=200
+            }
+        }else{
+            el.style.backgroundColor = "#C55052"
+        }
+        /*          llamar popoup indicando puntos                */
+
         setTimeout(() => { document.getElementById('triviaQuestion').submit(); }, 5000); // set timout 
     }
 
@@ -87,7 +104,7 @@
         </div>
         <div class="optionsContainer">
             {% for answer in answers %}
-                <div class="option" onclick="delayedSubmit('{{answer.answerID}}')">
+                <div class="option" onclick="delayedSubmit('{{answer.answerID}}', {%if answer.correctAnswer == True %} true {% else %} false {% endif %} )" id = "{{answer.answerID}}">
                     {% if answer.answerType == 'text' %}
                         {{answer.answerText}}
                     {% elif answer.answerType == 'image' %}
@@ -100,7 +117,7 @@
 
         <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
         <div class="buttonPlayContainer">
-            <a href="#" class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></a>
+            <button {% if canSkip == False %} disabled{% endif %} class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></button>
         </div>
 
     </form>
