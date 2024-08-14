@@ -24,16 +24,25 @@ class CategoryTests(TestCase):
         self.client = Client()
 
     def test_load(self):
+        print(f"------------------------ Test: Carga de Interfaz Categoría ------------------------")
         response = self.client.get("/categories/")
+        print(f"Expected Status Code: 200")
+        print(f"Actual Status Code: {response.status_code}")
         self.assertEqual(response.status_code, 200) #Prueba que la página cargue
+        print(f"Verified\n")
 
     def test_quantity(self):
+        print(f"------------------------ Test: Cantidad dinámica de Categorías ------------------------")
         response = self.client.get("/categories/")
         expectedCategoriesCount = len(self.categories)
         renderedCategories = response.content.count(b'<div class="category">')
+        print(f"Expected Categories Count: {expectedCategoriesCount}")
+        print(f"Actual Categories Count: {renderedCategories}")
         self.assertEqual(expectedCategoriesCount, renderedCategories)
+        print(f"Verified\n")
 
     def test_names(self):
+        print(f"------------------------ Test: Contención de nombres de Categorías ------------------------")
         response = self.client.get("/categories/")
         #Prueba que los nombres de las categorías estén en la página
         for category in self.categories:
@@ -41,6 +50,7 @@ class CategoryTests(TestCase):
         self.assertNotContains(response, 'Musica')
         self.assertNotContains(response, 'categoria')
         self.assertNotContains(response, '¡jugar!')
+        print(f"Verified\n")
 
     def hexToRGB(self, hexColor):
         hexColor = hexColor.lstrip('#')
@@ -52,6 +62,7 @@ class CategoryTests(TestCase):
         return s[0].lower() + ''.join(word.capitalize() for word in s[1:])
 
     def test_colors(self):
+        print(f"------------------------ Test: Colores de vectores de Categorías ------------------------")
         for category in self.categories:
             #print(f"Category: {category.name}")
 
@@ -60,16 +71,17 @@ class CategoryTests(TestCase):
             rgbTuple = self.hexToRGB(colorHex)
             #print(f"rgbTuple: {rgbTuple}")
             rgbArray = np.array([rgbTuple])
-            #print(f"Expected RGB: {rgbArray}")
+            print(f"Expected RGB: {rgbArray}")
 
             categoryCamel = self.toCamelCase(category.name)
             urlImage = f'mainapp/static/Trivias/{categoryCamel}/{categoryCamel}Icon.png'
             img = Image.open(urlImage)
             pixel = img.getpixel((156, 226)) #Pixel céntrico para todos los vectores
             rgbPixel = np.array([pixel[:3]]) #Ignora el canal alfa
-            #print(f"Actual RGB from image: {rgbPixel}")
+            print(f"Actual RGB from image: {rgbPixel}")
 
             self.assertTrue(np.array_equal(rgbPixel, rgbArray))
+            print(f"Verified\n")
 
 
 """
@@ -104,21 +116,24 @@ class PostMethodTests(TestCase):
 class RankingTests(TestCase):
 
     def setUp(self):
-        User.objects.create(email='Ayaka')
-        User.objects.create(email='Hu Tao')
-        User.objects.create(email='Shogun')
+        User.objects.create(email='ayaka@gmail.com')
+        User.objects.create(email='HuTao@liyue.com')
+        User.objects.create(email='Shogun@archon.com')
         self.users = User.objects.all()
         Ranking.objects.create(user=self.users[0], score='8600')
         Ranking.objects.create(user=self.users[1], score='8800')
         Ranking.objects.create(user=self.users[2], score='8700')
         self.rankings = Ranking.objects.all()
-        print(self.rankings)
         self.client = Client()
 
     def test_rankingOrder(self):
+        print(f"------------------------ Test: Ordenamiento del Ranking ------------------------")
+        print(f"Users inserted: {self.users}")
+        print(f"Users inserted: {self.rankings}")
         self.assertEqual(self.rankings[0].user.email, self.users[1].email)
         self.assertEqual(self.rankings[1].user.email, self.users[2].email)
         self.assertEqual(self.rankings[2].user.email, self.users[0].email)
+        print(f"Verified\n")
 
 
 class PlayTests(TestCase):
@@ -130,7 +145,7 @@ class PlayTests(TestCase):
         Category.objects.create(name='Música')
         self.categories = Category.objects.all()
 
-        self.user = User.objects.create(email='Ayaka')
+        self.user = User.objects.create(email='ayaka@gmail.com')
 
         Trivia.objects.create(triviaID='T1', category=self.categories[0], questionText='¿Quién es mangaka de Pandora Hearts?')
         Trivia.objects.create(triviaID='T2', category=self.categories[1], questionText='¿Cuál es el instrumento principal de una banda de rock?')
@@ -145,12 +160,15 @@ class PlayTests(TestCase):
         self.ranking = Ranking.objects.create(user=self.user, score=200)
         
     def test_categorySelection(self):
+        print(f"------------------------ Test: Categoría seleccionada al jugar ------------------------")
         response1 = self.client.post(reverse(views.play), {'category': 'Arte'})
         self.assertEqual(response1.context['category'].name, self.categories[0].name)
         response2 = self.client.post(reverse(views.play), {'category': 'Música'})
         self.assertEqual(response2.context['category'].name, self.categories[1].name)
+        print(f"Verified\n")
     
     def test_categoryQuestion(self):
+        print(f"------------------------ Test: Trivia desplegada al jugar ------------------------")
         response = self.client.post('/play/', {'category': self.categories[0].name})
         self.assertIn('trivia', response.context)
         trivia = response.context['trivia']
@@ -162,8 +180,10 @@ class PlayTests(TestCase):
         trivia2 = response2.context['trivia']
         print(f"La trivia es: {trivia2.questionText}")
         self.assertNotEqual(trivia2.category.name, self.categories[0].name)
+        print(f"Verified\n")
 
     def test_correctAnswerWithTime(self):
+        print(f"------------------------ Test: Puntaje de respuesta correcta con bono de tiempo ------------------------")
         time = 0.5
         data = {
             'category': self.categories[0].name,
@@ -175,11 +195,16 @@ class PlayTests(TestCase):
             'selectedAnswer': 'A1',
         }
         response = self.client.post(reverse(views.play), data)
+        print(f"Expected Score: 300")
+        print(f"Actual Score: {response.context['total']}")
         #self.assertIn('total', response.context)
         self.assertEqual(response.context['total'], 300)
         self.assertNotEqual(response.context['total'], 100)
+        print(f"Verified\n")
+        
 
     def test_correctAnswerWithoutTime(self):
+        print(f"------------------------ Test: Puntaje de respuesta correcta sin bono de tiempo ------------------------")
         time = 0
         data = {
             'category': self.categories[0].name,
@@ -191,9 +216,12 @@ class PlayTests(TestCase):
             'selectedAnswer': 'A1',
         }
         response = self.client.post(reverse(views.play), data)
+        print(f"Expected Score: 100")
+        print(f"Actual Score: {response.context['total']}")
         #self.assertIn('total', response.context)
         self.assertEqual(response.context['total'], 100)
         self.assertNotEqual(response.context['total'], 300)
+        print(f"Verified\n")
 
     """
     # No suma correctamente el puntaje
