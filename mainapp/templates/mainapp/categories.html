@@ -23,7 +23,10 @@
     <div class="main-content">
         <div class="categories">
             {% for categoria in categorias %}
-                <div class="category"> {{categoria.name}}  <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
+                <div class="category">
+                    {{categoria.name}}  
+                    <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'">
+                </div>
             {% endfor %}
 
             
