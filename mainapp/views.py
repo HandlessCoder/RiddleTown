@@ -3,6 +3,8 @@ from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
 from .models import Category, Ranking, User, Trivia, Answer
+import random
+from functools import reduce
 
 # Create your views here.
 
@@ -65,16 +67,25 @@ def play(request):
         canSkip = request.POST.get('canSkip')
         user = request.POST.get('user')
         time = request.POST.get('time')
+        selectedAnswer = request.POST.get('selectedAnswer')
         
         
         if category != None and total == None and done == None and canSkip == None and user == None and time == None:
+            
+            
             total = 0
             done = []
             canSkip = 1
             user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
             time = 30
             
-            trivia = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).first()
+            
+            
+            
+            trivias = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).all()
+            trivia = random.choice(list(trivias))
+            done.append(trivia.triviaID)
+            done = reduce(lambda x, y: x+","+y, done)
             answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
             
             context = {
@@ -87,6 +98,9 @@ def play(request):
                 "trivia" : trivia,
                 "answers" : answers
             }
+            
+            
+            
             print(category)
             print(total)
             print(done)
@@ -95,12 +109,13 @@ def play(request):
             print(time)
             print(trivia)
             print(answers)
-            
+            return render(request,'mainapp/trivia.html', context = context)
+        else:
+            print(f"El id de la respuesta seleccionada es: {selectedAnswer}")
             # print("pues sí, en efecto funciona")
             
             
             
-            return render(request,'mainapp/trivia.html', context = context)
             
     
         # if request.POST.get('category') != None and request.POST.get('total') != None and request.POST.get('done') != None and request.POST.get('canSkip') != None and request.POST.get('playerId') != None and request.POST.get('time') != None:
