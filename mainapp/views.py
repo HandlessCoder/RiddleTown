@@ -14,13 +14,11 @@ def mainpage(request):
     if(request.method == 'POST'):
         print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde el home")
 
-        
-
-
-    
+    ranking = Ranking.objects.order_by('-score').all()[:3]
     categorias = list(Category.objects.values())
     context = {
-        "categorias" : categorias
+        "categorias" : categorias,
+        "ranking" : ranking
     }
     
     
