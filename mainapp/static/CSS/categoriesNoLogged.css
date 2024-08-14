@@ -223,6 +223,33 @@ body{
 }
 
 @media (max-width: 1220px) {
+    .categories{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .category{
+        background-color: #efefef;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+        margin: 1.5vw;
+        width: 12vw;
+        height: 12vw;
+        min-width: 80px;
+    }
+    /*.category:hover{
+        background-color: #ddd;
+    }*/
+    
+    .categoryImage{
+        width: 100% !important;
+        height: 90% !important;
+        border-radius: 10px;
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);*/
+    }
+    
+}
+
+@media (max-width: 650px) {
 
     header {
         display: flex;

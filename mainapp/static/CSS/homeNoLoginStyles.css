@@ -125,6 +125,7 @@ header {
     margin-right: 5%;
     margin-top: 1%;
     margin-bottom: 1%;
+    transition:  0.5s ease-in-out;
 }
 
 .premioFisico{
@@ -336,14 +337,14 @@ ol{
 }
 
 .next img{
-    margin-left: 9vw;
+    margin-left: 2vw;
 }
 
 .popup {
     display: none;
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: calc(50% + 20vh);
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: #fff;
@@ -393,20 +394,47 @@ ol{
     z-index: 50;
     background-color: hsla(280, 100%, 5%, 0.6);
 
-}
+    }
 
-.prev, .next{
-    display: none;
-}
+    .categ{
+        padding-left: 5%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 
-.categ{
-    padding-left: 5%;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
+    #instaAwards{
+        display: none;
+    }
 
+    .awards div { 
+        transition: transform 0.5s ease-in-out; 
+      }
+
+      .textAward p{
+        text-align: center;
+    }
+
+    
 
 @media (max-width: 1220px) {
+
+    .awards{
+        height: 170px;
+    }
+
+    #instaAwards .premioFisico {
+
+        margin-top: 1vh;
+    }
+
+    .prev img, .next img{
+        width: 4vh;
+        margin-top: 9vh;
+    }
+    
+    .next img{
+        margin-left: 0;
+    }
 
     div{
         font-size: 0.9rem;
@@ -419,6 +447,12 @@ ol{
 
     li{
         font-size: .8em;
+    }
+
+    .textAward p{
+        margin: 0%;
+        text-align: center;
+        font-size: 0.7rem;
     }
 
     .buttonRanking{
@@ -475,10 +509,6 @@ ol{
         justify-content: space-between;
         padding: 10px;
         width: 90%;
-    }
-
-    .prev, .next{
-        display: none;
     }
 
     header {
@@ -575,6 +605,9 @@ ol{
         margin-left: 5vw;
         min-height: 150px;
         min-width: 150px;
+        max-width: 160px;
+        max-height: 150px;
+
     }
 
     .lineLogo{
@@ -617,4 +650,34 @@ ol{
       .buttonPlay{
         width: 60px;
       }
+      
+      .popup{
+        left:50% !important;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .popup{
+        left:50% !important;
+    }
+
+    .prev, .next{
+        width: 2vh;
+    }
+
+    div{
+        font-size: 0.6rem !important;
+    }
+
+    h2{
+        font-size: 1.30rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    li{
+        font-size: .6em !important;
+    }
+
 }

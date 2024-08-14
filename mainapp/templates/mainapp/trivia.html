@@ -11,13 +11,36 @@
 {% block content%}
 
     <div class="upperDecorationContainer">
-        <div class="decorationIconContainer">
-            <a href="/categories">
-                <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
-            </a>
-        </div>
         <div class="decorationIconContainer"><img src="{% static 'IMG/video.png' %}" alt="Play" class="decorationIcon"/></div>
         <img src="" alt=""/>
+        <div class="timer">
+            <p id="counter">30</p>
+            <img src="{% static 'IMG/reloj.png' %}">
+        </div>
+    </div>
+    <div class="decorationIconContainer" id="back">
+        <a href="/categories">
+            <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
+        </a>
+    </div>
+
+    <div class="background" id="background"></div>
+
+    <div class="popup" id="myPopup">
+        <h2>¡Pregunta respondida!</h2>
+        <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
+        <div class="button-container">
+            <button class="button exit" onclick="location.href='/categories'">Salir</button>
+            <div class="button continue"><a href="#">Continuar</a></div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <h2>¡Se acabo el tiempo!</h2>
+        <p>¡Has obtenido los siguiente puntos!<br>Total: 0 puntos</p>
+        <div class="button-container">
+            <button class="button exit" onclick="location.href='/categories'">Salir</button>
+            <button class="button continue"><a href="#">Continuar</a></button>
+        </div>
     </div>
     
     <div class="subContainer">
@@ -29,15 +52,56 @@
     </div>
 
     <div class="optionsContainer">
-        <div class="option r1"><a href="historyTriviaCorrect.html">Wingardium Leviosa</a></div>
-        <div class="option r2"><a href="historyTriviaIncorrect.html">Accio</a></div>
-        <div class="option r1">Expecto Patronum</div>
-        <div class="option r2">Lumos</div>
+        <div class="option r1" onclick="openPopup(); openBackground(); stopCounter()">Wingardium Leviosa</div>
+        <div class="option r2" onclick="openPopup(); openBackground(); stopCounter()">Accio</div>
+        <div class="option r1" onclick="openPopup(); openBackground(); stopCounter()">Expecto Patronum</div>
+        <div class="option r2" onclick="openPopup(); openBackground(); stopCounter()">Lumos</div>
     </div>
 
     <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
     <div class="buttonPlayContainer">
         <a href="#" class="buttonPass"><strong>{% trans "Saltar pregunta" %}</strong></a>
+
+        <script>
+            function openPopup() {
+              document.getElementById("myPopup").style.display = "block";
+            }
+            function closePopup() {
+              document.getElementById("myPopup").style.display = "none";
+            }
+            function openBackground() {
+              document.getElementById("background").style.display = "block";
+            }
+            function closeBackground() {
+              document.getElementById("background").style.display = "none";
+            }
+
+            let count = 30;
+            const counterElement = document.getElementById('counter');
+            const popup = document.getElementById('popup');
+            const background = document.getElementById('backgorund')
+
+            const interval = setInterval(() => {
+                count--;
+                counterElement.textContent = count;
+                
+                if (count === 0) {
+                    clearInterval(interval);
+                    popup.style.display = 'block';
+                    openBackground();
+
+                }
+            }, 1000);
+
+            function stopCounter() {
+                clearInterval(interval);
+            }
+
+            function closePopup() {
+                popup.style.display = 'none';
+            }
+
+        </script>
     </div>
 
 

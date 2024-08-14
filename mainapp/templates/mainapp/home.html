@@ -12,8 +12,24 @@
 
 <div class="main-content">
     <div class="content">
-        <div class="awards">
-            <div class="prev"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
+        <div class="background" id="background"></div>
+
+        <div class="popup" id="myPopup">
+            <h2>Premios de la temporada</h2>
+            <h3>¡Gana premios emocionantes con nuestro sistema de trivias!</h3>
+            <p>Pon a prueba tus conocimientos y diviértete mientras acumulas puntos para obtener premios increíbles. En cada trivia que completes, sumarás puntos que te acercarán a la cima del ranking. Al final de la temporada, los 3 mejores jugadores serán recompensados con premios que te dejarán sin aliento. ¡Gana puntos!</p>
+            <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
+          </div>
+
+        <div class="popup" id="myPopup2">
+            <h2>Premios de la temporada</h2>
+            <h3>¡Emoción instantánea con nuestros premios sorpresa!</h3>
+            <p>Prepárate para una experiencia llena de sorpresas y adrenalina. Mientras juegas tus trivias favoritas, tendrás la oportunidad de ganar premios instantáneos en cualquier momento. ¡Sí, como lees!</p>
+            <button class="close" onclick="closePopup2(); closeBackground()">&times;</button>
+          </div>
+          
+        <div class="awards" id="tempAwards">
+            <div class="prev" onclick="showAwards('instaAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
                 <img src="{% static 'IMG/premiosFisicos.png' %}" alt="Premio físico"/>
             </div>
@@ -23,12 +39,33 @@
                 <div class="awardPosition"><strong>{% trans "Segundo lugar" %}: Teclado mecánico</strong></div>
                 <div class="awardPosition"><strong>{% trans "Tercer lugar" %}: Mouse</strong></div>
                 <div class="buttonAwardsContainer">
-                    <a href="#" class="buttonAwards">{% trans "Ver más" %}</a>
+                    <a href="#" class="buttonAwards" onclick="openPopup(); openBackground()">{% trans "Ver más" %}</a>
                 </div>
             </div>
-            <div class="next"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
+            <div class="next" onclick="showAwards('instaAwards')"><a href="#" ><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
         </div>
 
+        <div class="awards" id = instaAwards>
+            <div class="prev insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
+            <div class="premioFisico">
+                <img src="{% static 'IMG/premiosInstantaneos-removebg-preview.png' %}" alt="Premios instantaneos"/>
+            </div>
+            <div class="awardsPositionsContainer">
+                <h2>Premios instantáneos</h2> 
+                <div class="textAward">
+                    <p>
+                        Gana más puntos si aciertas la pregunta <br/>
+                        ¡200 premios a repartir!
+                    </p>
+                </div>
+                <div class="buttonAwardsContainer">
+                    <a href="#" class="buttonAwards" onclick="openPopup2(); openBackground()">{% trans "Ver más" %}</a>
+                </div>
+                
+            </div>
+            <div class="next insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
+        </div>
+        
         <div class="top-ranking">
             <h2>{% trans "Podio de los clasificados" %}</h2>
             <ol class="ranking">
@@ -66,6 +103,43 @@
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
     {% include 'play_component.html' %}
 
+    <script>
+        function openPopup() {
+          document.getElementById("myPopup").style.display = "block";
+        }
+        function closePopup() {
+          document.getElementById("myPopup").style.display = "none";
+        }
+        function openBackground() {
+          document.getElementById("background").style.display = "block";
+        }
+        function closeBackground() {
+          document.getElementById("background").style.display = "none";
+        }
+        function openPopup2() {
+          document.getElementById("myPopup2").style.display = "block";
+        }
+        function closePopup2() {
+          document.getElementById("myPopup2").style.display = "none";
+        }
+
+        const tempAwards = document.getElementById('tempAwards');
+        const instaAwards = document.getElementById('instaAwards');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const prevInstaButton = document.querySelector('.insta');
+        const nextInstaButton = document.querySelector('.insta');
+
+        let currentAward = 'tempAwards';
+
+        function showAwards(awardId) {
+        tempAwards.style.display = awardId === 'tempAwards' ? 'flex' : 'none';
+        instaAwards.style.display = awardId === 'instaAwards' ? 'flex' : 'none';
+        currentAward = awardId;
+        }
+
+
+    </script>
 </div>
 
 {% endblock %}
