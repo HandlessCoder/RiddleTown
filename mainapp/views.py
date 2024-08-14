@@ -2,7 +2,7 @@ from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
-from .models import Category, Ranking, User, Trivia, Answer
+from .models import Category, Ranking, User, Trivia, Answer, PrizeWon
 import random
 from functools import reduce
 from django.utils import timezone
@@ -34,10 +34,23 @@ def register(request):
     return render(request,'register.html')
 
 def profile(request):
-    return render(request,'mainapp/profile.html')
+    user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
+    puntos = Ranking.objects.filter(user_id = user.id).first().score
+    premios = len(list(PrizeWon.objects.filter(user_id = user.id).all()))
+    
+    context = {
+        "user" : user,
+        "puntos" : puntos,
+        "premios" : premios
+    }
+    
+    
+    
+    return render(request,'mainapp/profile.html', context = context)
 
 def edit_profile(request):
-    return render(request,'mainapp/editProfile.html')
+
+    return render(request,'mainapp/editProfile.html', context = context)
 
 def help(request):
     return render(request,'mainapp/help.html')
