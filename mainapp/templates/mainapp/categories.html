@@ -29,7 +29,7 @@
             
         </div>
         <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
-        <form method="POST" action=".">
+        <form method="POST" action="/play/">
             {% csrf_token %}
             <input type="hidden" id="selectedCategory" name="category">
             {% include 'play_component.html' %}
