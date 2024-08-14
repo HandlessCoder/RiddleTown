@@ -2,21 +2,23 @@ from django.http import HttpResponse,JsonResponse
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
-from .models import Category, Ranking, User
+from .models import Category, Ranking, User, Trivia, Answer
+import random
+from functools import reduce
+from django.utils import timezone
+
 
 # Create your views here.
 
 def mainpage(request):
     if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('miValor', False)} desde el home")
+        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde el home")
 
-
-
-
-    
+    ranking = Ranking.objects.order_by('-score').all()[:3]
     categorias = list(Category.objects.values())
     context = {
-        "categorias" : categorias
+        "categorias" : categorias,
+        "ranking" : ranking
     }
     
     
@@ -56,11 +58,148 @@ def ranking(request):
     return render(request,'mainapp/ranking.html', context = context)
 
 def play(request):
+    if(request.method == 'POST'):
+        #se envía un mensaje de prueba a la consola del backend por motivos de prueba
+        # print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde Categorías")
+        
+
+        
+        
+        #se leen los parámetros enviados por el post
+        category = Category.objects.filter(name= request.POST.get('category')).first()
+        total = request.POST.get('total')
+        done = request.POST.get('done')
+        canSkip = request.POST.get('canSkip')
+        user = request.POST.get('user')
+        time = request.POST.get('time')
+        selectedAnswer = request.POST.get('selectedAnswer')
+        
+        print(f"\n\nLa categoría leída es: {category}")
+        print(f"El total leído es: {total}")
+        print(f"El canSkip leído es: {canSkip}")
+        print(f"El user leído es: {user}")
+        print(f"El time leído es: {time}")
+        print(f"La selectedAnswer leída es: {selectedAnswer} \n\n")
+        
+        #se valida el cumplimiento de las condiciones para que sea la primera pregunta que se está jugando
+        if category != None and total == None and done == None and canSkip == None and user == None and time == None:
+            #se inicializan las variables necesarias
+            total = 0
+            done = []
+            canSkip = 1
+            user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first().id
+            time = 30
+            
+            #se establece cuál es la pregunta y cuáles son sus respuestas            
+            trivias = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).all()
+            trivia = random.choice(list(trivias))
+            done.append(trivia.triviaID)
+            done = reduce(lambda x, y: x+","+y, done)
+            answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
+            
+            #se empaqueta todo el contexto que se enviará al template del front
+            context = {
+                "category" : category,
+                "total" : total,
+                "done" : done,
+                "canSkip" : canSkip,
+                "user" : user,
+                "time" : time,
+                "trivia" : trivia,
+                "answers" : answers
+            }
+            
+            #se retorna el renderizado del front con el contexto requerido
+            return render(request,'mainapp/trivia.html', context = context)
+        
+        elif category != None and total != None and done != None and canSkip != None and user != None and time != None and selectedAnswer != None:
+            #se inicializan las variables necesarias
+            user = int(user)
+            canSkip = int(canSkip)
+            time = int(time)
+            total = int (total)
+            
+            
+            if (selectedAnswer != "-1" and Answer.objects.filter(answerID=selectedAnswer).first().correctAnswer == True) or selectedAnswer == "-1":
+                if selectedAnswer != "-1":
+                    total += 100
+                    if time > 0:
+                        total+=200
+                else:
+                    canSkip = 0
+            
+                maximoPreguntas = 10         
+                #se busca la lista de trivias restantes por responder            
+                done = done.split(',')
+                trivias = Trivia.objects.filter(category_id=category.name).exclude(triviaID__in = done).all()
+                cantHechas = len(done)
+                cantFaltantes = len(trivias)
+                if cantHechas < maximoPreguntas and cantFaltantes > 0:
+                                    
+                
+                    trivia = random.choice(list(trivias))
+                    done.append(trivia.triviaID)
+                    done = reduce(lambda x, y: x+","+y, done)
+                    answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
+                    
+                    time = 30
+                    #se empaqueta todo el contexto que se enviará al template del front
+                    context = {
+                        "category" : category,
+                        "total" : total,
+                        "done" : done,
+                        "canSkip" : canSkip,
+                        "user" : user,
+                        "time" : time,
+                        "trivia" : trivia,
+                        "answers" : answers
+                    }
+                    return render(request,'mainapp/trivia.html', context = context)
+                
+            usuarioRankeado = Ranking.objects.filter(user_id=user).first()
+            if usuarioRankeado == None:
+                usuarioRankeado = Ranking(user_id = user,score = 0,position = -1, last_updated = timezone.now())
+            usuarioRankeado.score+=total
+            
+            usuarioRankeado.save()
+                    
+                
+                
+                
+            return profile(request)
+                #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
+                
+                
+       
+                
+            
+            
+                    
+            
+            
+        
+        
+        
+        
+        # else:
+        #     print(f"El id de la respuesta seleccionada es: {selectedAnswer}")
+            # print("pues sí, en efecto funciona")
+            
+            
+            
+            
+    
+    
+    
+    
+    
+
+    #debería retornarse una págian de error 404
     return render(request,'mainapp/trivia.html')
 
 def categories(request):
     if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('miValor', False)} desde Categorías")
+        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde home")
 
 
 
