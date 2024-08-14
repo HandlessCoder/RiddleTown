@@ -165,7 +165,7 @@ def play(request):
                     
                 
                 
-            return HttpResponseRedirect('/profile/')
+            return HttpResponseRedirect('/ranking/')
                 #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
                 
                 
