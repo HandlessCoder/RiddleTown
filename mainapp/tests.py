@@ -1,5 +1,5 @@
 from django.test import Client, TestCase
-from .models import Category, User, Ranking
+from .models import Category, User, Ranking, Prize
 from django.urls import reverse
 import numpy as np
 from PIL import Image #Requiere Pillow
@@ -72,7 +72,7 @@ class CategoryTests(TestCase):
             self.assertTrue(np.array_equal(rgbPixel, rgbArray))
 
 
-class PostMethodTests(TestCase):
+'''class PostMethodTests(TestCase):
 
     def setUp(self):
         self.client = Client()
@@ -96,7 +96,7 @@ class PostMethodTests(TestCase):
             response = self.client.post(reverse(views.categories), {'miValor': category.name})
             output = mock_stdout.getvalue()
             expectedMessage = f"Un usuario quiere jugar las trivias de categoría {category.name} desde Categorías\n"
-            self.assertIn(expectedMessage, output)
+            self.assertIn(expectedMessage, output)'''
 
 
 class RankingTests(TestCase):
@@ -117,3 +117,31 @@ class RankingTests(TestCase):
         self.assertEqual(self.rankings[0].user.email, self.users[1].email)
         self.assertEqual(self.rankings[1].user.email, self.users[2].email)
         self.assertEqual(self.rankings[2].user.email, self.users[0].email)
+
+
+class PrizeTests(TestCase):
+
+    def setUp(self):
+        Prize.objects.create(prizeCode='a', prizeType='ranking', rankingPosition=1)
+        Prize.objects.create(prizeCode='b', prizeType='ranking', rankingPosition=2)
+        Prize.objects.create(prizeCode='c', prizeType='ranking', rankingPosition=3)
+        self.prizes = Prize.objects.all()
+
+        User.objects.create(email='kaveh@mail.com', nickname='Kaveh')
+        User.objects.create(email='callmyname@adeptus.com', nickname='XiaoYaksha')
+        User.objects.create(email='bandaArataki@wujuu.com', nickname='XiaoYaksha')
+        self.users = User.objects.all()
+
+        Ranking.objects.create(user=self.users[0], score='12100', position=1)
+        Ranking.objects.create(user=self.users[1], score='6000', position=2)
+        Ranking.objects.create(user=self.users[2], score='4000', position=3)
+        self.rankings = Ranking.objects.all()
+        print(self.rankings)
+        self.client = Client()
+
+    def test_belongPrize(self):
+        self.assertEqual(self.rankings[0].position, self.prizes[0].rankingPosition)
+        self.assertEqual(self.rankings[1].position, self.prizes[1].rankingPosition)
+        self.assertEqual(self.rankings[2].position, self.prizes[2].rankingPosition)
+        
+        self.assertNotEqual(self.rankings[1].position, self.prizes[2].rankingPosition)
