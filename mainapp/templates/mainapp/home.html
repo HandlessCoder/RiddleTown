@@ -30,19 +30,16 @@
 
     <div class="top-ranking">
         <h2>{% trans "Podio de los clasificados" %}</h2>
+
+
+        
         <ol class="ranking">
-            <li>
-                <div class="namePerson">Kaveh</div>
-                <div class="points">9000 {% trans "puntos" %}</div>
-            </li>
-            <li>
-                <div class="namePerson">Rafax2002</div>
-                <div class="points">8900 {% trans "puntos" %}</div>
-            </li>
-            <li>
-                <div class="namePerson">TriviaBlaster10</div>
-                <div class="points">6500 {% trans "puntos" %}</div>
-            </li>
+            {% for place in ranking %}
+                <li>
+                    <div class="namePerson">{{place.user.nickname}}</div>
+                    <div class="points">{{place.score}} {% trans "puntos" %}</div>
+                </li>
+            {% endfor %}
         </ol>
         
         <div class="buttonRankingContainer">
@@ -63,9 +60,9 @@
     </div>
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
 
-    <form method="POST" action="/">
+    <form method="POST" action="play/">
             {% csrf_token %}
-            <input type="hidden" id="selectedCategory" name="miValor">
+            <input type="hidden" id="selectedCategory" name="category">
             {% include 'play_component.html' %}
     </form>
 </div>
