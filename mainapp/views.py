@@ -83,7 +83,7 @@ def configuration(request):
     return render(request,'mainapp/configuration.html')
 
 def ranking(request):
-    ranking = Ranking.objects.order_by('-score').all()
+    ranking = Ranking.objects.order_by('-score').all()[:15]
     context = {
         "ranking" : ranking
     }
@@ -175,7 +175,8 @@ def play(request):
                     trivia = random.choice(list(trivias))
                     done.append(trivia.triviaID)
                     done = reduce(lambda x, y: x+","+y, done)
-                    answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
+                    
+                    answers = Answer.objects.filter(trivia_id=trivia.triviaID).order_by('?').all()
                     
                     time = 30
                     #se empaqueta todo el contexto que se enviará al template del front
