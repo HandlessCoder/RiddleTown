@@ -44,15 +44,17 @@ body{
     width: 85%;
 }
 
-.lineMenuContainer{
-    display: flex;
-    width: 85%;
+.lineLogo{
+    background-color: #f35e3d;
+    padding: 1px;
+    margin-top: 10px;
+    width: 13.5vw;
 }
 
 .lineMenu{
     background-color: #f35e3d;
     padding: 1px;
-    width: 100%;
+    width: 13.5vw;
 }
 
 .sidebar ul{
@@ -129,6 +131,10 @@ body{
 
 .textMobile{
     display: none;
+}
+
+.buttonPlay{
+    width: 15%;
 }
 
 @media (max-width: 1220px){

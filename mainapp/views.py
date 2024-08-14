@@ -82,6 +82,9 @@ def help(request):
 def configuration(request):
     return render(request,'mainapp/configuration.html')
 
+def error404(request):
+    return render(request,'mainapp/error404.html')
+
 def ranking(request):
     ranking = Ranking.objects.order_by('-score').all()[:15]
     context = {

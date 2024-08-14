@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown - {% trans "Error 404" %}</title>
+<link rel="stylesheet" href="{% static 'CSS/error404.css' %}"/>
+<link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="mainContent" id="content">
+    <h2>{% trans "Error 404" %}</h2>
+    <div class="section">
+        <p>
+            {% trans "¡Oh no, parece que ha ocurrido un error!" %}
+        </p>
+    </div>
+  
+    </div>
+</div>
+{% endblock %}
