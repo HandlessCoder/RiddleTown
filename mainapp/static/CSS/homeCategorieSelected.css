@@ -282,3 +282,7 @@ body{
     float: right;
     margin-right: 8vw;
 }
+
+.lineMenuContainer{
+    width: 70%;
+}

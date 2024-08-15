@@ -11,54 +11,111 @@
 {% block content%}
     <div class="mainview">
         {% include 'back_component.html' %}
+        <div class="background" id="background"></div>
+        
         <div class="main">
             <div class="space"></div>
             <div class="mainContent">
+                <div class="popup" id="myPopup">
+                    <h2>¡Acción realizada con éxito!</h2>
+                    <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
+                </div>
                 <h2>{% trans "Editar perfil" %}</h2>
-                <div class="editContainer">
-                    <div class="profileImage">
-                        <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
-                        <span class="alias">{% trans "Alias" %}</span>
-                        <div class="changeImage">
-                            {% trans "Cambiar foto" %}
+                <div class="userMobile">
+                    <img src="{% static 'IMG/user.png' %}" alt="User" class="avatarMobile" id="avatarPreview"/>
+                </div>
+                <p class="textMobile">Cambiar foto de perfil</p>
+                <form action="." method="POST" id="editProfile">
+                    {% csrf_token %}
+
+                    <div class="editContainer" enctype="multipart/form-data">
+                        
+                        <div class="profileImage">
+                            <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar" id="avatarPreview"/>
+                            <span class="alias">{{ user.nickname }}</span>
+                            <div class="changeImage">
+                                <label for="avatarUpload">{% trans "Cambiar foto" %}</label>
+                            </div>
+                            <input type="file" id="avatarUpload" name="avatar" accept="image/*" style="display: none;">
+                        </div>
+
+                        <div class="profileAlias">
+                            <div class="alias2">
+                                {{ user.nickname }} <br>
+                                <input type="text" class="editAlias" id="userAlias" name="nickname" placeholder="{{ user.nickname }}" value="{{ user.nickname }}" >
+                            </div>
+                        </div>
+                        
+                        <h4 class="directionTitle">{% trans "Dirección" %}</h4>
+
+                        <div class="profileDirection">
+
+                            <div class="directionButton profileAlias">
+                                <span class="country alias2">
+                                    {% trans "País" %} <br>
+                                    <div class="form-group editAlias">
+                                        <select class="editOptions" id="options" name="country">
+
+                                            {% for country in countries %}
+                                                <option value="{{country}}" {% if country == user.country %} selected {% endif %}    >{{ country }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </span>
+                            </div>
+                            
+                            <div class="cityButton profileAlias">
+                                <span class="country alias2">
+                                        {% trans "Estado" %} <br>
+                                        <div class="form-group editAlias">
+                                            <select class="editOptions" id="options" name="estate">
+                                                {% for estate in estates %}
+                                                    <option value="{{estate}}" {% if estate == user.estate %} selected {% endif %} >{{ estate }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                </span>
+                            </div>
+
+                            <div class="directionTextArea profileAlias">
+                                <span class="direction alias2">
+                                    {% trans "Dirección" %} <br>
+                                    <textarea class="resUCV editAlias" id="userAddress" name="address" placeholder="{{ user.address }}">{{ user.address }}</textarea>
+                                </span>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="profileAlias">
-                        <span class="alias2">
-                            {% trans "Alias" %} <br>
-                            <span class="editAlias">Usuario1</span>
-                        </span>
+
+                    <div class="space"></div>
+                    <div class="saveChangesContainer">
+                        <div class="saveChangesButton submit-button" onclick="guardar()"><strong>{% trans "Guardar cambios" %}</strong></div>
                     </div>
-                    <h4 class="directionTitle">{% trans "Dirección" %}</h4>
-                    <div class="profileDirection">
-                        <a href="" class="directionButton">
-                            <span class="country">
-                                {% trans "País" %} <br>
-                                <span class="venezuela">Venezuela</span>
-                            </span>
-                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
-                        </a>
-                        <a href="" class="cityButton">
-                            <span class="country">
-                                {% trans "Estado" %} <br>
-                                <span class="caracas">Caracas</span>
-                            </span>
-                            <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
-                        </a>
-                        <div class="directionTextArea">
-                            <span class="direction">
-                                {% trans "Dirección" %} <br>
-                                <span class="resUCV">ResidenciasUCV</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="space"></div>
-                <div class="saveChangesContainer">
-                    <a href=".." class="saveChangesButton"><strong>{% trans "Guardar cambios" %}</strong></a>
-                </div>
-                {% include 'play_component.html' %}
+                </form>
+
+                <br><br><br><br>
             </div>
         </div>
+        <script>
+            function guardar(){
+                openPopup();
+                openBackground();
+                setTimeout( () => {
+                    document.getElementById('editProfile').submit()
+                },"3000");
+            }
+            function openPopup() {
+                document.getElementById("myPopup").style.display = "block";
+            }
+                function closePopup() {
+                document.getElementById("myPopup").style.display = "none";
+            }
+                function openBackground() {
+                document.getElementById("background").style.display = "block";
+            }
+                function closeBackground() {
+                document.getElementById("background").style.display = "none";
+            }
+        </script>
     </div>
 {% endblock %}

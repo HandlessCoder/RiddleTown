@@ -24,8 +24,10 @@ body{
     flex-direction: column;
     align-items: center;
     width: 50vh;
-    height: 60vh;
+    height: 38vh;
     margin: auto;
+    min-height: 500px;
+    min-width: 350px;
 }
 
 .logo img{
@@ -122,3 +124,34 @@ a{
     text-decoration: none;
 }
 
+.lineMenuContainer{
+    width: 70%;
+}
+
+
+@media (max-width: 1220px) {
+    body{
+        background-image: none;
+    }
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    .card{
+        background-size: 130% 30%;
+        background-position-x: -3.8vh;
+        background-position-y: 52.5vh;
+        padding-bottom: 0;
+        width: 50vw;
+        min-width: 270px;
+        height: 40vh;
+        min-height: 450px;
+        max-width: 393px;
+    }
+    
+    .logo img{
+        min-width: 120px;
+        min-height: 95px;
+    }
+}

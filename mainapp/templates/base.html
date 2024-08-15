@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'CSS/homeNoLoginStyles.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
     {% block head %}
 
     {% endblock %}
@@ -13,25 +13,61 @@
     <!-- <link rel="stylesheet" href="CSS/homeNoLoginStyles.css"/> -->
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <div class="logo">
             <a href="/"><img src="{% static 'IMG/logoV2.0.png' %}" alt="RiddleTown Logo"/></a>
         </div>
         <div class="lineLogo"></div>
+        <div class="containerSideBar">
             <ul>
-                <li><div class="optionContainer"><a href="/Profile" class="optionLink"><img src="{% static 'IMG/sidebar/usuario.png' %}" alt="Usuario" class="sideImages"/>{% trans "Perfil" %}</a></div></li>
+                <li><div class="optionContainer"><a href="/profile" class="optionLink"><img src="{% static 'IMG/sidebar/usuario.png' %}" alt="Usuario" class="sideImages"/>{% trans "Perfil" %}</a></div></li>
                 <li><div class="optionContainer"><a href="/categories" class="optionLink"><img src="{% static 'IMG/sidebar/piezas-de-rompecabezas.png' %}" alt="Categorías" class="sideImages"/>{% trans "Categorías" %}</a></div></li>
                 <li><div class="optionContainer"><a href="/ranking" class="optionLink"><img src="{% static 'IMG/sidebar/trofeo.png' %}" alt="Ranking" class="sideImages"/>{% trans "Ranking" %}</a></div></li>
-                <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+            </ul>
+            <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+            <ul>
                 <li><div class="optionContainer"><a href="/configuration" class="optionLink"><img src="{% static 'IMG/sidebar/engranaje.png' %}" alt="Configuración" class="sideImages"/>{% trans "Configuración" %}</a></div></li>
                 <li><div class="optionContainer"><a href="/help" class="optionLink"><img src="{% static 'IMG/sidebar/signo-de-interrogacion.png' %}" alt="Ayuda" class="sideImages">{% trans "Ayuda" %}</a></div></li>
                 <li><div class="optionContainer"><a href="/login" class="optionLink"><img src="{% static 'IMG/sidebar/iniciar-sesion.png' %}" alt="Iniciar Sesión" class="sideImages">{% trans "Iniciar Sesión" %}</a></div></li>
             </ul>
         </div>
-
+        </div>
+    <div class="backgroundOpacity" id="backgroundOpacity" onclick="closeSidebar()"></div>
+    
     <div class="main-content">
+        <header>
+            <div class="menu-icon" onclick="toggleSidebar(); toggleBackground()">
+                <img src="{% static 'IMG/menu_icon.png' %}" alt="Menu Icon">
+            </div>
+            <div class="logoMobile">
+                <a href="/"> <img src="{% static 'IMG/logoV2.0.png' %}" alt="RiddleTown Logo"></a>
+            </div>
+            <div class="space2"></div>
+        </header>
         {% block content%}
         {% endblock %}
     </div>
+    <script>
+        function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    function toggleBackground() {
+        var sidebar = document.getElementById('backgroundOpacity');
+        sidebar.classList.toggle('active');
+    }
+
+    function closeSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+        if (backgroundOpacity.classList.contains('active')) {
+            backgroundOpacity.classList.remove('active');
+        }
+    }
+
+    </script>
 </body>
 </html>

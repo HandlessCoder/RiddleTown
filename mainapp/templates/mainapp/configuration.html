@@ -10,23 +10,32 @@
 {% endblock %}
 
 
-{% block content%}|
+{% block content%}
 
 <div class="mainview">
     {% include 'back_component.html' %}
-    <d iv class="main">
+    <div class="main">
         <div class="space"></div>
         <div class="mainContent">
             <h2>{% trans "Configuración" %}</h2>
             <div class="form-container">
-                <a href="" class="form-button">
+                <div class="form-button">
                     <span class="language">
-                        {% trans "Idioma" %}
-                        <br>
-                        <span class="spanish">Español</span>
+                        <form action="/submit" method="post">
+                            {% trans "Idioma" %} <br>
+                            <div class="form-group">
+                                <select class="editOptions" id="options" name="options">
+                                    <option value="option0">Español</option>
+                                    <option value="option1">English</option>
+                                    <option value="option2">日本語</option>
+                                    <option value="option3">中文</option>
+                                    <option value="option4">한국어</option>
+                                </select>
+                            </div>
+                        </form>
                     </span>
-                    <img src="{% static 'IMG/flechaAbajo.png' %}" class="arrow-icon"></span>
-                </a>
+                </div>
+
             </div>
             <div class="space"></div>
         </div>

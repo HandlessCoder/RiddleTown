@@ -10,8 +10,11 @@
 </style>
 <script>
     function delayedSubmit(answerID, res){
+        openPopup();
+        openBackground();
+        stopCounter();
         document.getElementById('selectedAnswer').value = answerID;
-        //document.getElementById('timeInput').value = document.getElementById('counter').value;
+        document.getElementById('timeInput').value = document.getElementById('counter').innerHTML;
         el = document.getElementById(answerID)
         hermanos = el.parentElement.children
         for (let hijo of hermanos){
@@ -21,13 +24,21 @@
         if(res){
             el.style.backgroundColor = "#8ED697"
             puntos+=100
+            document.getElementById('myPopup').children[0].innerHTML += ' correctamente!';
+            
             if(document.getElementById('timeInput').value>0){
                 puntos+=200
             }
+            
+            document.getElementById('resultado').innerHTML = `¡Obtienes ${puntos} puntos!`;
         }else{
+            document.getElementById('myPopup').children[0].innerHTML += ' incorrectamente!';
+            document.getElementById('resultado').innerHTML = `Fallaste :( ¡Exitos en tu próxima partida!`;
             el.style.backgroundColor = "#C55052"
         }
         /*          llamar popoup indicando puntos                */
+        document.getElementById('myPopup').style.display = 'block';
+        openBackground();
 
         setTimeout(() => { document.getElementById('triviaQuestion').submit(); }, 3000); // set timout 
     }
@@ -66,16 +77,23 @@
             </div>
         </div>
         <div class="upperDecorationContainer">
-            <div class="decorationIconContainer">
-                <a href="/categories">
+            <div class="decorationIconContainer" id="back">
+                <a href="/">
                     <img src="{% static 'IMG/flecha.png' %}" alt="Atrás" class="decorationIcon"/>
                 </a>
             </div>
-
-            <div class="decorationIconContainer"><img src="{% static category.icon %}" alt="Play" class="decorationIcon"/></div>
-            <img src="" alt=""/>
+            <div class="decorationIconContainer" id="categoryLogo" ><img src="{% static category.icon %}" alt="Play" class="decorationIcon"/></div>
+            <div class="timer">
+                <p id="counter">30</p>
+                <img src="{% static 'IMG/reloj.png' %}">
+            </div>
+            <div class="background" id="background"></div>
+            <div class="popup" id="myPopup">
+                <h2>¡Pregunta respondida</h2>
+                <p id="resultado"></p>
+            </div>
         </div>
-        
+
         <div class="subContainer">
             {% if trivia.questionType == 'text'%}
                 <div class="question question-notImage">
@@ -102,8 +120,10 @@
                     <img src="{% static trivia.questionImage %}">
                 </div>
             {% endif %}
-        </div>
-        <div class="optionsContainer">
+
+        </div>          
+
+    <div class="optionsContainer">
             {% for answer in answers %}
                 <div class="option" onclick="delayedSubmit('{{answer.answerID}}', {%if answer.correctAnswer == True %} true {% else %} false {% endif %} )" id = "{{answer.answerID}}">
                     {% if answer.answerType == 'text' %}
@@ -113,15 +133,54 @@
                     {% endif %}
                 </div>
             {% endfor %}
+    </div>
 
-        </div>
-
-        <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
+    <p class="selectOption">{% trans "¡Selecciona una opción!" %}</p>
         {% if canSkip == 1 %}
         <div class="buttonPlayContainer">
             <button class="buttonPass" type="submit" onclick="document.getElementById('canSkip').value = 0"><strong>{% trans "Saltar pregunta" %}</strong></button>
         </div>
         {% endif %}
+
+        <script>
+            function openPopup() {
+              document.getElementById("myPopup").style.display = "block";
+            }
+            function closePopup() {
+              document.getElementById("myPopup").style.display = "none";
+            }
+            function openBackground() {
+              document.getElementById("background").style.display = "block";
+            }
+            function closeBackground() {
+              document.getElementById("background").style.display = "none";
+            }
+
+            let count = 30;
+            const counterElement = document.getElementById('counter');
+            const popup = document.getElementById('popup');
+            const background = document.getElementById('background')
+
+            const interval = setInterval(() => {
+                count--;
+                counterElement.textContent = count;
+                
+                if (count === 0) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+
+            function stopCounter() {
+                clearInterval(interval);
+            }
+
+            function closePopup() {
+                popup.style.display = 'none';
+            }
+
+        </script>
+    </div>
+
     </form>
 
 {% endblock %}

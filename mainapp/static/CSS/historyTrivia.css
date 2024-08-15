@@ -1,3 +1,4 @@
+
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -96,7 +97,8 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 7vw;
-    gap: 35.5vw;
+    min-height: 65px;
+    gap: 0;
 }
 
 .decorationIcon{
@@ -117,6 +119,7 @@ body{
     width: 75%;
     border-radius: 10px;
     padding: 5vh;
+    background-image: url(../IMG/colorTriviaH.png);
     background-repeat: no-repeat;
     background-size: 110% 100%;
     background-position-x: -7vh;
@@ -154,10 +157,6 @@ body{
     margin-right: 10.1vw;
 }
 
-.r1 a, .r2 a{
-    text-decoration: none;
-    color: #1D3D59;
-}
 
 .selectOption{
     text-align: center;
@@ -183,11 +182,356 @@ body{
     justify-content: center;
 }
 
-/*  Decoraciones variables */
+.lineMenuContainer{
+    width: 90%;
+}
 
-/*  */
-/* #entertainmentDeco{             background-image: url(../IMG/upperColorD.png);         }
-#entertainmentQuestion{         background-image: url(../../IMG/colorTriviaH.png);     }
- */
+.popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+.popup h2 {
+    margin-top: 0;
+    color: #1D3D59;
+}
+.popup p {
+    font-size: 1rem;
+    color: #1D3D59;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+}
+.button.exit {
+    background-color: #504673;
+    color: white;
+   
+}
+.button.continue {
+    background-color: #F25E3D;
+    color: white;
+    
+}
+
+a{
+    font-size: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+}
 
 
+.upperDecorationContainer{
+    display: flex;
+    width: 100%;
+}
+
+
+.option:hover{
+    cursor: pointer;
+}
+
+.space3{
+    width: 30%;
+}
+
+#categoryLogo{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.decorationIcon{
+    margin-left: 10px;
+}
+
+.timer{
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.timer img{
+    width: 7vw;
+    height: 7vw;
+    padding-left: 10px;
+    min-width: 55px;
+    min-height: 55px;
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.timer p{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0%;
+}
+
+
+@media (max-width: 1290px) {
+
+    .timer{
+        right: 1.5vw;
+        margin-top: 1vh;
+    }
+
+    .timer img{
+        width: 7vw;
+        height: 7vw;
+        padding-left: 5px;
+        min-width: 35px;
+        min-height: 35px;
+        max-width: 40px;
+        max-height: 40px;
+    }
+    
+    .timer p{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0%;
+    }
+
+
+    div {
+        font-size: 0.5rem;
+    }
+
+    h2{
+        font-size: 1.50rem;
+    }
+
+    p{
+        font-size: 0.2rem;
+    }
+
+    .buttonAwards, .buttonRanking{
+        width:15vw;
+        height: 7px;
+        align-items: center;
+        padding-top: 3px;
+    }
+
+    .buttonAwardsContainer, .buttonRankingContainer{
+        margin-top: 1.5vh;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .awardsPositionsContainer{
+        width: 50vw;
+        min-width: 300px;
+    }
+
+    .buttonRankingContainer{
+        margin-bottom: 5px;
+    }
+
+    .top-ranking{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .buttonRanking{
+        width:20vw;
+        height: 12px;
+        padding-bottom: 15px;
+        min-width: 150px;
+    }
+
+    .awards{
+        justify-content: space-between;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .prev, .next{
+        display: none;
+    }
+
+    header {
+        display: flex;
+        position: absolute;
+    }
+
+    .sidebar{
+        position: absolute;
+        left: -100%;
+        transition: left 0.1s ease;
+        width: 400px;
+        height: 100%;
+        background-image: none;
+        justify-content: left;
+        display: none;
+    }
+
+    .backgroundOpacity{
+        position: fixed;
+        left: -100%;
+        height: 100%;
+        z-index: 100;
+        background-color: hsla(280, 100%, 5%, 0.6);
+
+    }
+
+    .backgroundOpacity.active{
+        left: 400px;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    .sidebar.active {
+        left: 0;
+        display: flex;
+        position: fixed;
+        z-index: 99;
+        
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.active {
+        margin-left: 250px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+    }
+
+
+    .lineLogo{
+
+        width: 100%;
+    }
+    
+    .lineMenu{
+        width: 100%;
+        background-color: #ef7e65;
+    }
+
+    .lineMenuContainer{
+        width: 100%;
+
+    }
+
+    .containerSideBar{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .optionContainer{
+        padding-left: 30px;
+    }
+
+    .main-content{
+        margin: 0;
+        border: 1vw;
+        width: 100%;
+        padding: 0;
+    }
+
+    .logoMobile{
+        display: none;
+    }
+
+    .menu-icon img{
+        min-width: auto;
+    }
+
+    .decorationIcon{
+        width: 9vh;
+        height: 9vh;
+        max-width: 40px;
+        max-height: 40px;
+        padding: 0px;
+        padding-top: 5px;
+    }
+
+    #category{
+        position: absolute;
+        top: 1px;
+        left: 48%;
+    }
+
+    #back{
+        position: relative;
+        left: 2%;
+        z-index: 1;
+    }
+
+    .upperDecorationContainer{
+        width: 100%;
+        height: 5vh;
+        gap:0;
+    }
+
+    .question{
+        background-size: 100% 90%;
+        background-position-x: 0vh;
+        background-position-y: 4vh;
+        width: 90%;
+        width: 100%;
+        padding: 7vh;
+        height: 18vh;
+        font-size: 0.6rem;
+        margin-top: 0;
+    }
+
+    .optionsContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        gap: 4vh;
+    }
+
+    .buttonPlayContainer{
+       display: flex;
+
+    }
+
+    .option{
+        font-size: 0.8rem;
+        height: 4vh;
+        margin: 0;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup{
+        left:50% !important;
+    }
+}

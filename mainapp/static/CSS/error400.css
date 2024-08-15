@@ -7,6 +7,20 @@ body{
     background-color: white;
 }
 
+.mainContent{
+    background-image: url(../IMG/ImagenFondoLogin.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 130% 80%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#content{
+    height: 100% !important;
+    padding-bottom: 0;
+}
+
 .sidebar{
     width: 20vw;
     background-color: #fafafa;
@@ -27,7 +41,7 @@ body{
 }
 
 .sidebar .logo img{
-    width: 13.5vw;
+    width: 13vw;
 }
 
 .lineLogo{
@@ -75,7 +89,7 @@ body{
     color: #1D3D59;
     padding: 10px 20px;
     border-radius: 50px;
-    width: 15%;
+    width: 10%;
     font-size: 1.2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     text-decoration: none;
@@ -115,15 +129,60 @@ body{
     width: 100%;
 }
 
+h2{
+    font-size: 2.55rem;
+}
+
+p{
+    font-size: 1.8rem;
+    margin: 10px 60px;
+}
+
+.text{
+    font-size: 1.2rem;
+}
+
+.section{
+    background-color: #efefef;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 10%;
+    margin-bottom: 45%;
+
+}
+#errorText{
+    margin-bottom: 5%;
+}
+
 @media (max-width: 1220px){
+
 
     h2{
         margin-top: 0;
-        font-size: 1.1rem;
+        font-size: 1.5rem !important;
     }
 
     p{
         font-size: 1rem;
+        margin-bottom: 4px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .text{
+        font-size: 0.7rem;
+        margin-top: 2px;
+    }
+
+    .mainContent{
+        background-size: 150% 80%;
+        overflow-y:hidden;
+    }
+
+    #content{
+        height: calc(100% - 62px - 20px) !important;
     }
 
     .sidebar{
@@ -189,14 +248,6 @@ body{
         height: 5vh;
         min-width: 60px;
         min-height: 60px;
-    }
-
-    .buttonPlay{
-        width: 30% !important;
-    }
-
-    strong{
-        font-size: 1rem !important;
     }
     
 }

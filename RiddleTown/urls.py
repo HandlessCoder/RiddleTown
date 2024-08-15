@@ -32,14 +32,15 @@ urlpatterns = [
     path('login/', views.login),
     path('register/', views.register),
     
-    path('Profile/', views.profile),
-    path('Profile/edit/', views.edit_profile),
+    path('profile/', views.profile),
+    path('profile/edit/', views.edit_profile),
     path('help/', views.help),
     
     path('configuration/', views.configuration),
     path('ranking/', views.ranking),
     path('play/', views.play),
     path('categories/', views.categories),
+    path('error400/', views.error400),
     
     
     
