@@ -328,7 +328,7 @@ VALUES ('161', 'text', 'Daniel Radcliffe', NULL, True, '41'),
 -- Geografía
 
 INSERT INTO mainapp_trivia(triviaID, questionType, questionText, questionImage, questionAudio, category_id)
-VALUES ('51', 'text', '¿Quién interpreta al personaje de Harry Potter en las películas?', NULL, NULL,  'Geografía'),
+VALUES ('51', 'text', '¿Cuál es el país más grande del mundo en términos de superficie?', NULL, NULL,  'Geografía'),
     ('52', 'text', '¿Qué continente alberga la selva amazónica?', NULL, NULL,  'Geografía'),
     ('53', 'text', '¿Cuál es el océano más grande de la Tierra?', NULL, NULL,  'Geografía'),
     ('54', 'text', '¿Cuál es la montaña más alta del mundo?', NULL, NULL,  'Geografía'),
