@@ -8,6 +8,10 @@ body{
     background-color: white;
 }
 
+.category.active {
+    box-shadow: 0 0 0.6vw #f35e3d;
+}
+
 header {
     display: flex;
     justify-content: space-between;

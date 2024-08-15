@@ -88,7 +88,7 @@
         <h2 class="categ">{% trans "Categorías" %}</h2>
         <div class="category-icons">
             {% for categoria in categorias %}
-                <div class="category"><img src="{% static categoria.icon %}" alt="{{categoria.name}}" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
+                <div class="category" onclick="selectCategory(this);document.getElementById('selectedCategory').value = '{{categoria.name}}'"><img src="{% static categoria.icon %}" alt="{{categoria.name}}"></div>
             {% endfor %}
         </div>
     <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
@@ -128,6 +128,17 @@
         instaAwards.style.display = awardId === 'instaAwards' ? 'flex' : 'none';
         currentAward = awardId;
         }
+
+        function selectCategory(categoryElement) {
+
+            const categories = document.querySelectorAll('.category');
+            categories.forEach(category => category.classList.remove('active'));
+
+
+            categoryElement.classList.add('active');
+
+            document.getElementById('selectedCategory').value = categoryElement.dataset.categoryName;
+            }
 
 
     </script>
