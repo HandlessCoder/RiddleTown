@@ -11,9 +11,15 @@
 {% block content%}
     <div class="mainview">
         {% include 'back_component.html' %}
+        <div class="background" id="background"></div>
+        
         <div class="main">
             <div class="space"></div>
             <div class="mainContent">
+                <div class="popup" id="myPopup">
+                    <h2>¡Acción realizada con éxito!</h2>
+                    <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
+                </div>
                 <h2>{% trans "Editar perfil" %}</h2>
                 <div class="userMobile">
                     <img src="{% static 'IMG/user.png' %}" alt="User" class="avatarMobile" id="avatarPreview"/>
@@ -80,14 +86,29 @@
 
                         </div>
                     </div>
+
                     <div class="space"></div>
-                    <div class="saveChangesContainer">
-                        <button class="saveChangesButton submit-button" type="submit"><strong>Guardar cambios</strong></button>
+                    <div class="saveChangesContainer" onclick="openPopup(); openBackground()">
+                        <button class="saveChangesButton submit-button" type="submit"><strong>{% trans Guardar cambios %}</strong></button>
                     </div>
                 </form>
 
                 <br><br><br><br>
             </div>
         </div>
+        <script>
+            function openPopup() {
+                document.getElementById("myPopup").style.display = "block";
+            }
+                function closePopup() {
+                document.getElementById("myPopup").style.display = "none";
+            }
+                function openBackground() {
+                document.getElementById("background").style.display = "block";
+            }
+                function closeBackground() {
+                document.getElementById("background").style.display = "none";
+            }
+        </script>
     </div>
 {% endblock %}
