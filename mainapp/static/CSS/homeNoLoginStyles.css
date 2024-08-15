@@ -689,4 +689,13 @@ p{
         margin-bottom: 10px;
     }
 
+    .buttonPlay{
+        width: 100% !important;
+    }
+
+    .buttonPlay strong{
+        font-size: 0.9rem;
+    }
+
+
 }
