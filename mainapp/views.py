@@ -1,8 +1,8 @@
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 # from .models
 from django.shortcuts import render
 from django.utils.translation import gettext       ##requires to instal GNU gettext
-from .models import Category, Ranking, User, Trivia, Answer
+from .models import Category, Ranking, User, Trivia, Answer, PrizeWon
 import random
 from functools import reduce
 from django.utils import timezone
@@ -11,21 +11,14 @@ from django.utils import timezone
 # Create your views here.
 
 def mainpage(request):
-    if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde el home")
-
     ranking = Ranking.objects.order_by('-score').all()[:3]
     categorias = list(Category.objects.values())
     context = {
         "categorias" : categorias,
         "ranking" : ranking
     }
-    
-    
     return render(request,'mainapp/home.html', context=context)
 
-# def prueba(request):
-    # return render(request,'mainapp/prueba.html')
 
 def login(request):
     return render(request,'login.html')
@@ -34,22 +27,60 @@ def register(request):
     return render(request,'register.html')
 
 def profile(request):
-    return render(request,'mainapp/Profile.html')
+    user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
+    puntos = Ranking.objects.filter(user_id = user.id).first().score
+    premios = len(list(PrizeWon.objects.filter(user_id = user.id).all()))
+    
+    context = {
+        "user" : user,
+        "puntos" : puntos,
+        "premios" : premios
+    }
+    
+    return render(request,'mainapp/profile.html', context = context)
 
 def edit_profile(request):
-    return render(request,'mainapp/editProfile.html')
-
+    user = User.objects.filter(is_superuser=False).filter(is_staff=False).order_by('date_joined').first()
+    
+    if(request.method == "POST"):
+        nickname = request.POST.get('nickname')
+        country = request.POST.get('country')
+        estate = request.POST.get('estate')
+        address = request.POST.get('address')
+        
+        if nickname != None and user.nickname != nickname:
+            user.nickname = nickname
+        if country != None and user.country != country:
+            user.country = country
+        if estate != None and user.estate != estate:
+            user.estate = estate
+        if address != None and user.address != address:
+            user.address = address
+        user.save()
+        return HttpResponseRedirect('/profile/')
+        
+    else:
+        countries = User.objects.values_list("country",flat=True).distinct()
+        estates = User.objects.values_list("estate",flat=True).distinct()
+        context = {
+            "user" : user,
+            "countries" : countries,
+            "estates" : estates        
+        }
+        return render(request,'mainapp/editProfile.html', context = context)
+        
+    
 def help(request):
     return render(request,'mainapp/help.html')
 
 def configuration(request):
     return render(request,'mainapp/configuration.html')
 
-def error404(request):
-    return render(request,'mainapp/error404.html')
+def error400(request):
+    return render(request,'mainapp/error400.html')
 
 def ranking(request):
-    ranking = Ranking.objects.order_by('-score').all()
+    ranking = Ranking.objects.order_by('-score').all()[:15]
     context = {
         "ranking" : ranking
     }
@@ -64,8 +95,6 @@ def play(request):
     if(request.method == 'POST'):
         #se envía un mensaje de prueba a la consola del backend por motivos de prueba
         # print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde Categorías")
-        
-
         
         
         #se leen los parámetros enviados por el post
@@ -143,7 +172,8 @@ def play(request):
                     trivia = random.choice(list(trivias))
                     done.append(trivia.triviaID)
                     done = reduce(lambda x, y: x+","+y, done)
-                    answers = Answer.objects.filter(trivia_id=trivia.triviaID).all()
+                    
+                    answers = Answer.objects.filter(trivia_id=trivia.triviaID).order_by('?').all()
                     
                     time = 30
                     #se empaqueta todo el contexto que se enviará al template del front
@@ -168,53 +198,23 @@ def play(request):
                     
                 
                 
-                
-            return profile(request)
+            return HttpResponseRedirect('/ranking/')
                 #no quedan más preguntas, tocó mandarlo a su perfil de usuario para que vea sus puntos 
-                
-                
-       
-                
-            
-            
-                    
-            
-            
-        
-        
-        
-        
-        # else:
-        #     print(f"El id de la respuesta seleccionada es: {selectedAnswer}")
-            # print("pues sí, en efecto funciona")
-            
-            
-            
-            
-    
-    
-    
-    
-    
-
-    #debería retornarse una págian de error 404
-    return render(request,'mainapp/trivia.html')
+              
+    #debería retornarse una págian de error 400
+    return HttpResponseRedirect('/error400/')
 
 def categories(request):
     if(request.method == 'POST'):
-        print(f"Un usuario quiere jugar las trivias de categoría {request.POST.get('category', False)} desde home")
-
-
-
-
+        search = request.POST.get('search')
+        
+        categorias = list(Category.objects.filter(name__contains=search).values())
+    else:
+        categorias = list(Category.objects.values())
     
-    categorias = list(Category.objects.values())
     context = {
         "categorias" : categorias
     }
-    
-    
-    
     
     return render(request,'mainapp/categories.html', context = context)
 

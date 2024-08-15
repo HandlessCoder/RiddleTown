@@ -18,22 +18,22 @@
                 <div class="profileImage">
                     <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
                     <div class="withProfile">
-                        <p>0</p>
-                        <p class="text">{% trans "Puntos obtenidos" %}</p>
+                        <p>{{ puntos }}</p>
+                        <p class="text">{% trans "Total puntos en esta temporada" %}</p>
                     </div>
                     <div class="withProfile">
-                        <p>0</p>
+                        <p> {{ premios }} </p>
                         <p class="text">{% trans "Premios ganados" %}</p>
                     </div>
                 </div>
-                <span class="alias">{% trans "Alias" %}</span>
+                <span class="alias"> {{ user.nickname }} </span>
                 <div class="changeImage">
                     <a class="edit" href="edit">{% trans "Editar perfil" %}</a>
                 </div>
                 <p>{% trans "Dirección" %}</p>
-                <P>{% trans "Pais" %}: Venezuela</P>
-                <P>{% trans "Estado" %}: Caraacas</P>
-                <p>{% trans "Dirección" %}: ResidenciasUCV</p>
+                <P>{% trans "Pais" %}: {{ user.country }} </P>
+                <P>{% trans "Estado" %}: {{ user.estate }} </P>
+                <p>{% trans "Dirección" %}: {{ user.address }} </p>
                 <div class="container2">
                     <div class="top-ranking">
                         <div>
@@ -44,7 +44,9 @@
                 </div>
             </div>
         <div class="space"></div>
-        {% include 'play_component.html' %}
+        <a href="/categories/">
+            {% include 'play_component.html' %}    
+        </a>
         </div>
     </div>
 </div>
