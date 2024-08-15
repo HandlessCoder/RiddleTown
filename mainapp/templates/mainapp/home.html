@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n  %}
+{% load static i18n %}
 
 {% block head %}
 <title>RiddleTown</title>
@@ -7,27 +7,26 @@
 <link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
 {% endblock %}
 
-
-{% block content%}
+{% block content %}
 
 <div class="main-content">
     <div class="content">
         <div class="background" id="background"></div>
 
         <div class="popup" id="myPopup">
-            <h2>{% trans "Premios de la temporada"%}</h2>
-            <h3>{% trans "¡Gana premios emocionantes con nuestro sistema de trivias!"%}</h3>
-            <p>{% trans "Pon a prueba tus conocimientos y diviértete mientras acumulas puntos para obtener premios increíbles. En cada trivia que completes, sumarás puntos que te acercarán a la cima del ranking. Al final de la temporada, los 3 mejores jugadores serán recompensados con premios que te dejarán sin aliento. ¡Gana puntos!"%}</p>
+            <h2>{% trans "Premios de la temporada" %}</h2>
+            <h3>{% trans "¡Gana premios emocionantes con nuestro sistema de trivias!" %}</h3>
+            <p>{% trans "Pon a prueba tus conocimientos y diviértete mientras acumulas puntos para obtener premios increíbles. En cada trivia que completes, sumarás puntos que te acercarán a la cima del ranking. Al final de la temporada, los 3 mejores jugadores serán recompensados con premios que te dejarán sin aliento. ¡Gana puntos!" %}</p>
             <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
         </div>
 
         <div class="popup" id="myPopup2">
-            <h2>{% trans "Premios de la temporada"%}</h2>
-            <h3>{% trans "¡Emoción instantánea con nuestros premios sorpresa!"%}</h3>
-            <p>{% trans "Prepárate para una experiencia llena de sorpresas y adrenalina. Mientras juegas tus trivias favoritas, tendrás la oportunidad de ganar premios instantáneos en cualquier momento. ¡Sí, como lees!"%}</p>
+            <h2>{% trans "Premios de la temporada" %}</h2>
+            <h3>{% trans "¡Emoción instantánea con nuestros premios sorpresa!" %}</h3>
+            <p>{% trans "Prepárate para una experiencia llena de sorpresas y adrenalina. Mientras juegas tus trivias favoritas, tendrás la oportunidad de ganar premios instantáneos en cualquier momento. ¡Sí, como lees!" %}</p>
             <button class="close" onclick="closePopup2(); closeBackground()">&times;</button>
-          </div>
-          
+        </div>
+
         <div class="awards" id="tempAwards">
             <div class="prev" onclick="showAwards('instaAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
@@ -42,114 +41,97 @@
                     <a href="#" class="buttonAwards" onclick="openPopup(); openBackground()">{% trans "Ver más" %}</a>
                 </div>
             </div>
-            <div class="next" onclick="showAwards('instaAwards')"><a href="#" ><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
+            <div class="next" onclick="showAwards('instaAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adelante"></a></div>
         </div>
 
-
-        <div class="awards" id = instaAwards>
+        <div class="awards" id="instaAwards">
             <div class="prev insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselI.png' %}" alt="Hacia atrás"></a></div>
             <div class="premioFisico">
-                <img src="{% static 'IMG/premiosInstantaneos-removebg-preview.png' %}" alt="Premios instantaneos"/>
+                <img src="{% static 'IMG/premiosInstantaneos-removebg-preview.png' %}" alt="Premios instantáneos"/>
             </div>
             <div class="awardsPositionsContainer">
                 <h2>Premios instantáneos</h2> 
                 <div class="textAward">
                     <p>
-                        {% trans "Gana más puntos si aciertas la pregunta"%} <br/>
-                        {% trans "¡600 premios a repartir!"%}
+                        {% trans "Gana más puntos si aciertas la pregunta" %} <br/>
+                        {% trans "¡600 premios a repartir!" %}
                     </p>
                 </div>
                 <div class="buttonAwardsContainer">
                     <a href="#" class="buttonAwards" onclick="openPopup2(); openBackground()">{% trans "Ver más" %}</a>
                 </div>
-                
             </div>
-            <div class="next insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adalente"></a></div>
+            <div class="next insta" onclick="showAwards('tempAwards')"><a href="#"><img src="{% static 'IMG/flechaCarruselD.png' %}" alt="Hacia adelante"></a></div>
         </div>
 
-        
         <div class="top-ranking">
             <h2>{% trans "Podio de los clasificados" %}</h2>
             <ol class="ranking">
                 {% for place in ranking %}
                     <li>
-                        <div class="namePerson">{{place.user.nickname}}</div>
-                        <div class="points">{{place.score}} {% trans "puntos" %}</div>
+                        <div class="namePerson">{{ place.user.nickname }}</div>
+                        <div class="points">{{ place.score }} {% trans "puntos" %}</div>
                     </li>
                 {% endfor %}
             </ol>
-            
             <div class="buttonRankingContainer">
                 <a href="ranking" class="buttonRanking">{% trans "Ver la clasificación" %}</a>
             </div>
         </div>
 
-
         <h2 class="categ">{% trans "Categorías" %}</h2>
         <div class="category-icons">
             {% for categoria in categorias %}
-                <div class="category" onclick="selectCategory(this);document.getElementById('selectedCategory').value = '{{categoria.name}}'"><img src="{% static categoria.icon %}" alt="{{categoria.name}}"></div>
+                <div class="category">
+                    <img src="{% static categoria.icon %}" alt="{{ categoria.name }}" onclick="selectCategory(this); document.getElementById('selectedCategory').value = '{{ categoria.name }}'">
+                </div>
             {% endfor %}
         </div>
-    <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
+        <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
 
-
-    <script>
-        function openPopup() {
-          document.getElementById("myPopup").style.display = "block";
-        }
-        function closePopup() {
-          document.getElementById("myPopup").style.display = "none";
-        }
-        function openBackground() {
-          document.getElementById("background").style.display = "block";
-        }
-        function closeBackground() {
-          document.getElementById("background").style.display = "none";
-        }
-        function openPopup2() {
-          document.getElementById("myPopup2").style.display = "block";
-        }
-        function closePopup2() {
-          document.getElementById("myPopup2").style.display = "none";
-        }
-
-        const tempAwards = document.getElementById('tempAwards');
-        const instaAwards = document.getElementById('instaAwards');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        const prevInstaButton = document.querySelector('.insta');
-        const nextInstaButton = document.querySelector('.insta');
-
-        let currentAward = 'tempAwards';
-
-        function showAwards(awardId) {
-        tempAwards.style.display = awardId === 'tempAwards' ? 'flex' : 'none';
-        instaAwards.style.display = awardId === 'instaAwards' ? 'flex' : 'none';
-        currentAward = awardId;
-        }
-
-        function selectCategory(categoryElement) {
-
-            const categories = document.querySelectorAll('.category');
-            categories.forEach(category => category.classList.remove('active'));
-
-
-            categoryElement.classList.add('active');
-
-            document.getElementById('selectedCategory').value = categoryElement.dataset.categoryName;
+        <script>
+            function openPopup() {
+                document.getElementById("myPopup").style.display = "block";
+            }
+            function closePopup() {
+                document.getElementById("myPopup").style.display = "none";
+            }
+            function openBackground() {
+                document.getElementById("background").style.display = "block";
+            }
+            function closeBackground() {
+                document.getElementById("background").style.display = "none";
+            }
+            function openPopup2() {
+                document.getElementById("myPopup2").style.display = "block";
+            }
+            function closePopup2() {
+                document.getElementById("myPopup2").style.display = "none";
             }
 
+            const tempAwards = document.getElementById('tempAwards');
+            const instaAwards = document.getElementById('instaAwards');
 
-    </script>
+            function showAwards(awardId) {
+                tempAwards.style.display = awardId === 'tempAwards' ? 'flex' : 'none';
+                instaAwards.style.display = awardId === 'instaAwards' ? 'flex' : 'none';
+            }
 
-    <form method="POST" action="play/">
+            function selectCategory(categoryElement) {
+                const categories = document.querySelectorAll('.category img');
+                categories.forEach(category => category.parentElement.classList.remove('active'));
+
+                categoryElement.parentElement.classList.add('active');
+                document.getElementById('selectedCategory').value = categoryElement.alt;
+            }
+        </script>
+
+        <form method="POST" action="play/">
             {% csrf_token %}
             <input type="hidden" id="selectedCategory" name="category">
             {% include 'play_component.html' %}
-    </form>
-
+        </form>
+    </div>
 </div>
 
 {% endblock %}
-

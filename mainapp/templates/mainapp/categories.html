@@ -25,9 +25,9 @@
     <div class="main-content">
         <div class="categories">
             {% for categoria in categorias %}
-                <div class="category"  onclick="selectCategory(this);document.getElementById('selectedCategory').value = '{{categoria.name}}'" >
+                <div class="category">
                     {{categoria.name}}  
-                    <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" >
+                    <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="selectCategory(this);document.getElementById('selectedCategory').value = '{{categoria.name}}'" >
                 </div>
             {% endfor %}
 
@@ -41,15 +41,12 @@
     </form>
     <script>
         function selectCategory(categoryElement) {
+                const categories = document.querySelectorAll('.category img');
+                categories.forEach(category => category.parentElement.classList.remove('active'));
 
-          const categories = document.querySelectorAll('.category');
-          categories.forEach(category => category.classList.remove('active'));
-    
-       
-          categoryElement.classList.add('active');
- 
-          document.getElementById('selectedCategory').value = categoryElement.dataset.categoryName;
-        }
+                categoryElement.parentElement.classList.add('active');
+                document.getElementById('selectedCategory').value = categoryElement.alt;
+            }
       </script>
     </div>
 {% endblock %}
