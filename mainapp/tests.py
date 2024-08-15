@@ -71,34 +71,6 @@ class CategoryTests(TestCase):
 
             self.assertTrue(np.array_equal(rgbPixel, rgbArray))
 
-
-'''class PostMethodTests(TestCase):
-
-    def setUp(self):
-        self.client = Client()
-        Category.objects.create(name='Arte')
-        Category.objects.create(name='Ciencia')
-        Category.objects.create(name='Manga')
-        self.categories = Category.objects.all()
-        print(self.categories)
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_postRequestCategoryHome(self, mock_stdout):
-        for category in self.categories:
-            response = self.client.post(reverse(views.mainpage), {'miValor': category.name})
-            output = mock_stdout.getvalue()
-            expectedMessage = f"Un usuario quiere jugar las trivias de categoría {category.name} desde el home\n"
-            self.assertIn(expectedMessage, output)
-
-    @patch('sys.stdout', new_callable=io.StringIO)
-    def test_postRequestCategoryCategories(self, mock_stdout):
-        for category in self.categories:
-            response = self.client.post(reverse(views.categories), {'miValor': category.name})
-            output = mock_stdout.getvalue()
-            expectedMessage = f"Un usuario quiere jugar las trivias de categoría {category.name} desde Categorías\n"
-            self.assertIn(expectedMessage, output)'''
-
-
 class RankingTests(TestCase):
 
     def setUp(self):
