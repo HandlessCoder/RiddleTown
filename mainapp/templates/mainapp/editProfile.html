@@ -25,10 +25,10 @@
                     <img src="{% static 'IMG/user.png' %}" alt="User" class="avatarMobile" id="avatarPreview"/>
                 </div>
                 <p class="textMobile">Cambiar foto de perfil</p>
-                <form action="." method="POST">
+                <form action="." method="POST" id="editProfile">
                     {% csrf_token %}
 
-                    <div class="editContainer" method="POST" enctype="multipart/form-data">
+                    <div class="editContainer" enctype="multipart/form-data">
                         
                         <div class="profileImage">
                             <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar" id="avatarPreview"/>
@@ -88,8 +88,8 @@
                     </div>
 
                     <div class="space"></div>
-                    <div class="saveChangesContainer" onclick="openPopup(); openBackground()">
-                        <button class="saveChangesButton submit-button" type="submit"><strong>{% trans Guardar cambios %}</strong></button>
+                    <div class="saveChangesContainer">
+                        <div class="saveChangesButton submit-button" onclick="guardar()"><strong>{% trans "Guardar cambios" %}</strong></div>
                     </div>
                 </form>
 
@@ -97,6 +97,13 @@
             </div>
         </div>
         <script>
+            function guardar(){
+                openPopup();
+                openBackground();
+                setTimeout( () => {
+                    document.getElementById('editProfile').submit()
+                },"3000");
+            }
             function openPopup() {
                 document.getElementById("myPopup").style.display = "block";
             }
