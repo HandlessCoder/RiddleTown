@@ -1,0 +1,596 @@
+/* GENERAL */
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: white;
+}
+
+.sidebar{
+    width: 20%;
+    background-color: #ffffff;
+    background-image: url(../IMG/VectorMenu.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 113.8% 113%;
+    background-position-x: 6vw;
+    background-position-y: -3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sideImages{
+    width: 4.7vh;
+    margin-right: 1.5vh;
+}
+
+.sidebar .logo{
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo img{
+    width: 13.5vw;
+}
+
+.lineLogo{
+    background-color: #f35e3d;
+    padding: 1px;
+    margin-top: 10px;
+    width: 13.5vw;
+}
+
+.lineMenu{
+    background-color: #f35e3d;
+    padding: 1px;
+    width: 13.5vw;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li{
+    margin: 15px 0;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #1D3D59;
+    font-size: 1.2em;
+}
+
+.sideImages2{
+    width: 6.5vh;
+    margin-right: 1.5vh;
+}
+
+.optionContainer{
+    display: flex;
+}
+
+.optionLink{
+    display: flex;
+    margin-top: 5px;
+}
+
+.goBack{
+    width: 8vh;
+    height: 8vh;
+    padding: 0;
+    margin: 0;
+}
+
+.mainview{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    text-align: left;
+    justify-items: left;
+    overflow-y: auto;
+}
+
+.main{
+    display: flex;
+    text-align: left;
+}
+
+.space{
+    width: 15%;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    color: #1D3D59;
+}
+
+.perfil{
+    text-decoration: underline;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.form-group2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.buttonAux{
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.calendar-button,
+.load-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #504673;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-button:hover,
+.load-button:hover {
+    background-color: #504673;
+}
+
+.submit-button {
+    width: 15%;
+    padding: 15px;
+    margin: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #504673;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #453876;
+}
+
+.editContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profileImage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    transition: background-color 0.3s ease;
+    height: 35%;
+}
+
+.withProfile{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 20%;
+}
+
+.withProfile > p{
+margin: 0px;
+}
+
+.text{
+    font-size: large;
+    font-weight: bold;
+}
+
+p{
+    margin: -0.5%;
+}
+
+.form-button:hover {
+    background-color: #e0e0e0;
+}
+
+.arrow-icon {
+    width: 1.5vw;
+}
+
+.buttonPlay{
+    background-color: #f25e3d;
+    color: #1D3D59;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 10%;
+    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.buttonPlayContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.configuracion{
+    text-decoration: underline;
+    color: #1D3D59;
+}
+
+.language{
+    font-size: small;
+}
+
+.spanish{
+    font-size: 1.5em;
+}
+
+.avatar{
+    width: 4vw;
+    margin-right: 1vw;
+}
+
+.alias{
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-left: 2%;
+}
+
+.changeImage{
+    background-color: #504673;
+    color: white;
+    padding: 0.2vw;
+    border-radius: 12px;
+    text-align: center;
+    width: 12%;
+}
+
+.profileAlias{
+    display: flex;
+    padding: 10px 10px;
+    font-size: 16px;
+    border: 1px solid #1D3D59;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    height: 35%;
+}
+
+.alias2{
+    font-size: small;
+}
+
+.editAlias{
+    font-size: 1.6em;
+}
+
+.directionTitle{
+    margin: 0;
+    margin-top: 2vh;
+}
+
+.directionButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #1D3D59;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    transition: background-color 0.3s ease;
+    height: 20%;
+}
+
+.directionButton:hover {
+    background-color: #e0e0e0;
+}
+
+.country{
+    font-size: small;
+}
+
+.venezuela{
+    font-size: 1.4em;
+}
+
+.cityButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    font-size: 15px;
+    border: 1px solid #1D3D59;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    transition: background-color 0.3s ease;
+    height: 20%;
+    margin-top: 2vh;
+}
+
+.cityButton:hover {
+    background-color: #e0e0e0;
+}
+
+.city{
+    font-size: small;
+}
+
+.caracas{
+    font-size: 1.4em;
+}
+
+.directionTextArea{
+    display: flex;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #1D3D59;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #1D3D59;
+    height: 65%;
+    margin-top: 2vh;
+}
+
+.direction{
+    font-size: small;
+}
+
+.resUCV{
+    font-size: 1.4em;
+}
+
+.buttonPlay{
+    background-color: #f25e3d;
+    color: #1D3D59;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 15%;
+    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+}
+
+.buttonPlayContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 0;
+}
+
+.saveChangesButton{
+    background-color: #504673;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 22%;
+    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+}
+
+.saveChangesContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.container2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.top-ranking{
+    background-color: #ebebeb;
+    width: 50%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-image: url(../IMG/VectorRanking.png);
+    background-repeat: no-repeat;
+    background-size: 124% 70%;
+    background-position-x: -0.5vw;
+    background-position-y: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.ranking{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 7vw;
+}
+
+.lineMenuContainer{
+    width: 70%;
+}
+
+@media (max-width: 1220px){
+
+    .changeImage{
+        width: 30vw;
+        height: 45px;
+    }
+
+    .avatar{
+        width: 10vw;
+    }
+
+    .top-ranking{
+        background-color: #ebebeb;
+        width: 50%;
+        height: 150px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        background-image: url(../IMG/VectorRanking.png);
+        background-repeat: no-repeat;
+        background-size: 125% 110%;
+        background-position-x: -1.1vw;
+        background-position-y: 6vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar{
+        position: absolute;
+        left: -100%;
+        transition: left 0.1s ease;
+        width: 280px;
+        height: 100%;
+        background-image: none;
+        justify-content: left;
+        display: none;
+    }
+
+    .backgroundOpacity{
+        position: fixed;
+        left: -100%;
+        height: 100%;
+        z-index: 100;
+        background-color: hsla(280, 100%, 5%, 0.6);
+    }
+
+    .backgroundOpacity.active{
+        left: 280px;
+        width: 100%;
+    }
+
+    .sidebar.active {
+        left: 0;
+        display: flex;
+        position: fixed;
+    }
+
+    .lineLogo{
+        width: 100%;
+    }
+    
+    .lineMenu{
+        width: 100%;
+        background-color: #ef7e65;
+    }
+
+    .lineMenuContainer{
+        width: 100%;
+    }
+
+    .buttonPlay{
+        background-color: #f25e3d;
+        color: #1D3D59;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        width: 25%;
+        font-size: 1.2em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .mainview{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 0.7rem;
+    }
+
+    .withProfile{
+        width: 40%;
+    }
+
+    .main{
+        width: 100%;
+    }
+
+    .profileImage{
+        padding:0% !important;
+    }
+
+    .changeImage{
+        margin-bottom: 20px;
+    }
+
+    p{
+        font-size: 0.8rem;
+    }
+
+    .space{
+        width: 10%;
+    }
+
+    .top-ranking{
+        width: 80% !important;
+    }
+
+    .buttonPlay{
+        width: 30% !important;
+    }
+
+    strong{
+        font-size: 1rem !important;
+    }
+
+}

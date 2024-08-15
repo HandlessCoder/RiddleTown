@@ -1,0 +1,277 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: white;
+}
+
+.sidebar{
+    width: 20vw;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../IMG/VectorMenu.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 113.8% 113%;
+    background-position-x: 6vw;
+    background-position-y: -3vw;
+}
+
+.sidebar .logo{
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo img{
+    width: 13vw;
+}
+
+.lineLogo{
+    background-color: #f35e3d;
+    padding: 1px;
+    width: 12.5vw;
+}
+
+.lineMenu{
+    background-color: #f35e3d;
+    padding: 1px;
+    width: 100%;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li{
+    margin: 15px 0;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #1D3D59;
+    font-size: 1.2em;
+}
+
+.main-content{
+    width: 100%;
+    padding: 1vw;
+    overflow-y: auto;
+    color: #1D3D59;
+}
+
+.awards{
+    background-color: #ebebeb;
+    padding: 2.5vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    background-image: url(../IMG/VectorFigma.png);
+    background-repeat: no-repeat;
+    background-size: 113.8% 113%;
+    background-position-x: -5vw;
+    display: flex;
+}
+
+.premioFisico{
+    display: flex;
+    float: left;
+}
+
+.premioFisico img{
+    width: 18vw;
+    height: 15vw;
+    margin-left: 6vw;
+}
+
+.awardsInstantContainer{
+    display: flex;
+    width: 39vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.awardsInstantContainer h2{
+    margin: 0;
+}
+
+.textAward{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.buttonAwardsContainer{
+    margin-top: 2.5vh;
+}
+
+.buttonAwards{
+    background-color: #504673;
+    color: #fff;
+    padding: 1.5vh;
+    border-radius: 50px;
+    width: 20vw;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.top-ranking{
+    background-color: #ebebeb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-image: url(../IMG/VectorRanking.png);
+    background-repeat: no-repeat;
+    background-size: 110% 126%;
+    background-position-x: -5vw;
+}
+
+.ranking{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: 7vw;
+}
+
+.namePerson{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    float: left;
+}
+
+.points{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    float: right;
+    margin-right: 8vw;
+}
+
+.awards h2, .top-ranking h2{
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.buttonRanking{
+    background-color: #504673;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+    width: 30%;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.buttonRankingContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonAwardsContainer{
+    display: flex;
+    justify-content: center;
+    width: 67vw;
+}
+
+.buttonPlay{
+    background-color: #f25e3d;
+    color: #1D3D59;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 10%;
+    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+}
+
+.buttonPlayContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.category-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.category{
+    margin: 10px;
+}
+
+.category img{
+    width: 15vh;
+    height: 15vh;
+    border-radius: 12px;
+}
+
+.category p{
+    margin-top: 5px;
+}
+
+.category-icons .category:nth-child(even){
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.category-icons .category:nth-child(odd){
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*button:hover{
+    background-color: #e64a19;
+}*/
+
+.selectCategory{
+    text-align: center;
+    margin-top: 0;
+}
+
+.sideImages{
+    width: 4.7vh;
+    margin-right: 1.5vh;
+}
+
+.sideImages2{
+    width: 6vh;
+}
+
+.optionContainer{
+    display: flex;
+}
+
+.optionLink{
+    display: flex;
+    margin-top: 1vh;
+}
+
+.prev img, .next img{
+    width: 7vh;
+    margin-top: 12vh;
+}
+
+.next img{
+    margin-left: 9vw;
+}
+
+.lineMenuContainer{
+    width: 70%;
+}

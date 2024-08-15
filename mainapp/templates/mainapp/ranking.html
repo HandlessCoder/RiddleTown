@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+    <title>RiddleTown - {% trans "Clasificación" %}</title>
+    <link rel="stylesheet" href="{% static 'CSS/rankingNoLogged.css' %}"/>
+    <link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
+{% endblock %}
+
+{% block content%}
+{% include 'back_component.html' %}
+<div class="main-content" id="ranking">
+    
+    <ol class="ranking">
+        {% for place in ranking %}
+            <li>
+                <div class="namePerson">{{place.user.nickname}}</div>
+                <div class="points">{{place.score}} {% trans "puntos" %}</div>
+            </li>
+        {% endfor %}
+    </ol>
+    
+    <a href="/categories/">
+        {% include 'play_component.html' %}    
+    </a>
+    </div>
+{% endblock %}

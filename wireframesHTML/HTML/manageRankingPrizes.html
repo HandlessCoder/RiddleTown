@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RiddleTown - Administrar Premios</title>
+    <link rel="stylesheet" href="../CSS/adminStyles.css"/>
+    <link rel="stylesheet" href="../CSS/adminPrizesStyles.css"/>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="homeAdministradorDesktop.html"><img src="../IMG/logoV2.0.png" alt="RiddleTown Logo"/></a>
+        </div>
+        <div class="lineLogo"></div>
+        <ul>
+            <li><div class="optionContainer"><a href="adminTrivias.html" class="optionLink"><img src="../IMG/sidebar/iconotrivia.png" alt="Trivias" class="sideImages"/>Trivias</a></div></li>
+            <li><div class="optionContainer"><a href="manageTriviaCategories.html" class="optionLink"><img src="../IMG/sidebar/piezas-de-rompecabezas.png" alt="Categorías" class="sideImages"/>Categorías</a></div></li>
+            <li><div class="optionContainer"><a href="winners.html" class="optionLink"><img src="../IMG/sidebar/trofeo.png" alt="Ganadores" class="sideImages"/>Ganadores</a></div></li>
+            <li><div class="optionContainer premio"><a href="managePrizes.html" class="optionLink"><img src="../IMG/sidebar/iconoPremio.png" alt="Premios" class="sideImages"/>Premios</a></div></li>
+        </ul>
+            <div class="lineMenuContainer"><div class="lineMenu"></div></div>
+        <ul>
+            <li><div class="optionContainer"><a href="configurationAdmin.html" class="optionLink"><img src="../IMG/sidebar/engranaje.png" alt="Configuración" class="sideImages"/>Configuración</a></div></li>
+            <li><div class="optionContainer"><a href="homeNoLogged.html" class="optionLink"><img src="../IMG/sidebar/cerrar-sesion.png" alt="Cerrar Sesión" class="sideImages">Cerrar Sesión</a></div></li>
+            <li><div class="optionContainer"><a href="" class="optionLink"><img src="../IMG/sidebar/sol.png" alt="Cambiar modo" class="sideImages2"></a></div></li>
+        </ul>
+    </div>
+
+    <div class="mainview">
+        <a href="../HTML/managePrizes.html"><img src="../IMG/flecha.png" alt="Atrás" class="goBack"/></a>
+        <div class="main">
+            <div class="space"></div>
+            <div class="mainContent">
+
+                <h2>Administrar Premios Raking</h2>
+
+                <div class="form-container">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="fecha-sorteo">Fecha del sorteo</label>
+                            <div class="input-container">
+                                <input type="text" id="fecha-sorteo" name="fecha-sorteo" placeholder="DD/MM/AAAA">
+                                <button type="button" class="calendar-button">📅</button>
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Premios</label>
+                            <div class="input-container">
+                                <input type="text" name="premio1" placeholder="Premio 1">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" name="premio2" placeholder="Premio 2">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" name="premio3" placeholder="Premio 3">
+                                <button type="button" class="load-button">Cargar</button>
+                            </div>
+                        </div>
+            
+                        <div class="form-group buttonAux">
+                            <button type="submit" class="submit-button">Crear Sorteo</button>
+                        </div>
+                    </form>
+                </div>
+            <div class="space"></div>
+        
+            </div>
+        </div>
+            
+    </div>
+    
+</body>
+</html>

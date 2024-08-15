@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+    <title>RiddleTown - {% trans "Categorías" %}</title>
+    <link rel="stylesheet" href="{% static 'CSS/categoriesNoLogged.css' %}"/>
+    <link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
+{% endblock %}
+
+
+{% block content%}
+    {% include 'back_component.html' %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="searchBar">
+            <div class="searchInputContainer">
+                <input type="text" placeholder="{% trans 'Buscar categoría' %}" name="search">
+                <button type="submit">
+                    <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="main-content">
+        <div class="categories">
+            {% for categoria in categorias %}
+                <div class="category">
+                    {{categoria.name}}  
+                    <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="selectCategory(this);document.getElementById('selectedCategory').value = '{{categoria.name}}'" >
+                </div>
+            {% endfor %}
+
+            
+        </div>
+        <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
+        <form method="POST" action="/play/">
+            {% csrf_token %}
+            <input type="hidden" id="selectedCategory" name="category">
+            {% include 'play_component.html' %}
+    </form>
+    <script>
+        function selectCategory(categoryElement) {
+                const categories = document.querySelectorAll('.category img');
+                categories.forEach(category => category.parentElement.classList.remove('active'));
+
+                categoryElement.parentElement.classList.add('active');
+                document.getElementById('selectedCategory').value = categoryElement.alt;
+            }
+      </script>
+    </div>
+{% endblock %}

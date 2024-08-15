@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block head %}
+<title>RiddleTown - {% trans "Perfil" %}</title>
+<link rel="stylesheet" href="{% static 'CSS/profileStyles.css' %}"/>
+<link rel="icon" type="image/jpg" href="{% static 'IMG/logoV1.1.png' %}"/>
+{% endblock %}
+
+
+{% block content%}
+<div class="mainview">
+    {% include 'back_component.html' %}
+    <div class="main">
+        <div class="space"></div>
+        <div class="mainContent">
+            <div class="editContainer">
+                <div class="profileImage">
+                    <img src="{% static 'IMG/user.png' %}" alt="User" class="avatar"/>
+                    <div class="withProfile">
+                        <p>{{ puntos }}</p>
+                        <p class="text">{% trans "Total puntos en esta temporada" %}</p>
+                    </div>
+                    <div class="withProfile">
+                        <p> {{ premios }} </p>
+                        <p class="text">{% trans "Premios ganados" %}</p>
+                    </div>
+                </div>
+                <span class="alias"> {{ user.nickname }} </span>
+                <div class="changeImage">
+                    <a class="edit" href="edit">{% trans "Editar perfil" %}</a>
+                </div>
+                <p>{% trans "Dirección" %}</p>
+                <P>{% trans "Pais" %}: {{ user.country }} </P>
+                <P>{% trans "Estado" %}: {{ user.estate }} </P>
+                <p>{% trans "Dirección" %}: {{ user.address }} </p>
+                <div class="container2">
+                    <div class="top-ranking">
+                        <div>
+                            <img src="{% static 'IMG/sidebar/trofeo.png' %}" alt="Trofeo" class="sideImages"/>
+                        </div>
+                        <p>{% trans "No tienes premios por reclamar" %}</p>
+                    </div>  
+                </div>
+            </div>
+        <div class="space"></div>
+        <a href="/categories/">
+            {% include 'play_component.html' %}    
+        </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
