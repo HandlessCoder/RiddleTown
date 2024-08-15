@@ -226,7 +226,7 @@ class PlayTests(TestCase):
 
     def test_correctAnswerWithTime(self):
         print(f"------------------------ Test: Puntaje de respuesta correcta con bono de tiempo ------------------------")
-        time = 0.5
+        time = 1
         data = {
             'category': self.categories[0].name,
             'total': 0,
