@@ -17,14 +17,14 @@
             <div class="space"></div>
             <div class="mainContent">
                 <div class="popup" id="myPopup">
-                    <h2>¡Acción realizada con éxito!</h2>
+                    <h2>{% trans "¡Acción realizada con éxito!" %}</h2>
                     <button class="close" onclick="closePopup(); closeBackground()">&times;</button>
                 </div>
                 <h2>{% trans "Editar perfil" %}</h2>
                 <div class="userMobile">
                     <img src="{% static 'IMG/user.png' %}" alt="User" class="avatarMobile" id="avatarPreview"/>
                 </div>
-                <p class="textMobile">Cambiar foto de perfil</p>
+                <p class="textMobile">{% trans "Cambiar foto de perfil" %}</p>
                 <form action="." method="POST" id="editProfile">
                     {% csrf_token %}
 
@@ -41,7 +41,7 @@
 
                         <div class="profileAlias">
                             <div class="alias2">
-                                {{ user.nickname }} <br>
+                                {% trans "Alias" %} <br>
                                 <input type="text" class="editAlias" id="userAlias" name="nickname" placeholder="{{ user.nickname }}" value="{{ user.nickname }}" >
                             </div>
                         </div>

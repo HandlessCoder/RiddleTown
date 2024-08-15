@@ -24,16 +24,16 @@
         if(res){
             el.style.backgroundColor = "#8ED697"
             puntos+=100
-            document.getElementById('myPopup').children[0].innerHTML += ' correctamente!';
+            document.getElementById('myPopup').children[0].innerHTML += ' {% trans "correctamente!"%}';
             
             if(document.getElementById('timeInput').value>0){
                 puntos+=200
             }
             
-            document.getElementById('resultado').innerHTML = `¡Obtienes ${puntos} puntos!`;
+            document.getElementById('resultado').innerHTML = `{% trans "¡Obtienes"%} ${puntos} {% trans "puntos"%}!`;
         }else{
-            document.getElementById('myPopup').children[0].innerHTML += ' incorrectamente!';
-            document.getElementById('resultado').innerHTML = `Fallaste :( ¡Éxitos en tu próxima partida!`;
+            document.getElementById('myPopup').children[0].innerHTML += ' {% trans "incorrectamente!"%}';
+            document.getElementById('resultado').innerHTML = `{% trans "Fallaste :( ¡Éxitos en tu próxima partida!"%}`;
             el.style.backgroundColor = "#C55052"
         }
         /*          llamar popoup indicando puntos                */
@@ -89,7 +89,7 @@
             </div>
             <div class="background" id="background"></div>
             <div class="popup" id="myPopup">
-                <h2>¡Pregunta respondida</h2>
+                <h2>{% trans "¡Pregunta respondida"%}</h2>
                 <p id="resultado"></p>
             </div>
         </div>
