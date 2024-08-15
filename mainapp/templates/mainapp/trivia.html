@@ -49,6 +49,7 @@
 
 
 {% block content%}
+<div class="background" id="background"></div>
     <form action="." method="POST" id="triviaQuestion">
         {% csrf_token %}
         <div style="visibility: hidden;">
@@ -87,7 +88,7 @@
                 <p id="counter">30</p>
                 <img src="{% static 'IMG/reloj.png' %}">
             </div>
-            <div class="background" id="background"></div>
+            
             <div class="popup" id="myPopup">
                 <h2>{% trans "¡Pregunta respondida"%}</h2>
                 <p id="resultado"></p>

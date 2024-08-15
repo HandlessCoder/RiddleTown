@@ -286,6 +286,16 @@ a{
     margin: 0%;
 }
 
+.background{
+    left:20%
+    display: none;
+    position: fixed;
+    top: -20%;
+    height: 120%;
+    width: 100%;
+    z-index: 50;
+    background-color: hsla(280, 100%, 5%, 0.6);
+}
 
 @media (max-width: 1290px) {
 
