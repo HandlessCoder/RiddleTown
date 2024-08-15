@@ -1,11 +1,82 @@
 from django.test import Client, TestCase
-from .models import Category, User, Ranking, Trivia, Answer
+from .models import Category, User, Ranking, Trivia, Answer, Prize
 from django.urls import reverse
 import numpy as np
 from PIL import Image #Requiere Pillow
 from . import views
 from unittest.mock import patch
 import io
+
+
+class CustomUserManager(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            email='django@gmail.com',
+            password='123456',
+            nickname='prueba',
+            country='country',
+            estate='estate',
+            address='address',
+            is_staff=False,
+            is_superuser=False,
+            is_active=True
+        )
+
+        self.superUser = User.objects.create_superuser(
+            email='django2@gmail.com',
+            nickname='pruebaSuper',
+            password='789101',
+            is_superuser=True
+        )
+
+        self.staffUser = User.objects.create_user(
+            email='django3@gmail.com',
+            nickname='pruebaStaff',
+            password='2345678',
+            is_staff=True
+        )
+
+    def test_UserType(self):
+        print(f"------------------------ Test: Verificación del tipo de usuario ------------------------")
+        print(f"User: {self.user}\n")
+        print(f"SuperUser: {self.superUser}\n")
+        print(f"StaffUser: {self.staffUser}\n")
+        self.assertTrue(self.superUser.is_superuser, "Es un Super Usuario")
+        self.assertTrue(self.staffUser.is_staff, "Es un Usuario Staff")
+        print(f"\nVerified\n")
+
+
+class PrizeTests(TestCase):
+
+    def setUp(self):
+        Prize.objects.create(prizeCode='a', prizeType='ranking', rankingPosition=1)
+        Prize.objects.create(prizeCode='b', prizeType='ranking', rankingPosition=2)
+        Prize.objects.create(prizeCode='c', prizeType='ranking', rankingPosition=3)
+        self.prizes = Prize.objects.all()
+
+        User.objects.create(email='kaveh@mail.com', nickname='Kaveh')
+        User.objects.create(email='callmyname@adeptus.com', nickname='XiaoYaksha')
+        User.objects.create(email='bandaArataki@wujuu.com', nickname='XiaoYaksha')
+        self.users = User.objects.all()
+
+        Ranking.objects.create(user=self.users[0], score='12100', position=1)
+        Ranking.objects.create(user=self.users[1], score='6000', position=2)
+        Ranking.objects.create(user=self.users[2], score='4000', position=3)
+        self.rankings = Ranking.objects.all()
+        print(self.rankings)
+        self.client = Client()
+
+    def test_belongPrize(self):
+        print(f"------------------------ Test: Verificación de pertenencia de premio ------------------------")
+        print(f"Users inserted: {self.users}\n")
+        print(f"Ranking positions: {self.rankings}\n")
+        self.assertEqual(self.rankings[0].position, self.prizes[0].rankingPosition)
+        self.assertEqual(self.rankings[1].position, self.prizes[1].rankingPosition)
+        self.assertEqual(self.rankings[2].position, self.prizes[2].rankingPosition)
+        
+        self.assertNotEqual(self.rankings[1].position, self.prizes[2].rankingPosition)
+        print(f"Verified\n")
 
 
 class CategoryTests(TestCase):
