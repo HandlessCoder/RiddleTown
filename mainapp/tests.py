@@ -112,8 +112,12 @@ class PrizeTests(TestCase):
         self.client = Client()
 
     def test_belongPrize(self):
+        print(f"\n--------------------------------- Test: Verificación de pertenencia de premio ---------------------------------")
+        print(f"Users inserted: {self.users}\n")
+        print(f"Ranking positions: {self.rankings}\n")
         self.assertEqual(self.rankings[0].position, self.prizes[0].rankingPosition)
         self.assertEqual(self.rankings[1].position, self.prizes[1].rankingPosition)
         self.assertEqual(self.rankings[2].position, self.prizes[2].rankingPosition)
         
         self.assertNotEqual(self.rankings[1].position, self.prizes[2].rankingPosition)
+        print(f"Verified\n")
