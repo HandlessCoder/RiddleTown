@@ -177,4 +177,12 @@ body{
     .editOptions{
         margin: 0 !important;
     }
+
+    .buttonPlay{
+        width: 20% !important;
+    }
+
+    strong{
+        font-size: 1rem !important;
+    }
 }

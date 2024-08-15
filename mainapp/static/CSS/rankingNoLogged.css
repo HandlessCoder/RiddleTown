@@ -248,5 +248,17 @@ ol{
         min-width: 60px;
         min-height: 60px;
     }
+
+    .buttonPlay{
+        width: 30% !important;
+    }
+
+    strong{
+        font-size: 1rem !important;
+    }
+
+    a{
+        text-decoration: none;
+    }
     
 }

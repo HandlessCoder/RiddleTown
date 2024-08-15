@@ -346,7 +346,7 @@ ol{
     display: none;
     position: fixed;
     top: 50%;
-    left: calc(50% + 20vh);
+    left: 60%;
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: #fff;
@@ -648,7 +648,8 @@ p{
     }
 
     .popup {
-        max-width: 50%;
+        max-width: 80% !important;
+        width: 90%;
     }
 
     .buttonPlay{
