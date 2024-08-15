@@ -223,7 +223,7 @@ VALUES ('31', 'text', '¿Quién es considerado el mejor jugador de baloncesto de
     ('37', 'text', '¿En qué deporte se utiliza un tablero y una red?', NULL, NULL,  'Deporte'),
     ('38', 'text', '¿Quién ganó la Copa del Mundo de Fútbol en 2018?', NULL, NULL,  'Deporte'),
     ('39', 'text', '¿En qué deporte se utiliza un guante y una pelota pequeña?', NULL, NULL,  'Deporte'),
-    ('40', 'text', '¿Qué deporte es?', 'Trivias/deporte/pregunta10/pregunta.png', NULL,  'Deporte');
+    ('40', 'image', '¿Qué deporte es?', 'Trivias/deporte/pregunta10/pregunta.png', NULL,  'Deporte');
 
 INSERT INTO mainapp_answer(answerID, answerType, answerText, answerImage, correctAnswer, trivia_id)
 VALUES ('121', 'text', 'LeBron James', NULL, False, '31'),
