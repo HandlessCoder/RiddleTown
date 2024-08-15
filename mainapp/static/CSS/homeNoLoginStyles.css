@@ -43,8 +43,7 @@ header {
 }
 
 .sidebar{
-    width: 20vw;
-    height: 100%;
+    width: 20%;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
@@ -69,18 +68,16 @@ header {
 .lineLogo{
     background-color: #f35e3d;
     padding: 1px;
-    width: 12.5vw;
+    margin-top: 10px;
+    width: 13.5vw;
 }
 
 .lineMenu{
     background-color: #f35e3d;
     padding: 1px;
-    width: 100%;
+    width: 13.5vw;
 }
 
-.lineMenuContainer{
-    width: 100%;
-}
 
 .sidebar ul{
     list-style: none;
@@ -96,6 +93,11 @@ header {
     text-decoration: none;
     color: #1D3D59;
     font-size: 1.2em;
+}
+
+.optionLink{
+    display: flex;
+    margin-top: 5px;
 }
 
 .main-content{
@@ -279,6 +281,9 @@ ol{
     width: 100%;
     height: 90%;
     border-radius: 12px;
+    background-color: #EBEBEB;
+    padding-top: 10%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 .category p{
@@ -329,7 +334,6 @@ ol{
 
 .optionLink{
     display: flex;
-    margin-top: 1vh;
 }
 
 .prev img, .next img{
@@ -687,3 +691,4 @@ p{
         margin-bottom: 10px;
     }
 
+}

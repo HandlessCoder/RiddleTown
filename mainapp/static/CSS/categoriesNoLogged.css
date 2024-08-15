@@ -8,7 +8,7 @@ body{
 }
 
 .sidebar{
-    width: 20vw;
+    width: 20%;
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
@@ -27,19 +27,20 @@ body{
 }
 
 .sidebar .logo img{
-    width: 13vw;
+    width: 13.5vw;
 }
 
 .lineLogo{
     background-color: #f35e3d;
     padding: 1px;
-    width: 12.5vw;
+    margin-top: 10px;
+    width: 13.5vw;
 }
 
 .lineMenu{
     background-color: #f35e3d;
     padding: 1px;
-    width: 100%;
+    width: 13.5vw;
 }
 
 .sidebar ul{
@@ -107,7 +108,7 @@ body{
 
 .optionLink{
     display: flex;
-    margin-top: 1vh;
+    margin-top: 5px;
 }
 
 .goBack{

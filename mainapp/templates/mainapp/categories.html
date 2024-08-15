@@ -10,26 +10,31 @@
 
 {% block content%}
     {% include 'back_component.html' %}
-
-    <div class="searchBar">
-        <div class="searchInputContainer">
-            <input type="text" placeholder="{% trans 'Buscar categoría' %}">
-            <button type="submit">
-                <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
-            </button>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="searchBar">
+            <div class="searchInputContainer">
+                <input type="text" placeholder="{% trans 'Buscar categoría' %}" name="search">
+                <button type="submit">
+                    <img src="{% static 'IMG/lupa.png' %}" alt="Buscar">
+                </button>
+            </div>
         </div>
-    </div>
+    </form>
 
     <div class="main-content">
         <div class="categories">
             {% for categoria in categorias %}
-                <div class="category"> {{categoria.name}}  <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'"></div>
+                <div class="category">
+                    {{categoria.name}}  
+                    <img src="{% static categoria.icon %}" alt="{{categoria.name}}" class="categoryImage" onclick="document.getElementById('selectedCategory').value = '{{categoria.name}}'">
+                </div>
             {% endfor %}
 
             
         </div>
         <p class="selectCategory">{% trans "Selecciona una categoría antes de jugar" %}</p>
-        <form method="POST" action=".">
+        <form method="POST" action="/play/">
             {% csrf_token %}
             <input type="hidden" id="selectedCategory" name="category">
             {% include 'play_component.html' %}
